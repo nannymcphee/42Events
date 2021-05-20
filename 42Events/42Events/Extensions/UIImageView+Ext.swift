@@ -5,4 +5,14 @@
 //  Created by Nguyên Duy on 19/05/2021.
 //
 
-import Foundation
+import Kingfisher
+
+extension UIImageView {
+    public func setImage(url: String, placeholder: UIImage? = nil) {
+        guard let url = URL(string: url) else {
+            self.image = placeholder
+            return
+        }
+        self.kf.setImage(with: url, placeholder: placeholder, options: nil, completionHandler: nil)
+    }
+}

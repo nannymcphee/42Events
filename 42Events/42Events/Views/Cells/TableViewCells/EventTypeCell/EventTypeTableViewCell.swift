@@ -8,30 +8,32 @@
 import UIKit
 
 class EventTypeTableViewCell: UITableViewCell {
-
+    // MARK: - IBOutlets
     @IBOutlet weak var cvEventType: UICollectionView!
     
+    // MARK: - Variables
     private var activities: [Activity] = [
         Activity(name: "Running", color: AppColors.teal, image: #imageLiteral(resourceName: "ic_running")),
         Activity(name: "Cycling", color: AppColors.blue, image: #imageLiteral(resourceName: "ic_cycling")),
         Activity(name: "Walking", color: AppColors.orange, image: #imageLiteral(resourceName: "ic_walking")),
     ]
     
+    // MARK: - Overrides
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureCollectionView()
     }
     
+    // MARK: - Private functions
     private func configureCollectionView() {
         cvEventType.registerNib(EventActivityCollectionViewCell.self)
         cvEventType.delegate = self
         cvEventType.dataSource = self
         cvEventType.reloadData()
     }
-    
 }
 
-
+// MARK: - Extensions
 extension EventTypeTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return activities.count
@@ -55,8 +57,13 @@ extension EventTypeTableViewCell: UICollectionViewDelegate {
 
 extension EventTypeTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = collectionView.frame.size.height
-        return CGSize(width: size, height: size)
+        let screenSize = UIScreen.main.bounds.size
+        let width = (screenSize.width / 3) - 20
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

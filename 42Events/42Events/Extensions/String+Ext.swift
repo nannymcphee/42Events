@@ -5,4 +5,19 @@
 //  Created by Nguyên Duy on 20/05/2021.
 //
 
-import Foundation
+import UIKit
+
+extension String {
+    var capitalizeFirst:String {
+        var result: String = self
+        result.replaceSubrange(startIndex...startIndex, with: String(self[startIndex]).capitalized)
+        return result
+    }
+    
+    func labelSize(font: UIFont, considering maxWidth: CGFloat) -> CGSize {
+        let attributedText = NSAttributedString(string: self, attributes: [.font: font])
+        let constraintBox = CGSize(width: maxWidth, height: .greatestFiniteMagnitude)
+        let rect = attributedText.boundingRect(with: constraintBox, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil).integral
+        return CGSize(width: ceil(rect.size.width), height: ceil(rect.size.height))
+    }
+}

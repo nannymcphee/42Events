@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+class NetworkRouter {
+    static var raceEvents   = "/race-events"
+    static var raceFilter   = "/race-filters"
+}

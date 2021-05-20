@@ -8,11 +8,12 @@
 import UIKit
 
 class EventActivityCollectionViewCell: UICollectionViewCell {
-
+    // MARK: - IBOutlets
     @IBOutlet weak var vContainer: UIView!
     @IBOutlet weak var lbActivityName: UILabel!
     @IBOutlet weak var ivThumbnail: UIImageView!
     
+    // MARK: - Overrides
     override func awakeFromNib() {
         super.awakeFromNib()
         vContainer.customBorder(cornerRadius: 12, borderWidth: 1, color: .clear)
@@ -25,6 +26,7 @@ class EventActivityCollectionViewCell: UICollectionViewCell {
         ivThumbnail.image = nil
     }
 
+    // MARK: - Public functions
     public func configureCell(data: Activity) {
         vContainer.backgroundColor = data.color
         lbActivityName.text = data.name
