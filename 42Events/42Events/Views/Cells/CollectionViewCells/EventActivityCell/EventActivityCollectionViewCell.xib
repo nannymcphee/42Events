@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Metropolis-ExtraBold.otf">
+            <string>Metropolis-ExtraBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventActivityCollectionViewCell" id="gTV-IL-0wX" customClass="EventActivityCollectionViewCell" customModule="_2Events" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="194"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="194"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVr-df-KBh">
+                        <rect key="frame" x="0.0" y="0.0" width="216" height="194"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nZ-vu-Jq7">
+                                <rect key="frame" x="10" y="15" width="196" height="14"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Metropolis-ExtraBold" family="Metropolis" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_running" highlightedImage="EventActivityCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="Vnc-WO-SMq">
+                                <rect key="frame" x="0.0" y="0.0" width="216" height="194"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Vnc-WO-SMq" secondAttribute="trailing" id="4Vu-6i-AMh"/>
+                            <constraint firstAttribute="bottom" secondItem="Vnc-WO-SMq" secondAttribute="bottom" id="CZw-yL-7ww"/>
+                            <constraint firstItem="5nZ-vu-Jq7" firstAttribute="leading" secondItem="tVr-df-KBh" secondAttribute="leading" constant="10" id="FPC-NI-rTm"/>
+                            <constraint firstAttribute="trailing" secondItem="5nZ-vu-Jq7" secondAttribute="trailing" constant="10" id="MiA-i6-oy1"/>
+                            <constraint firstItem="Vnc-WO-SMq" firstAttribute="leading" secondItem="tVr-df-KBh" secondAttribute="leading" id="TnK-rB-nGN"/>
+                            <constraint firstItem="Vnc-WO-SMq" firstAttribute="top" secondItem="tVr-df-KBh" secondAttribute="top" id="c1o-Fd-rIZ"/>
+                            <constraint firstItem="5nZ-vu-Jq7" firstAttribute="top" secondItem="tVr-df-KBh" secondAttribute="top" constant="15" id="syh-rC-Yg0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="tVr-df-KBh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AYt-eI-qLb"/>
+                <constraint firstAttribute="bottom" secondItem="tVr-df-KBh" secondAttribute="bottom" id="ZCX-K7-erX"/>
+                <constraint firstItem="tVr-df-KBh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="p3U-JR-aAS"/>
+                <constraint firstAttribute="trailing" secondItem="tVr-df-KBh" secondAttribute="trailing" id="vRt-5h-GHc"/>
+            </constraints>
+            <size key="customSize" width="216" height="194"/>
+            <connections>
+                <outlet property="ivThumbnail" destination="Vnc-WO-SMq" id="Yz3-LD-AbP"/>
+                <outlet property="lbActivityName" destination="5nZ-vu-Jq7" id="KgY-A9-5b3"/>
+                <outlet property="vContainer" destination="tVr-df-KBh" id="LwA-s7-FCh"/>
+            </connections>
+            <point key="canvasLocation" x="168.11594202898553" y="156.02678571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="EventActivityCollectionViewCell" width="128" height="128"/>
+        <image name="ic_running" width="122" height="134"/>
+    </resources>
+</document>
