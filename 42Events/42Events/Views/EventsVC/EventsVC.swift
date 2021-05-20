@@ -44,7 +44,8 @@ class EventsVC: BaseViewController {
     }
     
     @objc private func didTapMenuButton() {
-        
+        let vc = SettingsVC.instance()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc private func reloadData() {
@@ -57,18 +58,16 @@ class EventsVC: BaseViewController {
     private func initNavigationBar() {
         self.showScreenTitle("Events")
         
-        let btnNoti = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_bell"))
-        btnNoti.action = #selector(didTapNotificationButton)
+        let btnNoti = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_bell"), target: self, action: #selector(didTapNotificationButton))
         self.navigationItem.leftBarButtonItem = btnNoti
         
-        let btnMenu = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_menu"))
-        btnNoti.action = #selector(didTapMenuButton)
+        let btnMenu = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_menu"), target: self, action: #selector(didTapMenuButton))
         self.navigationItem.rightBarButtonItem = btnMenu
     }
     
     private func initTableView() {
         tbContents.registerNib(FeaturedTableViewCell.self)
-        tbContents.registerNib(EventTypeTableViewCell.self)
+        tbContents.registerNib(SportTypeTableViewCell.self)
         tbContents.registerNib(EventListTableViewCell.self)
 
         tbContents.delegate = self
@@ -119,7 +118,8 @@ extension EventsVC: UITableViewDataSource {
             bannerCell.configureCell(data: sections[indexPath.section].data)
             return bannerCell
         } else if indexPath.section == 1 {
-            let eventTypeCell: EventTypeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            let eventTypeCell: SportTypeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            eventTypeCell.delegate = self
             return eventTypeCell
         }
         
@@ -132,5 +132,12 @@ extension EventsVC: UITableViewDataSource {
 extension EventsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected section: \(indexPath.section), row: \(indexPath.row)")
+    }
+}
+
+extension EventsVC: SportTypeTableViewCellDelegate {
+    func didSelectSportType(_ type: String) {
+        let vc = EventsFilterVC.instanceWithNavController(sportType: type)
+        self.present(vc, animated: true, completion: nil)
     }
 }

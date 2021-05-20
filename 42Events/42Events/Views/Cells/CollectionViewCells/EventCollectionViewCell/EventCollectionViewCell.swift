@@ -7,13 +7,14 @@
 
 import UIKit
 
-class EventCollectionViewCell: UICollectionViewCell {
+class EventCollectionViewCell: DynamicHeightCollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var ivThumbnail: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbSubtitle: UILabel!
     @IBOutlet weak var cvTags: DynamicHeightCollectionView!
     @IBOutlet weak var lbMedalEngraving: PaddingLabel!
+    @IBOutlet weak var vContent: UIView!
     
     // MARK: - Variables
     private var tags: [EventTag] = []

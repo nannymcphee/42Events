@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Activity {
+struct Activity {
     var name: String
     var color: UIColor
     var image: UIImage

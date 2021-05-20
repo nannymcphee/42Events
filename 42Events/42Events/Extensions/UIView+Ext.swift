@@ -16,6 +16,20 @@ extension UIView {
         self.clipsToBounds = true
     }
     
+    func animationRotate90Degrees() {
+        UIView.animate(withDuration: 0.25) { [weak self] in
+            guard let self = self else { return }
+            self.transform = CGAffineTransform(rotationAngle: .pi/2)
+        }
+    }
+    
+    func animationRotateBackToDefault() {
+        UIView.animate(withDuration: 0.25) { [weak self] in
+            guard let self = self else { return }
+            self.transform = .identity
+        }
+    }
+    
     // retrieves all constraints that mention the view
     func getAllConstraints() -> [NSLayoutConstraint] {
         

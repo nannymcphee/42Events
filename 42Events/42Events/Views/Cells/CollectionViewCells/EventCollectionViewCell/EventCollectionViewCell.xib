@@ -2,12 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Metropolis-ExtraBold.otf">
+            <string>Metropolis-ExtraBold</string>
+        </array>
         <array key="Metropolis-Medium.otf">
             <string>Metropolis-Medium</string>
         </array>
@@ -28,7 +32,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dge-dK-gJc">
                                 <rect key="frame" x="0.0" y="0.0" width="418" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="2zN-js-GIz"/>
+                                    <constraint firstAttribute="height" priority="999" constant="180" id="2zN-js-GIz"/>
                                 </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9E-iE-3JJ" customClass="PaddingLabel" customModule="_2Events" customModuleProvider="target">
@@ -37,26 +41,20 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMR-hO-8cj">
-                                <rect key="frame" x="0.0" y="190" width="408" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="pUl-kE-uHN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMR-hO-8cj">
+                                <rect key="frame" x="0.0" y="190" width="408" height="16"/>
+                                <fontDescription key="fontDescription" name="Metropolis-ExtraBold" family="Metropolis" pointSize="16"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzw-Q3-Gk7">
-                                <rect key="frame" x="0.0" y="211" width="408" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="gt6-n6-dVN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzw-Q3-Gk7">
+                                <rect key="frame" x="0.0" y="210" width="408" height="12"/>
+                                <fontDescription key="fontDescription" name="Metropolis-Medium" family="Metropolis" pointSize="12"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SMO-N9-7yI" customClass="DynamicHeightCollectionView" customModule="_2Events" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="252" width="418" height="21"/>
+                                <rect key="frame" x="0.0" y="232" width="418" height="41"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zgF-Mj-d2g">
                                     <size key="itemSize" width="128" height="128"/>
@@ -68,7 +66,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fzw-Q3-Gk7" firstAttribute="top" secondItem="OMR-hO-8cj" secondAttribute="bottom" id="3JQ-pB-BFD"/>
+                            <constraint firstItem="Fzw-Q3-Gk7" firstAttribute="top" secondItem="OMR-hO-8cj" secondAttribute="bottom" constant="4" id="3JQ-pB-BFD"/>
                             <constraint firstAttribute="trailing" secondItem="Dge-dK-gJc" secondAttribute="trailing" id="JJD-oL-avu"/>
                             <constraint firstItem="OMR-hO-8cj" firstAttribute="leading" secondItem="R0H-mY-AY6" secondAttribute="leading" id="R2I-ar-9tJ"/>
                             <constraint firstItem="Fzw-Q3-Gk7" firstAttribute="leading" secondItem="R0H-mY-AY6" secondAttribute="leading" id="Xv9-Je-0Tw"/>
@@ -82,7 +80,7 @@
                             <constraint firstItem="Dge-dK-gJc" firstAttribute="top" secondItem="R0H-mY-AY6" secondAttribute="top" id="jLW-Fu-yrs"/>
                             <constraint firstAttribute="trailing" secondItem="Fzw-Q3-Gk7" secondAttribute="trailing" constant="10" id="sbM-xh-A03"/>
                             <constraint firstAttribute="bottom" secondItem="SMO-N9-7yI" secondAttribute="bottom" id="uBQ-iq-9J8"/>
-                            <constraint firstItem="SMO-N9-7yI" firstAttribute="top" secondItem="Fzw-Q3-Gk7" secondAttribute="bottom" constant="20" id="ywy-uD-epJ"/>
+                            <constraint firstItem="SMO-N9-7yI" firstAttribute="top" secondItem="Fzw-Q3-Gk7" secondAttribute="bottom" constant="10" id="ywy-uD-epJ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -102,6 +100,7 @@
                 <outlet property="lbMedalEngraving" destination="l9E-iE-3JJ" id="0c4-JE-Jql"/>
                 <outlet property="lbSubtitle" destination="Fzw-Q3-Gk7" id="8jp-Gb-SmM"/>
                 <outlet property="lbTitle" destination="OMR-hO-8cj" id="VuN-vY-7h5"/>
+                <outlet property="vContent" destination="R0H-mY-AY6" id="Jbh-Cq-ne4"/>
             </connections>
             <point key="canvasLocation" x="-213.04347826086959" y="17.745535714285712"/>
         </collectionViewCell>

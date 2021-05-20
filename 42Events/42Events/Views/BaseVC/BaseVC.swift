@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class BaseViewController: UIViewController {
     //MARK: - VARIABLES
@@ -15,11 +16,14 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initDefaultNavigationBar()
+        
+        // Localization
+        NotificationCenter.default.addObserver(self, selector: #selector(localizeContent), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        self.localizeContent()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - PRIVATE FUNCTIONS
@@ -48,17 +52,26 @@ class BaseViewController: UIViewController {
         self.navigationItem.titleView = lbTitle
     }
     
-    public func getIconBarButtonItem(icon: UIImage?) -> UIBarButtonItem {
-        let button = UIButton(type: .custom)
-        button.frame = CGRect(x: 0, y: 0, width: BTN_BACK_WIDTH, height: BTN_BACK_WIDTH)
-        button.setImage(icon, for: .normal)
-        button.tintColor = AppColors.black
-        return UIBarButtonItem(customView: button)
+    public func getIconBarButtonItem(icon: UIImage?, target: UIViewController, action: Selector?) -> UIBarButtonItem {
+        let barButton = UIBarButtonItem(image: icon, style: .plain, target: target, action: action)
+        barButton.tintColor = AppColors.black
+        return barButton
     }
     
     //MARK: - ACTIONS
     @objc func backButtonPressed(_ sender: UIBarButtonItem)  {
-        self.navigationController?.popViewController(animated: true)
+        self.view.endEditing(true)
+        if let navigation = self.navigationController {
+            if navigation.viewControllers.count == 1 {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                navigation.popViewController(animated: true)
+            }
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
+    
+    @objc func localizeContent() {}
 }
 

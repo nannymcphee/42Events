@@ -9,9 +9,11 @@ target '42Events' do
   pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 6.0'
   pod 'ImageSlideshow', '~> 1.9.0'
-  pod 'Localize-Swift', '~> 3.2'
   pod 'ImageSlideshow/Kingfisher'
   pod 'MSPeekCollectionViewDelegateImplementation'
+  pod 'DropDown', '2.3.13'
+  pod 'SwipeBack', '~> 1.1'
+  pod 'Localize-Swift', '~> 3.2'
   
   target '42EventsTests' do
     inherit! :search_paths

@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SwipeBack
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var navigationController: UINavigationController?
+    var navigationController: SwipeBackNavigationController?
     var rootViewController: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -23,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setUpRootVC() {
         let eventsVC = EventsVC()
         rootViewController = eventsVC
-        navigationController = UINavigationController(rootViewController: rootViewController!)
+        navigationController = SwipeBackNavigationController(rootViewController: rootViewController!)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

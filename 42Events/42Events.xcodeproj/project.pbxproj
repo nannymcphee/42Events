@@ -12,9 +12,21 @@
 		A00A7A710241A8BD72C9C945 /* Pods_42Events_42EventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFC0957AF07723358BEF0F6 /* Pods_42Events_42EventsUITests.framework */; };
 		E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122C28E2656406A008611DF /* DynamicHeightCollectionView.swift */; };
 		E122C29426564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122C29326564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		E12565762656BBD300CCCEA7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565742656BBD300CCCEA7 /* SettingsVC.swift */; };
+		E12565772656BBD300CCCEA7 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12565752656BBD300CCCEA7 /* SettingsVC.xib */; };
+		E12565812656BC8B00CCCEA7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125657F2656BC8B00CCCEA7 /* SettingTableViewCell.swift */; };
+		E12565822656BC8B00CCCEA7 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */; };
+		E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125658D2656BCED00CCCEA7 /* Setting.swift */; };
+		E12565A22656C55400CCCEA7 /* SwipeBackNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */; };
+		E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565A62656CA9E00CCCEA7 /* Language.swift */; };
 		E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
 		E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CA2656592B00AC13C5 /* EventsApi.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
+		E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */; };
+		E180B7072656A3C200AC13C5 /* EventFilterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7062656A3C200AC13C5 /* EventFilterResponse.swift */; };
+		E180B70E2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B70C2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift */; };
+		E180B70F2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E180B70D2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib */; };
+		E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */; };
 		E1A390B126553DD000F7E378 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A390AF26553DD000F7E378 /* EventsVC.swift */; };
 		E1A390B226553DD000F7E378 /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A390B026553DD000F7E378 /* EventsVC.xib */; };
 		E1A390BF26553E7200F7E378 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A390BE26553E7200F7E378 /* NetworkManager.swift */; };
@@ -35,8 +47,8 @@
 		E1A391432655505900F7E378 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391422655505900F7E378 /* Event.swift */; };
 		E1A391482655546C00F7E378 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391472655546C00F7E378 /* UITableView+Reusable.swift */; };
 		E1A391592655589700F7E378 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391582655589700F7E378 /* UIImageView+Ext.swift */; };
-		E1A39160265560B000F7E378 /* EventTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3915E265560B000F7E378 /* EventTypeTableViewCell.swift */; };
-		E1A39161265560B000F7E378 /* EventTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A3915F265560B000F7E378 /* EventTypeTableViewCell.xib */; };
+		E1A39160265560B000F7E378 /* SportTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3915E265560B000F7E378 /* SportTypeTableViewCell.swift */; };
+		E1A39161265560B000F7E378 /* SportTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A3915F265560B000F7E378 /* SportTypeTableViewCell.xib */; };
 		E1A3916E2655653000F7E378 /* EventActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3916C2655653000F7E378 /* EventActivityCollectionViewCell.swift */; };
 		E1A3916F2655653000F7E378 /* EventActivityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A3916D2655653000F7E378 /* EventActivityCollectionViewCell.xib */; };
 		E1A39177265565D100F7E378 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A39176265565D100F7E378 /* Activity.swift */; };
@@ -92,9 +104,21 @@
 		C1F38930D4B1C2E643656A92 /* Pods_42EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E122C28E2656406A008611DF /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		E122C29326564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		E12565742656BBD300CCCEA7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		E12565752656BBD300CCCEA7 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
+		E125657F2656BC8B00CCCEA7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		E125658D2656BCED00CCCEA7 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackNavigationController.swift; sourceTree = "<group>"; };
+		E12565A62656CA9E00CCCEA7 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		E180B6C5265658CF00AC13C5 /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
 		E180B6CA2656592B00AC13C5 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		E180B6CF26565A0F00AC13C5 /* AppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDialog.swift; sourceTree = "<group>"; };
+		E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightFlowLayout.swift; sourceTree = "<group>"; };
+		E180B7062656A3C200AC13C5 /* EventFilterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFilterResponse.swift; sourceTree = "<group>"; };
+		E180B70C2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		E180B70D2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalViewCollectionViewCell.xib; sourceTree = "<group>"; };
+		E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1A390AF26553DD000F7E378 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		E1A390B026553DD000F7E378 /* EventsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsVC.xib; sourceTree = "<group>"; };
 		E1A390BE26553E7200F7E378 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -115,8 +139,8 @@
 		E1A391422655505900F7E378 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		E1A391472655546C00F7E378 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 		E1A391582655589700F7E378 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
-		E1A3915E265560B000F7E378 /* EventTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTypeTableViewCell.swift; sourceTree = "<group>"; };
-		E1A3915F265560B000F7E378 /* EventTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTypeTableViewCell.xib; sourceTree = "<group>"; };
+		E1A3915E265560B000F7E378 /* SportTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportTypeTableViewCell.swift; sourceTree = "<group>"; };
+		E1A3915F265560B000F7E378 /* SportTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportTypeTableViewCell.xib; sourceTree = "<group>"; };
 		E1A3916C2655653000F7E378 /* EventActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1A3916D2655653000F7E378 /* EventActivityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventActivityCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1A39176265565D100F7E378 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -202,9 +226,58 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E12565732656BBA800CCCEA7 /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				E12565742656BBD300CCCEA7 /* SettingsVC.swift */,
+				E12565752656BBD300CCCEA7 /* SettingsVC.xib */,
+			);
+			path = SettingsVC;
+			sourceTree = "<group>";
+		};
+		E125657E2656BC7400CCCEA7 /* SettingCell */ = {
+			isa = PBXGroup;
+			children = (
+				E125657F2656BC8B00CCCEA7 /* SettingTableViewCell.swift */,
+				E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */,
+			);
+			path = SettingCell;
+			sourceTree = "<group>";
+		};
+		E125658B2656BCD000CCCEA7 /* RemoteModels */ = {
+			isa = PBXGroup;
+			children = (
+				E1A3918E265574FD00F7E378 /* EventListResponse.swift */,
+				E180B7062656A3C200AC13C5 /* EventFilterResponse.swift */,
+			);
+			path = RemoteModels;
+			sourceTree = "<group>";
+		};
+		E125658C2656BCDD00CCCEA7 /* LocalModels */ = {
+			isa = PBXGroup;
+			children = (
+				E1A391422655505900F7E378 /* Event.swift */,
+				E1A39176265565D100F7E378 /* Activity.swift */,
+				E180B6C5265658CF00AC13C5 /* EventTag.swift */,
+				E125658D2656BCED00CCCEA7 /* Setting.swift */,
+				E12565A62656CA9E00CCCEA7 /* Language.swift */,
+			);
+			path = LocalModels;
+			sourceTree = "<group>";
+		};
+		E180B70B2656A68900AC13C5 /* MedalViewCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E180B70C2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift */,
+				E180B70D2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib */,
+			);
+			path = MedalViewCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		E1A390AA26553CE700F7E378 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E12565732656BBA800CCCEA7 /* SettingsVC */,
 				E1A390B926553DEA00F7E378 /* BaseVC */,
 				E1A390AE26553DB300F7E378 /* EventsFilterVC */,
 				E1A390AD26553DA800F7E378 /* EventsVC */,
@@ -216,10 +289,8 @@
 		E1A390AB26553D0500F7E378 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E1A39185265574CD00F7E378 /* API Models */,
-				E1A391422655505900F7E378 /* Event.swift */,
-				E1A39176265565D100F7E378 /* Activity.swift */,
-				E180B6C5265658CF00AC13C5 /* EventTag.swift */,
+				E125658C2656BCDD00CCCEA7 /* LocalModels */,
+				E125658B2656BCD000CCCEA7 /* RemoteModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +373,9 @@
 				E122C28E2656406A008611DF /* DynamicHeightCollectionView.swift */,
 				E122C29326564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift */,
 				E180B6CF26565A0F00AC13C5 /* AppDialog.swift */,
+				E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */,
+				E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */,
+				E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,8 +396,8 @@
 		E1A3915D2655608F00F7E378 /* EventTypeCell */ = {
 			isa = PBXGroup;
 			children = (
-				E1A3915E265560B000F7E378 /* EventTypeTableViewCell.swift */,
-				E1A3915F265560B000F7E378 /* EventTypeTableViewCell.xib */,
+				E1A3915E265560B000F7E378 /* SportTypeTableViewCell.swift */,
+				E1A3915F265560B000F7E378 /* SportTypeTableViewCell.xib */,
 			);
 			path = EventTypeCell;
 			sourceTree = "<group>";
@@ -335,14 +409,6 @@
 				E1A3916D2655653000F7E378 /* EventActivityCollectionViewCell.xib */,
 			);
 			path = EventActivityCell;
-			sourceTree = "<group>";
-		};
-		E1A39185265574CD00F7E378 /* API Models */ = {
-			isa = PBXGroup;
-			children = (
-				E1A3918E265574FD00F7E378 /* EventListResponse.swift */,
-			);
-			path = "API Models";
 			sourceTree = "<group>";
 		};
 		E1A391A026557A8D00F7E378 /* FeaturedCell */ = {
@@ -375,6 +441,7 @@
 		E1A3920726560BF400F7E378 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				E125657E2656BC7400CCCEA7 /* SettingCell */,
 				E1A391F126560BB600F7E378 /* EventListCell */,
 				E1A391A026557A8D00F7E378 /* FeaturedCell */,
 				E1A3915D2655608F00F7E378 /* EventTypeCell */,
@@ -385,6 +452,7 @@
 		E1A3920826560BFB00F7E378 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				E180B70B2656A68900AC13C5 /* MedalViewCollectionViewCell */,
 				E1C30DF826561A2A008CC0BA /* TagCollectionViewCell */,
 				E1A39168265564F700F7E378 /* EventActivityCell */,
 				E1A391FC26560BD400F7E378 /* EventCollectionViewCell */,
@@ -571,20 +639,23 @@
 				E1A3910C265542E100F7E378 /* Metropolis-Thin.otf in Resources */,
 				E1A3910B265542E100F7E378 /* SIL Open Font License.txt in Resources */,
 				E1A391F526560BCA00F7E378 /* EventListTableViewCell.xib in Resources */,
-				E1A39161265560B000F7E378 /* EventTypeTableViewCell.xib in Resources */,
+				E1A39161265560B000F7E378 /* SportTypeTableViewCell.xib in Resources */,
 				E1F325992655035C003525D6 /* LaunchScreen.storyboard in Resources */,
 				E1F325962655035C003525D6 /* Assets.xcassets in Resources */,
 				E1A39110265542E100F7E378 /* Metropolis-Light.otf in Resources */,
 				E1A39114265542E100F7E378 /* Metropolis-Medium.otf in Resources */,
 				E1A3910A265542E100F7E378 /* Metropolis-Bold.otf in Resources */,
+				E180B70F2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib in Resources */,
 				E1F325942655035A003525D6 /* Main.storyboard in Resources */,
 				E1A3916F2655653000F7E378 /* EventActivityCollectionViewCell.xib in Resources */,
 				E1A3911A265542E100F7E378 /* Metropolis-SemiBold.otf in Resources */,
 				E1A3910E265542E100F7E378 /* Metropolis-ExtraBold.otf in Resources */,
+				E12565822656BC8B00CCCEA7 /* SettingTableViewCell.xib in Resources */,
 				E1A390CF26553FE000F7E378 /* EventsFilterVC.xib in Resources */,
 				E1C30DF426561A21008CC0BA /* TagCollectionViewCell.xib in Resources */,
 				E1A391A426557AA900F7E378 /* FeaturedTableViewCell.xib in Resources */,
 				E1A39111265542E100F7E378 /* Metropolis-Regular.otf in Resources */,
+				E12565772656BBD300CCCEA7 /* SettingsVC.xib in Resources */,
 				E1A390B226553DD000F7E378 /* EventsVC.xib in Resources */,
 				E1A3920026560BF100F7E378 /* EventCollectionViewCell.xib in Resources */,
 			);
@@ -719,6 +790,7 @@
 				E1A39177265565D100F7E378 /* Activity.swift in Sources */,
 				E1A391FF26560BF100F7E378 /* EventCollectionViewCell.swift in Sources */,
 				E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */,
+				E180B70E2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift in Sources */,
 				E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */,
 				E1F325912655035A003525D6 /* EventsViewController.swift in Sources */,
 				E1A391432655505900F7E378 /* Event.swift in Sources */,
@@ -726,9 +798,15 @@
 				E1A391F426560BCA00F7E378 /* EventListTableViewCell.swift in Sources */,
 				E1A391812655733400F7E378 /* Dictionary+Ext.swift in Sources */,
 				E1A391A326557AA900F7E378 /* FeaturedTableViewCell.swift in Sources */,
+				E180B7072656A3C200AC13C5 /* EventFilterResponse.swift in Sources */,
+				E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */,
 				E1A3918F265574FD00F7E378 /* EventListResponse.swift in Sources */,
+				E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */,
 				E122C29426564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				E12565A22656C55400CCCEA7 /* SwipeBackNavigationController.swift in Sources */,
+				E12565762656BBD300CCCEA7 /* SettingsVC.swift in Sources */,
 				E1A391EA265603AB00F7E378 /* String+Ext.swift in Sources */,
+				E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */,
 				E1A391302655477000F7E378 /* AppFont.swift in Sources */,
 				E1C30DF326561A21008CC0BA /* TagCollectionViewCell.swift in Sources */,
 				E1A3920D26560D0700F7E378 /* PaddingLabel.swift in Sources */,
@@ -736,14 +814,16 @@
 				E1A391D92655823300F7E378 /* Codable+Ext.swift in Sources */,
 				E1A391482655546C00F7E378 /* UITableView+Reusable.swift in Sources */,
 				E1A3916E2655653000F7E378 /* EventActivityCollectionViewCell.swift in Sources */,
+				E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */,
 				E1A391592655589700F7E378 /* UIImageView+Ext.swift in Sources */,
 				E1A390C826553F5B00F7E378 /* BaseVC.swift in Sources */,
 				E1F3258D2655035A003525D6 /* AppDelegate.swift in Sources */,
-				E1A39160265560B000F7E378 /* EventTypeTableViewCell.swift in Sources */,
+				E1A39160265560B000F7E378 /* SportTypeTableViewCell.swift in Sources */,
 				E1A390CE26553FE000F7E378 /* EventsFilterVC.swift in Sources */,
 				E1A390BF26553E7200F7E378 /* NetworkManager.swift in Sources */,
 				E1A3917C2655669D00F7E378 /* UIView+Ext.swift in Sources */,
 				E1A3913E26554E0900F7E378 /* NetworkRouter.swift in Sources */,
+				E12565812656BC8B00CCCEA7 /* SettingTableViewCell.swift in Sources */,
 				E1A390B126553DD000F7E378 /* EventsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

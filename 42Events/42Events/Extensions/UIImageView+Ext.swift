@@ -13,6 +13,7 @@ extension UIImageView {
             self.image = placeholder
             return
         }
+        self.kf.indicatorType = .activity
         self.kf.setImage(with: url, placeholder: placeholder, options: nil, completionHandler: nil)
     }
 }
