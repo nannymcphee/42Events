@@ -20,9 +20,13 @@ class FeaturedTableViewCell: UITableViewCell {
     
     // MARK: - Private functions
     private func configureSlideshow() {
+        let pageIndicator = UIPageControl()
+        pageIndicator.currentPageIndicatorTintColor = AppColors.red
+        pageIndicator.pageIndicatorTintColor = AppColors.lightGray
+        vSlideshow.pageIndicator = pageIndicator
+        vSlideshow.pageIndicatorPosition = .init(horizontal: .center, vertical: .bottom)
         vSlideshow.slideshowInterval = 5.0
         vSlideshow.contentScaleMode = UIViewContentMode.scaleAspectFill
-        vSlideshow.pageIndicator = nil
     }
     
     // MARK: - Public functions
