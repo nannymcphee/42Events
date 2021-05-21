@@ -23,7 +23,6 @@ open class TableViewCell: UITableViewCell {
     open override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.reset()
     }
     
     open override func prepareForReuse() {

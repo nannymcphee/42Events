@@ -1,14 +1,13 @@
 //
-//  MedalViewCollectionViewCell.swift
+//  MedalViewTableViewCell.swift
 //  42Events
 //
-//  Created by Nguyên Duy on 20/05/2021.
+//  Created by Nguyên Duy on 21/05/2021.
 //
 
 import UIKit
 
-class MedalViewCollectionViewCell: CollectionViewCell {
-
+class MedalViewTableViewCell: TableViewCell {
     @IBOutlet weak var ivThumbnail: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbSubtitle: UILabel!
@@ -18,7 +17,7 @@ class MedalViewCollectionViewCell: CollectionViewCell {
         super.awakeFromNib()
         self.initUI()
     }
-
+    
     override func reset() {
         super.reset()
         self.ivThumbnail.image = nil
@@ -33,7 +32,7 @@ class MedalViewCollectionViewCell: CollectionViewCell {
     }
     
     private func getTagsText(data: Event) -> String? {
-        var firstLineComponents: [String] = [data.sportType.rawValue.capitalizeFirst]
+        var firstLineComponents: [String] = [data.sportType.rawValue.capitalizeFirst.localized]
         var firstLine = ""
         var secondLine = ""
         
@@ -42,7 +41,7 @@ class MedalViewCollectionViewCell: CollectionViewCell {
         }
         
         if let price = data.racePrice {
-            firstLineComponents.append(price)
+            firstLineComponents.append(price.localized)
         }
         
         if let categories = data.categories {
@@ -50,7 +49,7 @@ class MedalViewCollectionViewCell: CollectionViewCell {
         }
         
         firstLine = firstLineComponents.joined(separator: "・")
-        let thirdLine = data.eventType.displayName
+        let thirdLine = data.eventType.displayName.localized
         let text: String = "\(firstLine)\(secondLine)\n\(thirdLine)"
         return text
     }

@@ -84,9 +84,9 @@ enum EventType: String, Codable {
     var displayName: String {
         switch self {
         case .multiple:
-            return "Multiple submission"
+            return Text.multipleSubmission
         case .single:
-            return "Single submission"
+            return Text.singleSubmission
         }
     }
 }

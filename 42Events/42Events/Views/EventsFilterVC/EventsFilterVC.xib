@@ -19,10 +19,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventsFilterVC" customModule="_2Events" customModuleProvider="target">
             <connections>
-                <outlet property="cvEvents" destination="gtJ-Qp-yIh" id="p7S-bl-E6g"/>
                 <outlet property="lbEventsCount" destination="8K8-uJ-7MI" id="Ajs-In-cxW"/>
                 <outlet property="lbMedalView" destination="e7O-uU-ULS" id="viF-B8-XAP"/>
                 <outlet property="swMedalView" destination="XQ3-lE-Wud" id="PjY-b0-yC2"/>
+                <outlet property="tbEvents" destination="wsM-ZM-GUF" id="vUa-Zp-sfw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,19 +35,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K8-uJ-7MI">
-                            <rect key="frame" x="10" y="30" width="0.0" height="0.0"/>
+                            <rect key="frame" x="20" y="30" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" name="Metropolis-ExtraBold" family="Metropolis" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medal view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7O-uU-ULS">
-                            <rect key="frame" x="271" y="23" width="76" height="14"/>
+                            <rect key="frame" x="261" y="23" width="76" height="14"/>
                             <fontDescription key="fontDescription" name="Metropolis-Regular" family="Metropolis" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XQ3-lE-Wud">
-                            <rect key="frame" x="357" y="14.666666666666664" width="49" height="31"/>
+                            <rect key="frame" x="347" y="14.666666666666664" width="49" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="47" id="8Gh-oI-eMH"/>
                             </constraints>
@@ -58,36 +58,30 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="8K8-uJ-7MI" firstAttribute="leading" secondItem="DUJ-jY-H23" secondAttribute="leading" constant="10" id="26Y-Gx-8JK"/>
+                        <constraint firstItem="8K8-uJ-7MI" firstAttribute="leading" secondItem="DUJ-jY-H23" secondAttribute="leading" constant="20" id="26Y-Gx-8JK"/>
                         <constraint firstItem="XQ3-lE-Wud" firstAttribute="centerY" secondItem="DUJ-jY-H23" secondAttribute="centerY" id="6ua-9c-P1h"/>
                         <constraint firstItem="XQ3-lE-Wud" firstAttribute="leading" secondItem="e7O-uU-ULS" secondAttribute="trailing" constant="10" id="9ge-4c-7dE"/>
                         <constraint firstItem="e7O-uU-ULS" firstAttribute="centerY" secondItem="DUJ-jY-H23" secondAttribute="centerY" id="B91-JI-6mz"/>
-                        <constraint firstAttribute="trailing" secondItem="XQ3-lE-Wud" secondAttribute="trailing" constant="10" id="leH-ab-1FX"/>
+                        <constraint firstAttribute="trailing" secondItem="XQ3-lE-Wud" secondAttribute="trailing" constant="20" id="leH-ab-1FX"/>
                         <constraint firstItem="8K8-uJ-7MI" firstAttribute="centerY" secondItem="DUJ-jY-H23" secondAttribute="centerY" id="uFA-OA-wua"/>
                         <constraint firstAttribute="height" constant="60" id="wQV-v1-Mct"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gtJ-Qp-yIh">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wsM-ZM-GUF">
                     <rect key="frame" x="0.0" y="60" width="414" height="676"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eae-F6-omN">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="wsM-ZM-GUF" secondAttribute="trailing" id="FRK-6y-CTY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DUJ-jY-H23" secondAttribute="trailing" id="GXE-Fd-I3Y"/>
                 <constraint firstItem="DUJ-jY-H23" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Mpk-UQ-Gj2"/>
-                <constraint firstItem="gtJ-Qp-yIh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="cAP-bS-cah"/>
-                <constraint firstItem="gtJ-Qp-yIh" firstAttribute="top" secondItem="DUJ-jY-H23" secondAttribute="bottom" id="gVf-D0-pft"/>
-                <constraint firstAttribute="trailing" secondItem="gtJ-Qp-yIh" secondAttribute="trailing" id="hdj-m1-Vha"/>
+                <constraint firstAttribute="bottom" secondItem="wsM-ZM-GUF" secondAttribute="bottom" id="YVS-Gb-ZTb"/>
                 <constraint firstItem="DUJ-jY-H23" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oAv-XO-OBK"/>
-                <constraint firstAttribute="bottom" secondItem="gtJ-Qp-yIh" secondAttribute="bottom" id="ozG-8M-E2a"/>
+                <constraint firstItem="wsM-ZM-GUF" firstAttribute="top" secondItem="DUJ-jY-H23" secondAttribute="bottom" id="roL-Gc-1yB"/>
+                <constraint firstItem="wsM-ZM-GUF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uGa-aY-0iv"/>
             </constraints>
             <point key="canvasLocation" x="253.62318840579712" y="112.50000000000001"/>
         </view>

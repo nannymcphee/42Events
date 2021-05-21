@@ -29,13 +29,17 @@
 		E13781132657A49F0028839A /* SportTypeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13781122657A49F0028839A /* SportTypeListView.xib */; };
 		E13781182657A4A80028839A /* SportTypeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13781172657A4A80028839A /* SportTypeListView.swift */; };
 		E13781282657A7D60028839A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13781272657A7D60028839A /* BaseView.swift */; };
+		E1468FB8265813FF009D7971 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FB6265813FF009D7971 /* EventTableViewCell.swift */; };
+		E1468FB9265813FF009D7971 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1468FB7265813FF009D7971 /* EventTableViewCell.xib */; };
+		E1468FC626581481009D7971 /* MedalViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FC426581481009D7971 /* MedalViewTableViewCell.swift */; };
+		E1468FC726581481009D7971 /* MedalViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1468FC526581481009D7971 /* MedalViewTableViewCell.xib */; };
+		E1468FD1265818D7009D7971 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */; };
+		E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */; };
 		E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
 		E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CA2656592B00AC13C5 /* EventsApi.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
 		E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */; };
 		E180B7072656A3C200AC13C5 /* EventFilterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7062656A3C200AC13C5 /* EventFilterResponse.swift */; };
-		E180B70E2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B70C2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift */; };
-		E180B70F2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E180B70D2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib */; };
 		E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */; };
 		E1A390B126553DD000F7E378 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A390AF26553DD000F7E378 /* EventsVC.swift */; };
 		E1A390B226553DD000F7E378 /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A390B026553DD000F7E378 /* EventsVC.xib */; };
@@ -65,13 +69,14 @@
 		E1A3918F265574FD00F7E378 /* EventListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3918E265574FD00F7E378 /* EventListResponse.swift */; };
 		E1A391D92655823300F7E378 /* Codable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391D82655823300F7E378 /* Codable+Ext.swift */; };
 		E1A391EA265603AB00F7E378 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391E9265603AB00F7E378 /* String+Ext.swift */; };
-		E1A391FF26560BF100F7E378 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391FD26560BF100F7E378 /* EventCollectionViewCell.swift */; };
-		E1A3920026560BF100F7E378 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A391FE26560BF100F7E378 /* EventCollectionViewCell.xib */; };
 		E1A3920D26560D0700F7E378 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3920C26560D0700F7E378 /* PaddingLabel.swift */; };
 		E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */; };
 		E1A755A9265759FD0087412E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A755A8265759FD0087412E /* AppConstants.swift */; };
 		E1C30DF326561A21008CC0BA /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C30DF126561A21008CC0BA /* TagCollectionViewCell.swift */; };
 		E1C30DF426561A21008CC0BA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C30DF226561A21008CC0BA /* TagCollectionViewCell.xib */; };
+		E1D4669926580E2F00CBF384 /* EventContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D4669826580E2F00CBF384 /* EventContentView.xib */; };
+		E1D4669E26580E3800CBF384 /* EventContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4669D26580E3800CBF384 /* EventContentView.swift */; };
+		E1D466A626580F6E00CBF384 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D466A526580F6E00CBF384 /* NibLoadable.swift */; };
 		E1F3258D2655035A003525D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3258C2655035A003525D6 /* AppDelegate.swift */; };
 		E1F325912655035A003525D6 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F325902655035A003525D6 /* EventsViewController.swift */; };
 		E1F325942655035A003525D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F325922655035A003525D6 /* Main.storyboard */; };
@@ -141,13 +146,17 @@
 		E13781122657A49F0028839A /* SportTypeListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportTypeListView.xib; sourceTree = "<group>"; };
 		E13781172657A4A80028839A /* SportTypeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportTypeListView.swift; sourceTree = "<group>"; };
 		E13781272657A7D60028839A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		E1468FB6265813FF009D7971 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		E1468FB7265813FF009D7971 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
+		E1468FC426581481009D7971 /* MedalViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewTableViewCell.swift; sourceTree = "<group>"; };
+		E1468FC526581481009D7971 /* MedalViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalViewTableViewCell.xib; sourceTree = "<group>"; };
+		E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
+		E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		E180B6C5265658CF00AC13C5 /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
 		E180B6CA2656592B00AC13C5 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		E180B6CF26565A0F00AC13C5 /* AppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDialog.swift; sourceTree = "<group>"; };
 		E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightFlowLayout.swift; sourceTree = "<group>"; };
 		E180B7062656A3C200AC13C5 /* EventFilterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFilterResponse.swift; sourceTree = "<group>"; };
-		E180B70C2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewCollectionViewCell.swift; sourceTree = "<group>"; };
-		E180B70D2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1A390AF26553DD000F7E378 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		E1A390B026553DD000F7E378 /* EventsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsVC.xib; sourceTree = "<group>"; };
@@ -177,13 +186,14 @@
 		E1A3918E265574FD00F7E378 /* EventListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListResponse.swift; sourceTree = "<group>"; };
 		E1A391D82655823300F7E378 /* Codable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Ext.swift"; sourceTree = "<group>"; };
 		E1A391E9265603AB00F7E378 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		E1A391FD26560BF100F7E378 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
-		E1A391FE26560BF100F7E378 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1A3920C26560D0700F7E378 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ext.swift"; sourceTree = "<group>"; };
 		E1A755A8265759FD0087412E /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		E1C30DF126561A21008CC0BA /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1C30DF226561A21008CC0BA /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
+		E1D4669826580E2F00CBF384 /* EventContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventContentView.xib; sourceTree = "<group>"; };
+		E1D4669D26580E3800CBF384 /* EventContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventContentView.swift; sourceTree = "<group>"; };
+		E1D466A526580F6E00CBF384 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		E1F325892655035A003525D6 /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F3258C2655035A003525D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F325902655035A003525D6 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +311,7 @@
 		E13781012657975C0028839A /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				E1D4669726580E1900CBF384 /* New Group */,
 				E13781112657A48B0028839A /* SportTypeListView */,
 				E1378103265797920028839A /* EventsListView */,
 				E1A3920C26560D0700F7E378 /* PaddingLabel.swift */,
@@ -331,13 +342,31 @@
 			path = SportTypeListView;
 			sourceTree = "<group>";
 		};
-		E180B70B2656A68900AC13C5 /* MedalViewCollectionViewCell */ = {
+		E1468FB5265813EF009D7971 /* EventTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				E180B70C2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift */,
-				E180B70D2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib */,
+				E1468FB6265813FF009D7971 /* EventTableViewCell.swift */,
+				E1468FB7265813FF009D7971 /* EventTableViewCell.xib */,
 			);
-			path = MedalViewCollectionViewCell;
+			path = EventTableViewCell;
+			sourceTree = "<group>";
+		};
+		E1468FC02658146B009D7971 /* MedalViewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E1468FC426581481009D7971 /* MedalViewTableViewCell.swift */,
+				E1468FC526581481009D7971 /* MedalViewTableViewCell.xib */,
+			);
+			path = MedalViewTableViewCell;
+			sourceTree = "<group>";
+		};
+		E1468FCE265818D7009D7971 /* EventCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */,
+				E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */,
+			);
+			path = EventCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		E1A390AA26553CE700F7E378 /* Views */ = {
@@ -442,6 +471,7 @@
 				E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */,
 				E12565B92656D27C00CCCEA7 /* Text.swift */,
 				E1A755A8265759FD0087412E /* AppConstants.swift */,
+				E1D466A526580F6E00CBF384 /* NibLoadable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -469,18 +499,11 @@
 			path = EventActivityCell;
 			sourceTree = "<group>";
 		};
-		E1A391FC26560BD400F7E378 /* EventCollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				E1A391FD26560BF100F7E378 /* EventCollectionViewCell.swift */,
-				E1A391FE26560BF100F7E378 /* EventCollectionViewCell.xib */,
-			);
-			path = EventCollectionViewCell;
-			sourceTree = "<group>";
-		};
 		E1A3920726560BF400F7E378 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				E1468FC02658146B009D7971 /* MedalViewTableViewCell */,
+				E1468FB5265813EF009D7971 /* EventTableViewCell */,
 				E125657E2656BC7400CCCEA7 /* SettingCell */,
 			);
 			path = TableViewCells;
@@ -489,10 +512,9 @@
 		E1A3920826560BFB00F7E378 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				E180B70B2656A68900AC13C5 /* MedalViewCollectionViewCell */,
+				E1468FCE265818D7009D7971 /* EventCollectionViewCell */,
 				E1C30DF826561A2A008CC0BA /* TagCollectionViewCell */,
 				E1A39168265564F700F7E378 /* EventActivityCell */,
-				E1A391FC26560BD400F7E378 /* EventCollectionViewCell */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -504,6 +526,15 @@
 				E1C30DF226561A21008CC0BA /* TagCollectionViewCell.xib */,
 			);
 			path = TagCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E1D4669726580E1900CBF384 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E1D4669D26580E3800CBF384 /* EventContentView.swift */,
+				E1D4669826580E2F00CBF384 /* EventContentView.xib */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E1F3258026550359003525D6 = {
@@ -684,23 +715,25 @@
 				E12565C926574EE100CCCEA7 /* Localizable.strings in Resources */,
 				E1F325992655035C003525D6 /* LaunchScreen.storyboard in Resources */,
 				E1F325962655035C003525D6 /* Assets.xcassets in Resources */,
+				E1468FD1265818D7009D7971 /* EventCollectionViewCell.xib in Resources */,
 				E1378105265797FA0028839A /* EventsListView.xib in Resources */,
 				E1A39110265542E100F7E378 /* Metropolis-Light.otf in Resources */,
+				E1D4669926580E2F00CBF384 /* EventContentView.xib in Resources */,
 				E1A39114265542E100F7E378 /* Metropolis-Medium.otf in Resources */,
 				E1A3910A265542E100F7E378 /* Metropolis-Bold.otf in Resources */,
-				E180B70F2656A6A000AC13C5 /* MedalViewCollectionViewCell.xib in Resources */,
 				E1F325942655035A003525D6 /* Main.storyboard in Resources */,
+				E1468FB9265813FF009D7971 /* EventTableViewCell.xib in Resources */,
 				E1A3916F2655653000F7E378 /* EventActivityCollectionViewCell.xib in Resources */,
 				E1A3911A265542E100F7E378 /* Metropolis-SemiBold.otf in Resources */,
 				E1A3910E265542E100F7E378 /* Metropolis-ExtraBold.otf in Resources */,
 				E12565822656BC8B00CCCEA7 /* SettingTableViewCell.xib in Resources */,
+				E1468FC726581481009D7971 /* MedalViewTableViewCell.xib in Resources */,
 				E1A390CF26553FE000F7E378 /* EventsFilterVC.xib in Resources */,
 				E1C30DF426561A21008CC0BA /* TagCollectionViewCell.xib in Resources */,
 				E13781132657A49F0028839A /* SportTypeListView.xib in Resources */,
 				E1A39111265542E100F7E378 /* Metropolis-Regular.otf in Resources */,
 				E12565772656BBD300CCCEA7 /* SettingsVC.xib in Resources */,
 				E1A390B226553DD000F7E378 /* EventsVC.xib in Resources */,
-				E1A3920026560BF100F7E378 /* EventCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -829,13 +862,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */,
+				E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */,
 				E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */,
 				E12565BF2656D2E700CCCEA7 /* Localize+Ext.swift in Sources */,
 				E1A39177265565D100F7E378 /* Activity.swift in Sources */,
-				E1A391FF26560BF100F7E378 /* EventCollectionViewCell.swift in Sources */,
+				E1468FC626581481009D7971 /* MedalViewTableViewCell.swift in Sources */,
 				E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */,
-				E180B70E2656A6A000AC13C5 /* MedalViewCollectionViewCell.swift in Sources */,
 				E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */,
+				E1D4669E26580E3800CBF384 /* EventContentView.swift in Sources */,
 				E1F325912655035A003525D6 /* EventsViewController.swift in Sources */,
 				E1A391432655505900F7E378 /* Event.swift in Sources */,
 				E12565E72657521900CCCEA7 /* CollectionViewCell.swift in Sources */,
@@ -844,12 +878,14 @@
 				E13781282657A7D60028839A /* BaseView.swift in Sources */,
 				E137810A265798030028839A /* EventsListView.swift in Sources */,
 				E180B7072656A3C200AC13C5 /* EventFilterResponse.swift in Sources */,
+				E1D466A626580F6E00CBF384 /* NibLoadable.swift in Sources */,
 				E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */,
 				E1A3918F265574FD00F7E378 /* EventListResponse.swift in Sources */,
 				E12565BA2656D27C00CCCEA7 /* Text.swift in Sources */,
 				E1A755A9265759FD0087412E /* AppConstants.swift in Sources */,
 				E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */,
 				E122C29426564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				E1468FB8265813FF009D7971 /* EventTableViewCell.swift in Sources */,
 				E12565A22656C55400CCCEA7 /* SwipeBackNavigationController.swift in Sources */,
 				E12565762656BBD300CCCEA7 /* SettingsVC.swift in Sources */,
 				E12565E22657518200CCCEA7 /* TableViewCell.swift in Sources */,

@@ -16,6 +16,7 @@
 "Running" = "Lari";
 "Cycling" = "Bersepeda";
 "Walking" = "Berjalan";
+"FREE MEDAL ENGRAVING" = "ukiran medali gratis";
 
 // MARK : - EventsFilterVC
 "event" = "peristiwa";

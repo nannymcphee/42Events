@@ -16,6 +16,7 @@
 "Running" = "跑步";
 "Cycling" = "骑自行车";
 "Walking" = "步行";
+"FREE MEDAL ENGRAVING" = "免费奖牌雕刻";
 
 // MARK : - EventsFilterVC
 "event" = "事件";

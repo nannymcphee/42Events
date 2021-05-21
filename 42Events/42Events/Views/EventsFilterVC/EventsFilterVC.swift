@@ -24,9 +24,8 @@ class EventsFilterVC: BaseViewController {
     // MARK: - IBOUTLETS
     @IBOutlet weak var lbEventsCount: UILabel!
     @IBOutlet weak var swMedalView: UISwitch!
-    @IBOutlet weak var cvEvents: UICollectionView!
     @IBOutlet weak var lbMedalView: UILabel!
-    
+    @IBOutlet weak var tbEvents: UITableView!
     
     
     // MARK: - VARIABLES
@@ -34,22 +33,15 @@ class EventsFilterVC: BaseViewController {
     private var viewType: ViewType = .events
     private var events: [Event] = []
     private var refreshControl = UIRefreshControl()
-    private lazy var flowLayout: DynamicHeightFlowLayout = {
-        let layout = DynamicHeightFlowLayout()
-        layout.sectionInsetReference = .fromContentInset
-        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        layout.minimumLineSpacing = 20
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
-        return layout
-    }()
 
     
     // MARK: - OVERRIDES
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.initUI()
         self.initNavigationBar()
-        self.initCollectionView()
+        self.initTableView()
         self.getEventsBySportType()
     }
     
@@ -57,7 +49,7 @@ class EventsFilterVC: BaseViewController {
         super.localizeContent()
         self.initNavigationBar()
         let suffix = events.count > 1 ? Text.events.localized.lowercased() : Text.event.localized.lowercased()
-        self.lbEventsCount.text = "\(events.count) \(self.sportType.localized) \(suffix)"
+        self.lbEventsCount.text = "\(events.count) \(self.sportType.localized) \(suffix)" + "\(events.count) \(self.sportType.localized) \(suffix)"
         self.lbMedalView.text = Text.medalView.localized
     }
     
@@ -69,7 +61,7 @@ class EventsFilterVC: BaseViewController {
     // MARK: - ACTIONS
     @IBAction func didToggleMedalView(_ sender: UISwitch) {
         self.viewType = sender.isOn ? .medals : .events
-        self.cvEvents.reloadData()
+        self.tbEvents.reloadData()
     }
     
     @objc private func reloadData() {
@@ -78,27 +70,32 @@ class EventsFilterVC: BaseViewController {
     
     
     // MARK: - FUNCTIONS
+    private func initUI() {
+        self.swMedalView.onTintColor = AppColors.red
+    }
+    
     private func initNavigationBar() {
         self.showScreenTitle(Text.events.localized)
         self.showBackButton()
     }
     
-    private func initCollectionView() {
-        cvEvents.registerNib(EventCollectionViewCell.self)
-        cvEvents.registerNib(MedalViewCollectionViewCell.self)
-        cvEvents.delegate = self
-        cvEvents.dataSource = self
+    private func initTableView() {
+        tbEvents.registerNib(EventTableViewCell.self)
+        tbEvents.registerNib(MedalViewTableViewCell.self)
+        tbEvents.delegate = self
+        tbEvents.dataSource = self
+        tbEvents.estimatedRowHeight = 200
+        tbEvents.rowHeight = UITableView.automaticDimension
         
         refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
-        cvEvents.refreshControl = refreshControl
-        cvEvents.collectionViewLayout = flowLayout
+        tbEvents.refreshControl = refreshControl
     }
     
     private func populateData(_ data: [Event]) {
         let suffix = data.count > 1 ? Text.events.localized.lowercased() : Text.event.localized
         self.lbEventsCount.text = "\(data.count) \(self.sportType.localized) \(suffix)"
         self.events = data
-        self.cvEvents.reloadData()
+        self.tbEvents.reloadData()
         self.refreshControl.endRefreshing()
     }
     
@@ -118,27 +115,27 @@ class EventsFilterVC: BaseViewController {
 }
 
 // MARK: - EXTENSIONS
-extension EventsFilterVC: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension EventsFilterVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.events.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch self.viewType {
         case .events:
-            let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+            let cell: EventTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configureCell(data: events[indexPath.row])
             return cell
         case .medals:
-            let cell: MedalViewCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+            let cell: MedalViewTableViewCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configureCell(data: events[indexPath.row])
             return cell
         }
     }
 }
 
-extension EventsFilterVC: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+extension EventsFilterVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("tapped \(events[indexPath.item])")
     }
 }

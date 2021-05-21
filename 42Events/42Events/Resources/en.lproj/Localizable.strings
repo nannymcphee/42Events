@@ -16,6 +16,7 @@
 "Running" = "Running";
 "Cycling" = "Cycling";
 "Walking" = "Walking";
+"FREE MEDAL ENGRAVING" = "FREE MEDAL ENGRAVING";
 
 // MARK : - EventsFilterVC
 "event" = "event";

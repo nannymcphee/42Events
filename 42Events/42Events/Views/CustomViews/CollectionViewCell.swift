@@ -24,7 +24,6 @@ open class CollectionViewCell: UICollectionViewCell {
     open override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.reset()
     }
     
     open override func prepareForReuse() {
