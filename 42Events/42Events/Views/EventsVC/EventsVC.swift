@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class EventsVC: BaseViewController {
     // MARK: - IBOUTLETS
-    @IBOutlet weak var tbContents: UITableView!
+    @IBOutlet weak var vStackEventList: UIStackView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var vSlideshow: ImageSlideshow!
+    @IBOutlet weak var vSportTypeListContainer: UIView!
     
     private struct Section {
         var id: String
@@ -19,27 +23,33 @@ class EventsVC: BaseViewController {
     
     // MARK: - VARIABLES
     private let refreshControl = UIRefreshControl()
-    private var sections = [
-        Section(id: "featured",         title: nil,                 data: []),
-        Section(id: "events-filter",    title: Text.events,         data: []),
-        Section(id: "starting-soon",    title: Text.startingSoon,   data: []),
-        Section(id: "popular",          title: Text.popular,        data: []),
-        Section(id: "new-release",      title: Text.newRelease,     data: []),
-        Section(id: "free",             title: Text.free,           data: []),
+    private var sectionList = [
+        Section(id: "startingSoon", title: Text.startingSoon,   data: []),
+        Section(id: "popular",      title: Text.popular,        data: []),
+        Section(id: "newRelease",   title: Text.newRelease,     data: []),
+        Section(id: "free",         title: Text.free,           data: []),
+        Section(id: "past",         title: Text.pastEvents,     data: []),
     ]
+    
+    private var eventListViews: [EventsListView] = []
+    private var sportTypeListView: SportTypeListView?
     
     // MARK: - OVERRIDES
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.initTableView()
+        self.initRefreshControl()
+        self.initSlideshow()
+        self.initSportTypeListView()
+        self.initEventListViews()
         self.getListEvents()
     }
     
     override func localizeContent() {
         super.localizeContent()
-        self.tbContents.reloadData()
         self.initNavigationBar()
+        self.sportTypeListView?.updateLocalize()
+        self.eventListViews.forEach { $0.updateLocalize() }
     }
     
     override func onNetworkConnectionRestored() {
@@ -73,18 +83,48 @@ class EventsVC: BaseViewController {
         self.navigationItem.rightBarButtonItem = btnMenu
     }
     
-    private func initTableView() {
-        tbContents.registerNib(FeaturedTableViewCell.self)
-        tbContents.registerNib(SportTypeTableViewCell.self)
-        tbContents.registerNib(EventListTableViewCell.self)
-
-        tbContents.delegate = self
-        tbContents.dataSource = self
-        tbContents.estimatedRowHeight = 200
-        tbContents.rowHeight = UITableView.automaticDimension
-        
+    private func initSlideshow() {
+        let pageIndicator = UIPageControl()
+        pageIndicator.currentPageIndicatorTintColor = AppColors.red
+        pageIndicator.pageIndicatorTintColor = AppColors.lightGray
+        vSlideshow.pageIndicator = pageIndicator
+        vSlideshow.pageIndicatorPosition = .init(horizontal: .center, vertical: .bottom)
+        vSlideshow.slideshowInterval = 5.0
+        vSlideshow.contentScaleMode = UIViewContentMode.scaleAspectFill
+    }
+    
+    private func initSportTypeListView() {
+        self.sportTypeListView = SportTypeListView.instance(with: self)
+        self.vSportTypeListContainer.addSubview(self.sportTypeListView!)
+        self.sportTypeListView?.layoutAttachAll(to: self.vSportTypeListContainer)
+    }
+    
+    private func initRefreshControl() {
         refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
-        tbContents.refreshControl = refreshControl
+        scrollView.refreshControl = refreshControl
+    }
+    
+    private func initEventListViews() {
+        for section in sectionList {
+            let view = EventsListView.instance(with: section.data, sectionTitle: section.title, sectionId: section.id, delegate: self)
+            eventListViews.append(view)
+        }
+        self.eventListViews.forEach { self.vStackEventList.addArrangedSubview($0) }
+    }
+    
+    private func populateData(with response: EventListResponse) {
+        // Featured
+        let imageSource = response.featured.compactMap { KingfisherSource(urlString: $0.bannerCard) }
+        self.vSlideshow.setImageInputs(imageSource)
+        
+        // Starting soon, popular, New release, Free, Past events
+        let mirror = Mirror(reflecting: response)
+        let mirrorChildren = mirror.children.filter { $0.label != "id" && $0.label != "updatedAt" && $0.label != "featured" }
+        for child in mirrorChildren {
+            if let view = self.eventListViews.first(where: { $0.sectionId == child.label }) {
+                view.populateData(with: child.value as! [Event])
+            }
+        }
     }
     
     private func getListEvents() {
@@ -93,15 +133,7 @@ class EventsVC: BaseViewController {
             
             switch result {
             case .success(let eventListResponse):
-                self.sections = [
-                    Section(id: "featured",     title:  nil,                data: eventListResponse.featured),
-                    Section(id: "eventsFilter", title:  Text.events,        data: []),
-                    Section(id: "startingSoon", title:  Text.startingSoon,  data: eventListResponse.startingSoon),
-                    Section(id: "popular",      title:  Text.popular,       data: eventListResponse.popular),
-                    Section(id: "newRelease",   title:  Text.newRelease,    data: eventListResponse.newRelease),
-                    Section(id: "free",         title:  Text.free,          data: eventListResponse.free),
-                ]
-                self.tbContents.reloadData()
+                self.populateData(with: eventListResponse)
                 
             case .failure:
                 self.refreshControl.endRefreshing()
@@ -111,41 +143,15 @@ class EventsVC: BaseViewController {
 }
 
 // MARK: - EXTENSIONS
-extension EventsVC: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sections.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let bannerCell: FeaturedTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            bannerCell.configureCell(data: sections[indexPath.section].data)
-            return bannerCell
-        } else if indexPath.section == 1 {
-            let eventTypeCell: SportTypeTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-            eventTypeCell.delegate = self
-            return eventTypeCell
-        }
-        
-        let eventListCell: EventListTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-        eventListCell.configureCell(title: sections[indexPath.section].title, data: sections[indexPath.section].data)
-        return eventListCell
-    }
-}
-
-extension EventsVC: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected indexPath: \(indexPath)")
-    }
-}
-
-extension EventsVC: SportTypeTableViewCellDelegate {
+extension EventsVC: SportTypeListViewDelegate {
     func didSelectSportType(_ type: String) {
         let vc = EventsFilterVC.instanceWithNavController(sportType: type)
         self.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension EventsVC: EventsListViewDelegate {
+    func didSelectEvent(_ event: Event) {
+        print("didSelectEvent: \(event)")
     }
 }

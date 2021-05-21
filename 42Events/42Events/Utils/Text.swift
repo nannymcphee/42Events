@@ -14,6 +14,7 @@ class Text {
     static var popular = "Popular"
     static var newRelease = "New release"
     static var free = "Free"
+    static var pastEvents = "Past events"
     static var running = "Running"
     static var cycling = "Cycling"
     static var walking = "Walking"

@@ -5,12 +5,16 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventsVC" customModule="_2Events" customModuleProvider="target">
             <connections>
-                <outlet property="tbContents" destination="qPq-PD-3Yf" id="dlr-DC-Mgn"/>
+                <outlet property="scrollView" destination="eSc-lX-byp" id="jUI-DN-IbE"/>
+                <outlet property="vSlideshow" destination="VNB-hD-xz9" id="LNB-bv-vyu"/>
+                <outlet property="vSportTypeListContainer" destination="37z-GE-JKN" id="Qgj-KI-mDW"/>
+                <outlet property="vStackEventList" destination="HOF-2h-Nq6" id="EwK-za-D97"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +23,69 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qPq-PD-3Yf">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSc-lX-byp">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7us-Xv-Phb">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37z-GE-JKN">
+                                    <rect key="frame" x="0.0" y="250" width="414" height="212"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="212" id="fVf-fQ-5Bl"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HOF-2h-Nq6">
+                                    <rect key="frame" x="0.0" y="462" width="414" height="434"/>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNB-hD-xz9" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="250" id="W07-ed-sD5"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="HOF-2h-Nq6" secondAttribute="trailing" id="0H2-wZ-uPV"/>
+                                <constraint firstAttribute="bottom" secondItem="HOF-2h-Nq6" secondAttribute="bottom" id="9Cy-Nr-yHs"/>
+                                <constraint firstItem="VNB-hD-xz9" firstAttribute="top" secondItem="7us-Xv-Phb" secondAttribute="top" id="BtW-TP-Jq6"/>
+                                <constraint firstAttribute="trailing" secondItem="37z-GE-JKN" secondAttribute="trailing" id="FCy-VC-Qgf"/>
+                                <constraint firstItem="37z-GE-JKN" firstAttribute="top" secondItem="VNB-hD-xz9" secondAttribute="bottom" id="Q1g-Gt-pR4"/>
+                                <constraint firstItem="HOF-2h-Nq6" firstAttribute="top" secondItem="37z-GE-JKN" secondAttribute="bottom" id="bOr-EQ-czh"/>
+                                <constraint firstItem="HOF-2h-Nq6" firstAttribute="leading" secondItem="7us-Xv-Phb" secondAttribute="leading" id="bfn-du-Hc3"/>
+                                <constraint firstItem="37z-GE-JKN" firstAttribute="leading" secondItem="7us-Xv-Phb" secondAttribute="leading" id="nCb-tk-q4i"/>
+                                <constraint firstItem="VNB-hD-xz9" firstAttribute="leading" secondItem="7us-Xv-Phb" secondAttribute="leading" id="nhO-hA-rh7"/>
+                                <constraint firstAttribute="trailing" secondItem="VNB-hD-xz9" secondAttribute="trailing" id="szK-de-Nkf"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="7us-Xv-Phb" firstAttribute="leading" secondItem="eSc-lX-byp" secondAttribute="leading" id="2hK-vH-665"/>
+                        <constraint firstAttribute="bottom" secondItem="7us-Xv-Phb" secondAttribute="bottom" id="dvw-9U-FoF"/>
+                        <constraint firstItem="7us-Xv-Phb" firstAttribute="height" secondItem="eSc-lX-byp" secondAttribute="height" priority="750" id="ixf-D0-TK6"/>
+                        <constraint firstItem="7us-Xv-Phb" firstAttribute="top" secondItem="eSc-lX-byp" secondAttribute="top" id="m8v-pR-Ys5"/>
+                        <constraint firstAttribute="trailing" secondItem="7us-Xv-Phb" secondAttribute="trailing" id="mFG-dw-ZRn"/>
+                        <constraint firstItem="7us-Xv-Phb" firstAttribute="width" secondItem="eSc-lX-byp" secondAttribute="width" id="rYa-gw-539"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="qPq-PD-3Yf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="X2R-kb-diy"/>
-                <constraint firstAttribute="bottom" secondItem="qPq-PD-3Yf" secondAttribute="bottom" id="Yvb-Nt-oKs"/>
-                <constraint firstItem="qPq-PD-3Yf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dbq-Lh-2kG"/>
-                <constraint firstItem="qPq-PD-3Yf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uZv-5M-dfE"/>
+                <constraint firstItem="eSc-lX-byp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1zI-DO-tuD"/>
+                <constraint firstItem="eSc-lX-byp" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PSK-Jw-E4b"/>
+                <constraint firstItem="eSc-lX-byp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="cJ9-li-wQa"/>
+                <constraint firstAttribute="bottom" secondItem="eSc-lX-byp" secondAttribute="bottom" id="fIB-2v-5Km"/>
             </constraints>
             <point key="canvasLocation" x="-188.40579710144928" y="130.58035714285714"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

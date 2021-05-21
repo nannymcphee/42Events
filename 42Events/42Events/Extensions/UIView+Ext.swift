@@ -124,4 +124,14 @@ extension UIView {
                 $0.secondAttribute == .notAnAttribute
         } ).forEach( {$0.constant = value })
     }
+    
+    func layoutAttachAll(to view: UIView) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            self.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            self.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+        ])
+    }
 }

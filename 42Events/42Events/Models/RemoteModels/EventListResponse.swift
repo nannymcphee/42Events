@@ -17,6 +17,17 @@ struct EventListResponse: Codable {
     let newRelease, free, past: [Event]
     let id, updatedAt: String
     
+    init() {
+        self.featured = []
+        self.startingSoon = []
+        self.popular = []
+        self.newRelease = []
+        self.free = []
+        self.past = []
+        self.id = ""
+        self.updatedAt = ""
+    }
+    
     enum CodingKeys: String, CodingKey {
         case featured, startingSoon, popular, newRelease, free, past
         case id = "_id"

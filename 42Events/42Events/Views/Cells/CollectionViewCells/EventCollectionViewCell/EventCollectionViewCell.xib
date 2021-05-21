@@ -36,25 +36,25 @@
                                 </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9E-iE-3JJ" customClass="PaddingLabel" customModule="_2Events" customModuleProvider="target">
-                                <rect key="frame" x="373" y="8" width="37" height="14"/>
+                                <rect key="frame" x="375.5" y="8" width="34.5" height="16.5"/>
                                 <fontDescription key="fontDescription" name="Metropolis-Medium" family="Metropolis" pointSize="14"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMR-hO-8cj">
-                                <rect key="frame" x="0.0" y="190" width="408" height="16"/>
+                                <rect key="frame" x="0.0" y="190" width="408" height="19"/>
                                 <fontDescription key="fontDescription" name="Metropolis-ExtraBold" family="Metropolis" pointSize="16"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzw-Q3-Gk7">
-                                <rect key="frame" x="0.0" y="210" width="408" height="12"/>
+                                <rect key="frame" x="0.0" y="213" width="408" height="14"/>
                                 <fontDescription key="fontDescription" name="Metropolis-Medium" family="Metropolis" pointSize="12"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SMO-N9-7yI" customClass="DynamicHeightCollectionView" customModule="_2Events" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="232" width="418" height="41"/>
+                                <rect key="frame" x="0.0" y="237" width="418" height="36"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zgF-Mj-d2g">
                                     <size key="itemSize" width="128" height="128"/>
@@ -107,7 +107,7 @@
     </objects>
     <designables>
         <designable name="l9E-iE-3JJ">
-            <size key="intrinsicContentSize" width="37" height="14"/>
+            <size key="intrinsicContentSize" width="34.5" height="16.5"/>
         </designable>
     </designables>
     <resources>

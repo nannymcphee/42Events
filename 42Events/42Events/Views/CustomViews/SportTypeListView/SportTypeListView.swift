@@ -1,23 +1,21 @@
 //
-//  SportTypeTableViewCell.swift
+//  SportTypeListView.swift
 //  42Events
 //
-//  Created by Nguyên Duy on 19/05/2021.
+//  Created by Nguyên Duy on 21/05/2021.
 //
 
 import UIKit
-
-protocol SportTypeTableViewCellDelegate: class {
+protocol SportTypeListViewDelegate: class {
     func didSelectSportType(_ type: String)
 }
 
-class SportTypeTableViewCell: TableViewCell {
-    // MARK: - IBOutlets
+class SportTypeListView: BaseView {
+    @IBOutlet weak var lbEventsSection: UILabel!
     @IBOutlet weak var cvSportType: UICollectionView!
-    @IBOutlet weak var lbSectionTitle: UILabel!
     
     // MARK: - Variables
-    weak var delegate: SportTypeTableViewCellDelegate?
+    weak var delegate: SportTypeListViewDelegate?
     
     private var activities: [Activity] = [
         Activity(name: "Running", color: AppColors.teal,   image: #imageLiteral(resourceName: "ic_running")),
@@ -31,10 +29,20 @@ class SportTypeTableViewCell: TableViewCell {
         self.configureCollectionView()
     }
     
-    override func reset() {
-        super.reset()
-        self.lbSectionTitle.text = Text.events.localized
+    public override func updateLocalize() {
+        super.updateLocalize()
+        self.lbEventsSection.text = Text.events.localized
         self.cvSportType.reloadData()
+    }
+    
+    // MARK: - Public functions
+    static func instance(with delegate: SportTypeListViewDelegate?) -> SportTypeListView {
+        let nib = UINib(nibName: "SportTypeListView", bundle: Bundle(for: SportTypeListView.self))
+        guard let view = nib.instantiate(withOwner: nil, options: nil).first as? SportTypeListView else {
+            return SportTypeListView()
+        }
+        view.delegate = delegate
+        return view
     }
     
     // MARK: - Private functions
@@ -47,7 +55,7 @@ class SportTypeTableViewCell: TableViewCell {
 }
 
 // MARK: - Extensions
-extension SportTypeTableViewCell: UICollectionViewDataSource {
+extension SportTypeListView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return activities.count
     }
@@ -60,7 +68,7 @@ extension SportTypeTableViewCell: UICollectionViewDataSource {
     }
 }
 
-extension SportTypeTableViewCell: UICollectionViewDelegate {
+extension SportTypeListView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         let activity = activities[indexPath.item]
@@ -68,7 +76,7 @@ extension SportTypeTableViewCell: UICollectionViewDelegate {
     }
 }
 
-extension SportTypeTableViewCell: UICollectionViewDelegateFlowLayout {
+extension SportTypeListView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = UIScreen.main.bounds.size
         let width = (screenSize.width / 3) - 20
