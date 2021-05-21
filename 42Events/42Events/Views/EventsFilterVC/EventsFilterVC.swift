@@ -95,7 +95,7 @@ class EventsFilterVC: BaseViewController {
     }
     
     private func populateData(_ data: [Event]) {
-        let suffix = data.count > 1 ? Text.events.localized.lowercased() : Text.event.localized.lowercased()
+        let suffix = data.count > 1 ? Text.events.localized.lowercased() : Text.event.localized
         self.lbEventsCount.text = "\(data.count) \(self.sportType.localized) \(suffix)"
         self.events = data
         self.cvEvents.reloadData()

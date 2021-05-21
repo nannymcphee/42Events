@@ -8,7 +8,7 @@
 import Foundation
 
 class Text {
-    static var event = "Event"
+    static var event = "event"
     static var events = "Events"
     static var startingSoon = "Starting soon"
     static var popular = "Popular"
