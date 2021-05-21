@@ -8,7 +8,7 @@
 import UIKit
 import MSPeekCollectionViewDelegateImplementation
 
-class EventListTableViewCell: UITableViewCell {
+class EventListTableViewCell: TableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var cvEvents: UICollectionView!
@@ -23,8 +23,8 @@ class EventListTableViewCell: UITableViewCell {
     }
     
     // MARK: - Overrides
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    override func reset() {
+        super.reset()
         self.lbTitle.text = nil
         self.eventList.removeAll()
         self.cvEvents.reloadData()
@@ -39,7 +39,7 @@ class EventListTableViewCell: UITableViewCell {
     
     // MARK: - Public functions
     public func configureCell(title: String?, data: [Event]) {
-        self.lbTitle.text = title
+        self.lbTitle.text = title?.localized
         self.eventList = data
         self.behavior = MSCollectionViewPeekingBehavior(cellSpacing: 10,
                                                         cellPeekWidth: 20,

@@ -8,7 +8,7 @@
 import UIKit
 import ImageSlideshow
 
-class FeaturedTableViewCell: UITableViewCell {
+class FeaturedTableViewCell: TableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var vSlideshow: ImageSlideshow!
     
@@ -16,6 +16,10 @@ class FeaturedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureSlideshow()
+    }
+    
+    override func reset() {
+        super.reset()
     }
     
     // MARK: - Private functions

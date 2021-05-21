@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Localize_Swift
 
-class SettingTableViewCell: UITableViewCell {
+class SettingTableViewCell: TableViewCell {
 
     @IBOutlet var vSeparators: [UIView]!
     @IBOutlet weak var ivType: UIImageView!
@@ -20,8 +21,8 @@ class SettingTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    override func reset() {
+        super.reset()
         self.vSeparators.forEach { $0.isHidden = true }
         self.lbLanguage.isHidden = true
         self.ivType.image = nil
@@ -30,11 +31,12 @@ class SettingTableViewCell: UITableViewCell {
     
     public func configureCell(data: Setting) {
         self.ivType.image = data.image
-        self.lbTitle.text = data.name
+        self.lbTitle.text = data.name.localized
         
         if data.id == ActionSettingType.language.id {
             self.vSeparators.forEach { $0.isHidden = false }
             self.lbLanguage.isHidden = false
+            self.lbLanguage.text = AppConstants.languages.first(where: { $0.code == Localize.currentLanguage() })?.name
         }
     }
     

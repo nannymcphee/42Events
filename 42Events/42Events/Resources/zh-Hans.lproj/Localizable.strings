@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  42Events
+
+  Created by Nguyên Duy on 21/05/2021.
+  
+*/
+
+// MARK : - EventsVC
+"Events" = "大事记";
+"Starting soon" = "马上就开始了";
+"Popular" = "受欢迎的";
+"New release" = "新品发布";
+"Free" = "自由";
+"Running" = "跑步";
+"Cycling" = "骑自行车";
+"Walking" = "步行";
+
+// MARK : - EventsFilterVC
+"event" = "事件";
+"running" = "跑步";
+"cycling" = "骑自行车";
+"walking" = "步行";
+"Medal view" = "奖牌视图";
+"joined" = "已加入";
+"Multiple submission" = "多次提交";
+"Single submission" = "单次提交";
+
+// MARK : - SettingsVC
+"Error" = "错误";
+"Login" = "登录";
+"Sign up" = "注册";
+"Guides and FAQ" = "指南和常见问题解答";
+"Contact us" = "联系我们";
+"Language" = "语";

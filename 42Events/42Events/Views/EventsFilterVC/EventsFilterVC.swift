@@ -25,6 +25,7 @@ class EventsFilterVC: BaseViewController {
     @IBOutlet weak var lbEventsCount: UILabel!
     @IBOutlet weak var swMedalView: UISwitch!
     @IBOutlet weak var cvEvents: UICollectionView!
+    @IBOutlet weak var lbMedalView: UILabel!
     
     
     
@@ -35,7 +36,7 @@ class EventsFilterVC: BaseViewController {
     private var refreshControl = UIRefreshControl()
     private lazy var flowLayout: DynamicHeightFlowLayout = {
         let layout = DynamicHeightFlowLayout()
-        layout.sectionInsetReference = .fromContentInset // .fromContentInset is default
+        layout.sectionInsetReference = .fromContentInset
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.minimumLineSpacing = 20
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
@@ -52,6 +53,14 @@ class EventsFilterVC: BaseViewController {
         self.getEventsBySportType()
     }
     
+    override func localizeContent() {
+        super.localizeContent()
+        self.initNavigationBar()
+        let suffix = events.count > 1 ? Text.events.localized.lowercased() : Text.event.localized.lowercased()
+        self.lbEventsCount.text = "\(events.count) \(self.sportType.localized) \(suffix)"
+        self.lbMedalView.text = Text.medalView.localized
+    }
+    
     
     // MARK: - ACTIONS
     @IBAction func didToggleMedalView(_ sender: UISwitch) {
@@ -66,7 +75,7 @@ class EventsFilterVC: BaseViewController {
     
     // MARK: - FUNCTIONS
     private func initNavigationBar() {
-        self.showScreenTitle("Events")
+        self.showScreenTitle(Text.events.localized)
         self.showBackButton()
     }
     
@@ -82,8 +91,8 @@ class EventsFilterVC: BaseViewController {
     }
     
     private func populateData(_ data: [Event]) {
-        let suffix = data.count > 1 ? "events" : "event"
-        self.lbEventsCount.text = "\(data.count) \(self.sportType) \(suffix)"
+        let suffix = data.count > 1 ? Text.events.localized.lowercased() : Text.event.localized.lowercased()
+        self.lbEventsCount.text = "\(data.count) \(self.sportType.localized) \(suffix)"
         self.events = data
         self.cvEvents.reloadData()
         self.refreshControl.endRefreshing()
@@ -97,7 +106,7 @@ class EventsFilterVC: BaseViewController {
             case .success(let events):
                 self.populateData(events)
             case .failure(let error):
-                AppDialog.withOk(controller: self, title: "Error", message: error.localizedDescription)
+                AppDialog.withOk(controller: self, title: Text.error.localized, message: error.localizedDescription)
                 
             }
         }

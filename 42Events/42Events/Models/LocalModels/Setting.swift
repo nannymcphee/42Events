@@ -32,15 +32,13 @@ public enum ActionSettingType {
         case .login:
             return "Login"
         case .signUp:
-            return "Sign up"
+            return Text.signUp
         case .faq:
-            return "Guides and FAQ"
+            return Text.guidesAndFaq
         case .contactUs:
-            return "Contact us"
+            return Text.contactUs
         case .language:
-            return "Language"
-        default:
-            return ""
+            return Text.language
         }
     }
     
@@ -56,8 +54,10 @@ public enum ActionSettingType {
             return "contact"
         case .language:
             return "language"
-        default:
-            return ""
         }
+    }
+    
+    func updateLocalizedTitle() {
+        
     }
 }

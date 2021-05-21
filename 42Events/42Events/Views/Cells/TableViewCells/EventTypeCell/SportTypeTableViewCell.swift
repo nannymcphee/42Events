@@ -11,16 +11,17 @@ protocol SportTypeTableViewCellDelegate: class {
     func didSelectSportType(_ type: String)
 }
 
-class SportTypeTableViewCell: UITableViewCell {
+class SportTypeTableViewCell: TableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var cvSportType: UICollectionView!
+    @IBOutlet weak var lbSectionTitle: UILabel!
     
     // MARK: - Variables
     weak var delegate: SportTypeTableViewCellDelegate?
     
     private var activities: [Activity] = [
-        Activity(name: "Running", color: AppColors.teal, image: #imageLiteral(resourceName: "ic_running")),
-        Activity(name: "Cycling", color: AppColors.blue, image: #imageLiteral(resourceName: "ic_cycling")),
+        Activity(name: "Running", color: AppColors.teal,   image: #imageLiteral(resourceName: "ic_running")),
+        Activity(name: "Cycling", color: AppColors.blue,   image: #imageLiteral(resourceName: "ic_cycling")),
         Activity(name: "Walking", color: AppColors.orange, image: #imageLiteral(resourceName: "ic_walking")),
     ]
     
@@ -28,6 +29,12 @@ class SportTypeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureCollectionView()
+    }
+    
+    override func reset() {
+        super.reset()
+        self.lbSectionTitle.text = Text.events.localized
+        self.cvSportType.reloadData()
     }
     
     // MARK: - Private functions

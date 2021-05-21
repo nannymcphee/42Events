@@ -19,6 +19,11 @@
 		E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125658D2656BCED00CCCEA7 /* Setting.swift */; };
 		E12565A22656C55400CCCEA7 /* SwipeBackNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */; };
 		E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565A62656CA9E00CCCEA7 /* Language.swift */; };
+		E12565BA2656D27C00CCCEA7 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565B92656D27C00CCCEA7 /* Text.swift */; };
+		E12565BF2656D2E700CCCEA7 /* Localize+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */; };
+		E12565C926574EE100CCCEA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12565CB26574EE100CCCEA7 /* Localizable.strings */; };
+		E12565E22657518200CCCEA7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565E12657518200CCCEA7 /* TableViewCell.swift */; };
+		E12565E72657521900CCCEA7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565E62657521900CCCEA7 /* CollectionViewCell.swift */; };
 		E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
 		E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CA2656592B00AC13C5 /* EventsApi.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
@@ -65,6 +70,7 @@
 		E1A3920026560BF100F7E378 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A391FE26560BF100F7E378 /* EventCollectionViewCell.xib */; };
 		E1A3920D26560D0700F7E378 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3920C26560D0700F7E378 /* PaddingLabel.swift */; };
 		E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */; };
+		E1A755A9265759FD0087412E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A755A8265759FD0087412E /* AppConstants.swift */; };
 		E1C30DF326561A21008CC0BA /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C30DF126561A21008CC0BA /* TagCollectionViewCell.swift */; };
 		E1C30DF426561A21008CC0BA /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1C30DF226561A21008CC0BA /* TagCollectionViewCell.xib */; };
 		E1F3258D2655035A003525D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3258C2655035A003525D6 /* AppDelegate.swift */; };
@@ -111,6 +117,26 @@
 		E125658D2656BCED00CCCEA7 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackNavigationController.swift; sourceTree = "<group>"; };
 		E12565A62656CA9E00CCCEA7 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		E12565B92656D27C00CCCEA7 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localize+Ext.swift"; sourceTree = "<group>"; };
+		E12565CA26574EE100CCCEA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E12565CF26574F4B00CCCEA7 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		E12565D026574F4B00CCCEA7 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E12565D126574F4B00CCCEA7 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E12565D526574F5800CCCEA7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		E12565D626574F5800CCCEA7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E12565D726574F5800CCCEA7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E12565D826574F6100CCCEA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		E12565D926574F6100CCCEA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		E12565DA26574F6100CCCEA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E12565DB2657512900CCCEA7 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
+		E12565DC2657512900CCCEA7 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E12565DD2657512900CCCEA7 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E12565DE2657513500CCCEA7 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Main.strings; sourceTree = "<group>"; };
+		E12565DF2657513500CCCEA7 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		E12565E02657513500CCCEA7 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E12565E12657518200CCCEA7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		E12565E62657521900CCCEA7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		E180B6C5265658CF00AC13C5 /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
 		E180B6CA2656592B00AC13C5 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		E180B6CF26565A0F00AC13C5 /* AppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDialog.swift; sourceTree = "<group>"; };
@@ -157,6 +183,7 @@
 		E1A391FE26560BF100F7E378 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1A3920C26560D0700F7E378 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ext.swift"; sourceTree = "<group>"; };
+		E1A755A8265759FD0087412E /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		E1C30DF126561A21008CC0BA /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1C30DF226561A21008CC0BA /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1F325892655035A003525D6 /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +290,14 @@
 				E12565A62656CA9E00CCCEA7 /* Language.swift */,
 			);
 			path = LocalModels;
+			sourceTree = "<group>";
+		};
+		E12565C326574E5600CCCEA7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E12565CB26574EE100CCCEA7 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E180B70B2656A68900AC13C5 /* MedalViewCollectionViewCell */ = {
@@ -376,6 +411,10 @@
 				E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */,
 				E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */,
 				E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */,
+				E12565B92656D27C00CCCEA7 /* Text.swift */,
+				E12565E12657518200CCCEA7 /* TableViewCell.swift */,
+				E12565E62657521900CCCEA7 /* CollectionViewCell.swift */,
+				E1A755A8265759FD0087412E /* AppConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -389,6 +428,7 @@
 				E1A391D82655823300F7E378 /* Codable+Ext.swift */,
 				E1A391E9265603AB00F7E378 /* String+Ext.swift */,
 				E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */,
+				E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,6 +534,7 @@
 		E1F3258B2655035A003525D6 /* 42Events */ = {
 			isa = PBXGroup;
 			children = (
+				E12565C326574E5600CCCEA7 /* Resources */,
 				E1A391572655588B00F7E378 /* Extensions */,
 				E1A39120265543C400F7E378 /* Utils */,
 				E1A390F5265542C700F7E378 /* Fonts */,
@@ -618,6 +659,11 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
+				th,
+				id,
 			);
 			mainGroup = E1F3258026550359003525D6;
 			productRefGroup = E1F3258A2655035A003525D6 /* Products */;
@@ -638,6 +684,7 @@
 			files = (
 				E1A3910C265542E100F7E378 /* Metropolis-Thin.otf in Resources */,
 				E1A3910B265542E100F7E378 /* SIL Open Font License.txt in Resources */,
+				E12565C926574EE100CCCEA7 /* Localizable.strings in Resources */,
 				E1A391F526560BCA00F7E378 /* EventListTableViewCell.xib in Resources */,
 				E1A39161265560B000F7E378 /* SportTypeTableViewCell.xib in Resources */,
 				E1F325992655035C003525D6 /* LaunchScreen.storyboard in Resources */,
@@ -787,6 +834,7 @@
 			files = (
 				E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */,
 				E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */,
+				E12565BF2656D2E700CCCEA7 /* Localize+Ext.swift in Sources */,
 				E1A39177265565D100F7E378 /* Activity.swift in Sources */,
 				E1A391FF26560BF100F7E378 /* EventCollectionViewCell.swift in Sources */,
 				E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */,
@@ -794,6 +842,7 @@
 				E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */,
 				E1F325912655035A003525D6 /* EventsViewController.swift in Sources */,
 				E1A391432655505900F7E378 /* Event.swift in Sources */,
+				E12565E72657521900CCCEA7 /* CollectionViewCell.swift in Sources */,
 				E1A39122265543CF00F7E378 /* AppColors.swift in Sources */,
 				E1A391F426560BCA00F7E378 /* EventListTableViewCell.swift in Sources */,
 				E1A391812655733400F7E378 /* Dictionary+Ext.swift in Sources */,
@@ -801,10 +850,13 @@
 				E180B7072656A3C200AC13C5 /* EventFilterResponse.swift in Sources */,
 				E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */,
 				E1A3918F265574FD00F7E378 /* EventListResponse.swift in Sources */,
+				E12565BA2656D27C00CCCEA7 /* Text.swift in Sources */,
+				E1A755A9265759FD0087412E /* AppConstants.swift in Sources */,
 				E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */,
 				E122C29426564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				E12565A22656C55400CCCEA7 /* SwipeBackNavigationController.swift in Sources */,
 				E12565762656BBD300CCCEA7 /* SettingsVC.swift in Sources */,
+				E12565E22657518200CCCEA7 /* TableViewCell.swift in Sources */,
 				E1A391EA265603AB00F7E378 /* String+Ext.swift in Sources */,
 				E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */,
 				E1A391302655477000F7E378 /* AppFont.swift in Sources */,
@@ -860,10 +912,28 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E12565CB26574EE100CCCEA7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E12565CA26574EE100CCCEA7 /* en */,
+				E12565D126574F4B00CCCEA7 /* vi */,
+				E12565D726574F5800CCCEA7 /* zh-Hans */,
+				E12565DA26574F6100CCCEA7 /* zh-Hant */,
+				E12565DD2657512900CCCEA7 /* th */,
+				E12565E02657513500CCCEA7 /* id */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E1F325922655035A003525D6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E1F325932655035A003525D6 /* Base */,
+				E12565CF26574F4B00CCCEA7 /* vi */,
+				E12565D526574F5800CCCEA7 /* zh-Hans */,
+				E12565D826574F6100CCCEA7 /* zh-Hant */,
+				E12565DB2657512900CCCEA7 /* th */,
+				E12565DE2657513500CCCEA7 /* id */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -872,6 +942,11 @@
 			isa = PBXVariantGroup;
 			children = (
 				E1F325982655035C003525D6 /* Base */,
+				E12565D026574F4B00CCCEA7 /* vi */,
+				E12565D626574F5800CCCEA7 /* zh-Hans */,
+				E12565D926574F6100CCCEA7 /* zh-Hant */,
+				E12565DC2657512900CCCEA7 /* th */,
+				E12565DF2657513500CCCEA7 /* id */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -883,6 +958,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -944,6 +1020,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

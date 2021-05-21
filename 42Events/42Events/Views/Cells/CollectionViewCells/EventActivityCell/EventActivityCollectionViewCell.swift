@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventActivityCollectionViewCell: UICollectionViewCell {
+class EventActivityCollectionViewCell: CollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var vContainer: UIView!
     @IBOutlet weak var lbActivityName: UILabel!
@@ -19,8 +19,8 @@ class EventActivityCollectionViewCell: UICollectionViewCell {
         vContainer.customBorder(cornerRadius: 12, borderWidth: 1, color: .clear)
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    override func reset() {
+        super.reset()
         vContainer.backgroundColor = .clear
         lbActivityName.text = nil
         ivThumbnail.image = nil
@@ -29,7 +29,7 @@ class EventActivityCollectionViewCell: UICollectionViewCell {
     // MARK: - Public functions
     public func configureCell(data: Activity) {
         vContainer.backgroundColor = data.color
-        lbActivityName.text = data.name
+        lbActivityName.text = data.name.localized
         ivThumbnail.image = data.image
     }
 }

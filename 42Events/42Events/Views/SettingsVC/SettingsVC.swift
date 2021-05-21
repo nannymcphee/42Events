@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import Localize_Swift
 
 class SettingsVC: BaseViewController {
     enum ViewType {
@@ -28,20 +29,11 @@ class SettingsVC: BaseViewController {
     // MARK: - VARIABLES
     private let languageDropDown = DropDown()
     private var settings = [
-        Setting(actionType: .login, image: UIImage(named: "ic_login")),
-        Setting(actionType: .signUp, image: UIImage(named: "ic_sign_up")),
-        Setting(actionType: .faq, image: UIImage(named: "ic_faq")),
+        Setting(actionType: .login,     image: UIImage(named: "ic_login")),
+        Setting(actionType: .signUp,    image: UIImage(named: "ic_sign_up")),
+        Setting(actionType: .faq,       image: UIImage(named: "ic_faq")),
         Setting(actionType: .contactUs, image: UIImage(named: "ic_contact")),
-        Setting(actionType: .language, image: UIImage(named: "ic_language")),
-    ]
-    
-    private var languages = [
-        Language(code: "en", name: "English"),
-        Language(code: "zh-Hans", name: "简体 中文"),
-        Language(code: "zh-Hant", name: "繁體 中文"),
-        Language(code: "id", name: "Bahasa Indonesia"),
-        Language(code: "th", name: "ภาษา ไทย"),
-        Language(code: "vi", name: "Tiếng Việt"),
+        Setting(actionType: .language,  image: UIImage(named: "ic_language")),
     ]
     private var selectedLanguageIndex = 0
     
@@ -55,6 +47,10 @@ class SettingsVC: BaseViewController {
         self.initDropDown()
     }
     
+    override func localizeContent() {
+        super.localizeContent()
+        self.tbSettings.reloadData()
+    }
     
     // MARK: - ACTIONS
     
@@ -84,7 +80,8 @@ class SettingsVC: BaseViewController {
         appearance.textColor = AppColors.black
         appearance.textFont = fontScheme.medium14
         
-        self.languageDropDown.dataSource = self.languages.map { $0.name }
+        self.selectedLanguageIndex = AppConstants.languages.firstIndex(where: { $0.code == Localize.currentLanguage() }) ?? 0
+        self.languageDropDown.dataSource = AppConstants.languages.map { $0.name }
         self.languageDropDown.selectRow(self.selectedLanguageIndex)
     }
 }
@@ -120,6 +117,7 @@ extension SettingsVC: UITableViewDelegate {
             }
             self.languageDropDown.selectionAction = { [weak self] (index, item) in
                 guard let self = self else { return }
+                Localize.setCurrentLanguage(AppConstants.languages[index].code)
                 self.selectedLanguageIndex = index
                 cell.lbLanguage.text = item
             }

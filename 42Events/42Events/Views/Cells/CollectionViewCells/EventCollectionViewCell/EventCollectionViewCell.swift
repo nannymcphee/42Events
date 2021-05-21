@@ -92,7 +92,8 @@ extension EventCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let tag = self.tags[indexPath.row]
         let iconWidth: CGFloat = tag.iconName == nil ? 0 : 24
-        let labelSize = tag.title.labelSize(font: fontScheme.medium12, considering: collectionView.frame.size.width)
-        return CGSize(width: labelSize.width + iconWidth + 16, height: 30.0)
+        let labelHorizontalPadding: CGFloat = 16
+        let labelSize = tag.title.localized.labelSize(font: fontScheme.medium12, considering: collectionView.frame.size.width)
+        return CGSize(width: labelSize.width + iconWidth + labelHorizontalPadding, height: 30.0)
     }
 }

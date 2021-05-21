@@ -20,21 +20,26 @@ class EventsVC: BaseViewController {
     // MARK: - VARIABLES
     private let refreshControl = UIRefreshControl()
     private var sections = [
-        Section(id: "featured", title: nil, data: []),
-        Section(id: "events-filter", title: "Events", data: []),
-        Section(id: "starting-soon", title: "Starting soon", data: []),
-        Section(id: "popular", title: "Popular", data: []),
-        Section(id: "new-release", title: "New release", data: []),
-        Section(id: "free", title: "Free", data: []),
+        Section(id: "featured",         title: nil,                 data: []),
+        Section(id: "events-filter",    title: Text.events,         data: []),
+        Section(id: "starting-soon",    title: Text.startingSoon,   data: []),
+        Section(id: "popular",          title: Text.popular,        data: []),
+        Section(id: "new-release",      title: Text.newRelease,     data: []),
+        Section(id: "free",             title: Text.free,           data: []),
     ]
     
     // MARK: - OVERRIDES
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.initNavigationBar()
         self.initTableView()
         self.getListEvents()
+    }
+    
+    override func localizeContent() {
+        super.localizeContent()
+        self.tbContents.reloadData()
+        self.initNavigationBar()
     }
     
     
@@ -49,14 +54,13 @@ class EventsVC: BaseViewController {
     }
     
     @objc private func reloadData() {
-        self.sections.removeAll()
         self.getListEvents()
         self.refreshControl.endRefreshing()
     }
     
     // MARK: - FUNCTIONS
     private func initNavigationBar() {
-        self.showScreenTitle("Events")
+        self.showScreenTitle(Text.events.localized)
         
         let btnNoti = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_bell"), target: self, action: #selector(didTapNotificationButton))
         self.navigationItem.leftBarButtonItem = btnNoti
@@ -86,17 +90,17 @@ class EventsVC: BaseViewController {
             switch result {
             case .success(let eventListResponse):
                 self.sections = [
-                    Section(id: "featured", title: nil, data: eventListResponse.featured),
-                    Section(id: "eventsFilter", title: "Events", data: []),
-                    Section(id: "startingSoon", title: "Starting soon", data: eventListResponse.startingSoon),
-                    Section(id: "popular", title: "Popular", data: eventListResponse.popular),
-                    Section(id: "newRelease", title: "New release", data: eventListResponse.newRelease),
-                    Section(id: "free", title: "Free", data: eventListResponse.free),
+                    Section(id: "featured",     title:  nil,                data: eventListResponse.featured),
+                    Section(id: "eventsFilter", title:  Text.events,        data: []),
+                    Section(id: "startingSoon", title:  Text.startingSoon,  data: eventListResponse.startingSoon),
+                    Section(id: "popular",      title:  Text.popular,       data: eventListResponse.popular),
+                    Section(id: "newRelease",   title:  Text.newRelease,    data: eventListResponse.newRelease),
+                    Section(id: "free",         title:  Text.free,          data: eventListResponse.free),
                 ]
                 self.tbContents.reloadData()
                 
             case .failure(let error):
-                AppDialog.withOk(controller: self, title: "Error", message: error.localizedDescription)
+                AppDialog.withOk(controller: self, title: Text.error.localized, message: error.localizedDescription)
             }
         }
     }
@@ -131,7 +135,7 @@ extension EventsVC: UITableViewDataSource {
 
 extension EventsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected section: \(indexPath.section), row: \(indexPath.row)")
+        print("Selected indexPath: \(indexPath)")
     }
 }
 

@@ -21,6 +21,7 @@
             <connections>
                 <outlet property="cvEvents" destination="gtJ-Qp-yIh" id="p7S-bl-E6g"/>
                 <outlet property="lbEventsCount" destination="8K8-uJ-7MI" id="Ajs-In-cxW"/>
+                <outlet property="lbMedalView" destination="e7O-uU-ULS" id="viF-B8-XAP"/>
                 <outlet property="swMedalView" destination="XQ3-lE-Wud" id="PjY-b0-yC2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -34,16 +35,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K8-uJ-7MI">
-                            <rect key="frame" x="10" y="30" width="251" height="0.0"/>
+                            <rect key="frame" x="10" y="30" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" name="Metropolis-ExtraBold" family="Metropolis" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medal view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7O-uU-ULS">
                             <rect key="frame" x="271" y="23" width="76" height="14"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="76" id="K21-Sb-Aff"/>
-                            </constraints>
                             <fontDescription key="fontDescription" name="Metropolis-Regular" family="Metropolis" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -62,7 +60,6 @@
                     <constraints>
                         <constraint firstItem="8K8-uJ-7MI" firstAttribute="leading" secondItem="DUJ-jY-H23" secondAttribute="leading" constant="10" id="26Y-Gx-8JK"/>
                         <constraint firstItem="XQ3-lE-Wud" firstAttribute="centerY" secondItem="DUJ-jY-H23" secondAttribute="centerY" id="6ua-9c-P1h"/>
-                        <constraint firstItem="e7O-uU-ULS" firstAttribute="leading" secondItem="8K8-uJ-7MI" secondAttribute="trailing" constant="10" id="8oF-EG-Vrb"/>
                         <constraint firstItem="XQ3-lE-Wud" firstAttribute="leading" secondItem="e7O-uU-ULS" secondAttribute="trailing" constant="10" id="9ge-4c-7dE"/>
                         <constraint firstItem="e7O-uU-ULS" firstAttribute="centerY" secondItem="DUJ-jY-H23" secondAttribute="centerY" id="B91-JI-6mz"/>
                         <constraint firstAttribute="trailing" secondItem="XQ3-lE-Wud" secondAttribute="trailing" constant="10" id="leH-ab-1FX"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TagCollectionViewCell: UICollectionViewCell {
+class TagCollectionViewCell: CollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var ivTag: UIImageView!
     @IBOutlet weak var lbTitle: PaddingLabel!
@@ -20,8 +20,8 @@ class TagCollectionViewCell: UICollectionViewCell {
         self.configureUI()
     }
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    override func reset() {
+        super.reset()
         self.vIconContainer.isHidden = true
         self.lbTitle.text = nil
     }
@@ -40,6 +40,6 @@ class TagCollectionViewCell: UICollectionViewCell {
             self.vIconContainer.isHidden = false
             self.ivTag.image = UIImage(named: iconName)
         }
-        self.lbTitle.text = data.title
+        self.lbTitle.text = data.title.localized
     }
 }

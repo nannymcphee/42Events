@@ -70,6 +70,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="cvSportType" destination="zAj-Qv-7xf" id="UOD-qy-xbh"/>
+                <outlet property="lbSectionTitle" destination="e0P-tB-Wwf" id="nrm-rP-YY1"/>
             </connections>
             <point key="canvasLocation" x="275.36231884057975" y="176.45089285714286"/>
         </tableViewCell>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MedalViewCollectionViewCell: UICollectionViewCell {
+class MedalViewCollectionViewCell: CollectionViewCell {
 
     @IBOutlet weak var ivThumbnail: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
@@ -19,8 +19,8 @@ class MedalViewCollectionViewCell: UICollectionViewCell {
         self.initUI()
     }
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    override func reset() {
+        super.reset()
         self.ivThumbnail.image = nil
         self.lbTitle.text = nil
         self.lbSubtitle.text = nil
@@ -38,7 +38,7 @@ class MedalViewCollectionViewCell: UICollectionViewCell {
         var secondLine = ""
         
         if data.raceRunners >= 1 {
-            firstLineComponents.append("\(String(data.raceRunners)) joined")
+            firstLineComponents.append("\(String(data.raceRunners)) \(Text.joined.localized)")
         }
         
         if let price = data.racePrice {
@@ -51,7 +51,7 @@ class MedalViewCollectionViewCell: UICollectionViewCell {
         
         firstLine = firstLineComponents.joined(separator: "・")
         let thirdLine = data.eventType.displayName
-        let text: String = "\(firstLine)\(secondLine)\n\(thirdLine)" //+ "\(firstLine)\(secondLine)\n\(thirdLine)" + "\(firstLine)\(secondLine)\n\(thirdLine)"
+        let text: String = "\(firstLine)\(secondLine)\n\(thirdLine)"
         return text
     }
     

@@ -59,7 +59,7 @@ struct Event: Codable {
         ]
         
         if raceRunners >= 1 {
-            allTags.append(EventTag(title: "\(raceRunners) joined"))
+            allTags.append(EventTag(title: "\(raceRunners) \(Text.joined.localized)"))
         }
         
         if let price = racePrice {

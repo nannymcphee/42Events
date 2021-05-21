@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  42Events
+
+  Created by Nguyên Duy on 21/05/2021.
+  
+*/
+
+// MARK : - EventsVC
+"Events" = "เหตุการณ์";
+"Starting soon" = "เริ่มต้นเร็ว ๆ นี้";
+"Popular" = "เป็นที่นิยม";
+"New release" = "รุ่นใหม่";
+"Free" = "ฟรี";
+"Running" = "วิ่ง";
+"Cycling" = "ขี่จักรยาน";
+"Walking" = "ที่เดิน";
+
+// MARK : - EventsFilterVC
+"event" = "เหตุการณ์";
+"running" = "วิ่ง";
+"cycling" = "ขี่จักรยาน";
+"walking" = "ที่เดิน";
+"Medal view" = "มุมมองเหรียญ";
+"joined" = "เข้าร่วม";
+"Multiple submission" = "การส่งหลายครั้ง";
+"Single submission" = "การส่งครั้งเดียว";
+
+// MARK : - SettingsVC
+"Error" = "ข้อผิดพลาด";
+"Login" = "เข้าสู่ระบบ";
+"Sign up" = "ลงชื่อ";
+"Guides and FAQ" = "คำแนะนำและคำถามที่พบบ่อย";
+"Contact us" = "ติดต่อเรา";
+"Language" = "ภาษา";
