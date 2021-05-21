@@ -33,3 +33,6 @@
 "Guides and FAQ" = "Panduan dan FAQ";
 "Contact us" = "Hubungi kami";
 "Language" = "Bahasa";
+
+// MARK: - Alert
+"You are offline. Please check your network connection." = "Anda sedang offline. Silakan periksa koneksi jaringan Anda.";

@@ -33,3 +33,6 @@
 "Guides and FAQ" = "คำแนะนำและคำถามที่พบบ่อย";
 "Contact us" = "ติดต่อเรา";
 "Language" = "ภาษา";
+
+// MARK: - Alert
+"You are offline. Please check your network connection." = "คุณออฟไลน์อยู่ โปรดตรวจสอบการเชื่อมต่อเครือข่ายของคุณ";

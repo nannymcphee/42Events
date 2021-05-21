@@ -33,3 +33,6 @@
 "Guides and FAQ" = "Guides and FAQ";
 "Contact us" = "Contact us";
 "Language" = "Language";
+
+// MARK: - Alert
+"You are offline. Please check your network connection." = "You are offline. Please check your network connection.";

@@ -6,27 +6,45 @@
 //
 
 import UIKit
+import Reachability
 import Localize_Swift
 
 class BaseViewController: UIViewController {
     //MARK: - VARIABLES
     private let BTN_BACK_WIDTH: CGFloat = 36
+    let reachability = try? Reachability()
     
     //MARK: - OVERRIDES
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initDefaultNavigationBar()
-        
-        // Localization
-        NotificationCenter.default.addObserver(self, selector: #selector(localizeContent), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        self.addObservers()
         self.localizeContent()
+        self.initDefaultNavigationBar()
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        self.removeObservers()
     }
     
     // MARK: - PRIVATE FUNCTIONS
+    private func addObservers() {
+        // Localization
+        NotificationCenter.default.addObserver(self, selector: #selector(localizeContent), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        
+        // Reachability
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(notification:)), name: .reachabilityChanged, object: reachability)
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("could not start reachability notifier")
+        }
+    }
+    
+    private func removeObservers() {
+        reachability?.stopNotifier()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     private func initDefaultNavigationBar() {
         let navigationBar = navigationController?.navigationBar
         navigationBar?.backgroundColor = .white
@@ -58,6 +76,8 @@ class BaseViewController: UIViewController {
         return barButton
     }
     
+    public func onNetworkConnectionRestored() {}
+    
     //MARK: - ACTIONS
     @objc func backButtonPressed(_ sender: UIBarButtonItem)  {
         self.view.endEditing(true)
@@ -73,5 +93,16 @@ class BaseViewController: UIViewController {
     }
     
     @objc func localizeContent() {}
+        
+    @objc private func reachabilityChanged(notification: Notification) {
+        let reachability = notification.object as! Reachability
+        
+        switch reachability.connection {
+        case .wifi, .cellular:
+            self.onNetworkConnectionRestored()
+        case .unavailable, .none:
+            AppDialog.withOk(controller: self, title: Text.error.localized, message: Text.networkConnectionAlertMessage.localized)
+        }
+    }
 }
 

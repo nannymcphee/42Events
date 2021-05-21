@@ -33,3 +33,6 @@
 "Guides and FAQ" = "指南和常见问题解答";
 "Contact us" = "联系我们";
 "Language" = "语";
+
+// MARK: - Alert
+"You are offline. Please check your network connection." = "您离线。请检查您的网络连接。";

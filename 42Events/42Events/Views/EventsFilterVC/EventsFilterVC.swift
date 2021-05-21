@@ -61,6 +61,10 @@ class EventsFilterVC: BaseViewController {
         self.lbMedalView.text = Text.medalView.localized
     }
     
+    override func onNetworkConnectionRestored() {
+        super.onNetworkConnectionRestored()
+        self.getEventsBySportType()
+    }
     
     // MARK: - ACTIONS
     @IBAction func didToggleMedalView(_ sender: UISwitch) {
@@ -105,9 +109,8 @@ class EventsFilterVC: BaseViewController {
             switch result {
             case .success(let events):
                 self.populateData(events)
-            case .failure(let error):
-                AppDialog.withOk(controller: self, title: Text.error.localized, message: error.localizedDescription)
-                
+            case .failure:
+                self.refreshControl.endRefreshing()
             }
         }
     }

@@ -32,3 +32,6 @@
 "Guides and FAQ" = "指南和常見問題解答";
 "Contact us" = "聯繫我們";
 "Language" = "語";
+
+// MARK: - Alert
+"You are offline. Please check your network connection." = "您離線。請檢查您的網絡連接。";

@@ -42,6 +42,10 @@ class EventsVC: BaseViewController {
         self.initNavigationBar()
     }
     
+    override func onNetworkConnectionRestored() {
+        super.onNetworkConnectionRestored()
+        self.getListEvents()
+    }
     
     // MARK: - ACTIONS
     @objc private func didTapNotificationButton() {
@@ -99,8 +103,8 @@ class EventsVC: BaseViewController {
                 ]
                 self.tbContents.reloadData()
                 
-            case .failure(let error):
-                AppDialog.withOk(controller: self, title: Text.error.localized, message: error.localizedDescription)
+            case .failure:
+                self.refreshControl.endRefreshing()
             }
         }
     }

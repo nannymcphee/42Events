@@ -33,3 +33,6 @@
 "Guides and FAQ" = "Hướng dẫn và hỏi đáp";
 "Contact us" = "Liên hệ";
 "Language" = "Ngôn ngữ";
+
+// MARK: - Alert
+"You are offline. Please check your network connection." = "Bạn đang offline. Vui lòng kiểm tra lại kết nối mạng.";

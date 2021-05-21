@@ -30,4 +30,5 @@ class Text {
     static var medalView = "Medal view"
     static var singleSubmission = "Single submission"
     static var multipleSubmission = "Multiple submission"
+    static var networkConnectionAlertMessage = "You are offline. Please check your network connection."
 }
