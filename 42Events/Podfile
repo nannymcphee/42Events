@@ -11,7 +11,6 @@ target '42Events' do
   pod 'ImageSlideshow/Kingfisher'
   pod 'MSPeekCollectionViewDelegateImplementation'
   pod 'DropDown', '2.3.13'
-  pod 'SwipeBack', '~> 1.1'
   pod 'Localize-Swift', '~> 3.2'
   pod 'ReachabilitySwift'
   

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwipeBack
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

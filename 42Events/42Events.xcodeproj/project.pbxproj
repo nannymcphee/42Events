@@ -17,7 +17,6 @@
 		E12565812656BC8B00CCCEA7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125657F2656BC8B00CCCEA7 /* SettingTableViewCell.swift */; };
 		E12565822656BC8B00CCCEA7 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */; };
 		E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125658D2656BCED00CCCEA7 /* Setting.swift */; };
-		E12565A22656C55400CCCEA7 /* SwipeBackNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */; };
 		E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565A62656CA9E00CCCEA7 /* Language.swift */; };
 		E12565BA2656D27C00CCCEA7 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565B92656D27C00CCCEA7 /* Text.swift */; };
 		E12565BF2656D2E700CCCEA7 /* Localize+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */; };
@@ -59,6 +58,7 @@
 		E1468FC726581481009D7971 /* MedalViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1468FC526581481009D7971 /* MedalViewTableViewCell.xib */; };
 		E1468FD1265818D7009D7971 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */; };
 		E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */; };
+		E1498F692658B0F400043C42 /* SwipeBackNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */; };
 		E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
 		E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CA2656592B00AC13C5 /* EventsApi.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
@@ -140,7 +140,6 @@
 		E125657F2656BC8B00CCCEA7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
 		E125658D2656BCED00CCCEA7 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeBackNavigationController.swift; sourceTree = "<group>"; };
 		E12565A62656CA9E00CCCEA7 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		E12565B92656D27C00CCCEA7 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localize+Ext.swift"; sourceTree = "<group>"; };
@@ -197,6 +196,7 @@
 		E1468FC526581481009D7971 /* MedalViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedalViewTableViewCell.xib; sourceTree = "<group>"; };
 		E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeBackNavigationController.swift; sourceTree = "<group>"; };
 		E180B6C5265658CF00AC13C5 /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
 		E180B6CA2656592B00AC13C5 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		E180B6CF26565A0F00AC13C5 /* AppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDialog.swift; sourceTree = "<group>"; };
@@ -360,6 +360,7 @@
 				E1A3920C26560D0700F7E378 /* PaddingLabel.swift */,
 				E122C28E2656406A008611DF /* DynamicHeightCollectionView.swift */,
 				E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */,
+				E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */,
 				E12565E12657518200CCCEA7 /* TableViewCell.swift */,
 				E12565E62657521900CCCEA7 /* CollectionViewCell.swift */,
 				E13781272657A7D60028839A /* BaseView.swift */,
@@ -621,7 +622,6 @@
 				E122C29326564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift */,
 				E180B6CF26565A0F00AC13C5 /* AppDialog.swift */,
 				E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */,
-				E12565A12656C55400CCCEA7 /* SwipeBackNavigationController.swift */,
 				E12565B92656D27C00CCCEA7 /* Text.swift */,
 				E1A755A8265759FD0087412E /* AppConstants.swift */,
 				E1D466A526580F6E00CBF384 /* NibLoadable.swift */,
@@ -1046,9 +1046,9 @@
 				E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */,
 				E122C29426564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				E1468FB8265813FF009D7971 /* EventTableViewCell.swift in Sources */,
-				E12565A22656C55400CCCEA7 /* SwipeBackNavigationController.swift in Sources */,
 				E13A93A92658A05200348FDE /* XDecodingWrapper.swift in Sources */,
 				E12565762656BBD300CCCEA7 /* SettingsVC.swift in Sources */,
+				E1498F692658B0F400043C42 /* SwipeBackNavigationController.swift in Sources */,
 				E12565E22657518200CCCEA7 /* TableViewCell.swift in Sources */,
 				E1A391EA265603AB00F7E378 /* String+Ext.swift in Sources */,
 				E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */,

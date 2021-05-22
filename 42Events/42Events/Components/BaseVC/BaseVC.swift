@@ -12,7 +12,13 @@ import Localize_Swift
 class BaseViewController: UIViewController {
     //MARK: - VARIABLES
     private let BTN_BACK_WIDTH: CGFloat = 36
-    let reachability = try? Reachability()
+    private let reachability = try? Reachability()
+    
+    public var isSwipeBackEnabled: Bool = false {
+        didSet {
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = isSwipeBackEnabled
+        }
+    }
     
     //MARK: - OVERRIDES
     override func viewDidLoad() {
