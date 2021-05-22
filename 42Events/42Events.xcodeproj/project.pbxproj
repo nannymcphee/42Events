@@ -63,7 +63,6 @@
 		E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CA2656592B00AC13C5 /* EventsApi.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
 		E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */; };
-		E180B7072656A3C200AC13C5 /* EventFilterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7062656A3C200AC13C5 /* EventFilterResponse.swift */; };
 		E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */; };
 		E1A390B126553DD000F7E378 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A390AF26553DD000F7E378 /* EventsVC.swift */; };
 		E1A390B226553DD000F7E378 /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A390B026553DD000F7E378 /* EventsVC.xib */; };
@@ -201,7 +200,6 @@
 		E180B6CA2656592B00AC13C5 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		E180B6CF26565A0F00AC13C5 /* AppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDialog.swift; sourceTree = "<group>"; };
 		E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightFlowLayout.swift; sourceTree = "<group>"; };
-		E180B7062656A3C200AC13C5 /* EventFilterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFilterResponse.swift; sourceTree = "<group>"; };
 		E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1A390AF26553DD000F7E378 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		E1A390B026553DD000F7E378 /* EventsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsVC.xib; sourceTree = "<group>"; };
@@ -325,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				E1A3918E265574FD00F7E378 /* EventListResponse.swift */,
-				E180B7062656A3C200AC13C5 /* EventFilterResponse.swift */,
 			);
 			path = RemoteModels;
 			sourceTree = "<group>";
@@ -1036,7 +1033,6 @@
 				E137810A265798030028839A /* EventsListView.swift in Sources */,
 				E13A93A22658A05200348FDE /* DataUpload.swift in Sources */,
 				E13A93BF2658A19000348FDE /* Int+Ext.swift in Sources */,
-				E180B7072656A3C200AC13C5 /* EventFilterResponse.swift in Sources */,
 				E13A93CB2658A3EC00348FDE /* EventEndPoint.swift in Sources */,
 				E1D466A626580F6E00CBF384 /* NibLoadable.swift in Sources */,
 				E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */,
@@ -1282,15 +1278,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZCX458UUY2;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MZ84R57GH6;
 				INFOPLIST_FILE = 42Events/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.42events;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.42events;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = provisioning_test_development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1302,15 +1300,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZCX458UUY2;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = MZ84R57GH6;
 				INFOPLIST_FILE = 42Events/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.42events;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.42events;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = provisioning_test_development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,11 +7,6 @@
 
 import Foundation
 
-struct RaceEventsResponse: Codable {
-    let code: Int
-    let data: EventListResponse
-}
-
 struct EventListResponse: Codable {
     let featured, startingSoon, popular: [Event]
     let newRelease, free, past: [Event]
