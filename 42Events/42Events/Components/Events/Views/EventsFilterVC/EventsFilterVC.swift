@@ -32,7 +32,6 @@ class EventsFilterVC: BaseViewController {
     private var sportType: String = ""
     private var viewType: ViewType = .events
     private var events: [Event] = []
-    private var refreshControl = UIRefreshControl()
 
     
     // MARK: - OVERRIDES
@@ -64,7 +63,7 @@ class EventsFilterVC: BaseViewController {
         self.tbEvents.reloadData()
     }
     
-    @objc private func reloadData() {
+    @objc override func reloadData() {
         self.getEventsBySportType()
     }
     
@@ -87,7 +86,6 @@ class EventsFilterVC: BaseViewController {
         tbEvents.estimatedRowHeight = 200
         tbEvents.rowHeight = UITableView.automaticDimension
         
-        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
         tbEvents.refreshControl = refreshControl
     }
     

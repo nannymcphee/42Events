@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
     private let BTN_BACK_WIDTH: CGFloat = 36
     private let reachability = try? Reachability()
     
+    public var refreshControl = UIRefreshControl()
     public var isSwipeBackEnabled: Bool = false {
         didSet {
             self.navigationController?.interactivePopGestureRecognizer?.isEnabled = isSwipeBackEnabled
@@ -25,6 +26,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
         self.addObservers()
         self.localizeContent()
+        self.initRefreshControl()
         self.initDefaultNavigationBar()
     }
     
@@ -49,6 +51,10 @@ class BaseViewController: UIViewController {
     private func removeObservers() {
         reachability?.stopNotifier()
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func initRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
     }
     
     private func initDefaultNavigationBar() {
@@ -97,6 +103,8 @@ class BaseViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    @objc func reloadData() {}
     
     @objc func localizeContent() {}
         

@@ -22,7 +22,6 @@ class EventsVC: BaseViewController {
     }
     
     // MARK: - VARIABLES
-    private let refreshControl = UIRefreshControl()
     private var sectionList = [
         Section(id: "startingSoon", title: Text.startingSoon,   data: []),
         Section(id: "popular",      title: Text.popular,        data: []),
@@ -67,7 +66,7 @@ class EventsVC: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    @objc private func reloadData() {
+    @objc override func reloadData() {
         self.getListEvents()
         self.refreshControl.endRefreshing()
     }
@@ -100,7 +99,6 @@ class EventsVC: BaseViewController {
     }
     
     private func initRefreshControl() {
-        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
         scrollView.refreshControl = refreshControl
     }
     
