@@ -8,6 +8,8 @@
 import Foundation
 
 class AppConstants {
+    static var serverUrl: String = "https://api-v2-sg-staging.42race.com/api/v1"
+    
     static var languages = [
         Language(code: "en",        name: "English"),
         Language(code: "zh-Hans",   name: "简体 中文"),

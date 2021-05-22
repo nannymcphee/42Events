@@ -20,4 +20,8 @@ extension String {
         let rect = attributedText.boundingRect(with: constraintBox, options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil).integral
         return CGSize(width: ceil(rect.size.width), height: ceil(rect.size.height))
     }
+    
+    func replace(_ target: String, withString: String) -> String {
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
+    }
 }

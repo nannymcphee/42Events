@@ -49,7 +49,7 @@ class EventsFilterVC: BaseViewController {
         super.localizeContent()
         self.initNavigationBar()
         let suffix = events.count > 1 ? Text.events.localized.lowercased() : Text.event.localized.lowercased()
-        self.lbEventsCount.text = "\(events.count) \(self.sportType.localized) \(suffix)" + "\(events.count) \(self.sportType.localized) \(suffix)"
+        self.lbEventsCount.text = "\(events.count) \(self.sportType.localized) \(suffix)"
         self.lbMedalView.text = Text.medalView.localized
     }
     

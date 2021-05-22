@@ -6,7 +6,6 @@ target '42Events' do
   use_frameworks!
 
   # Pods for 42Events
-  pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 6.0'
   pod 'ImageSlideshow', '~> 1.9.0'
   pod 'ImageSlideshow/Kingfisher'
