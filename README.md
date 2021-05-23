@@ -12,7 +12,7 @@
 5. Build & run.
 
 ### Functionalities ###
-1. List all events: Featured, Starting soon, Popular, New release, Free.
+1. List all events: Featured, Starting soon, Popular, New release, Free, Past.
 2. Filter events by activities: Running, Cycling, Walking.
-3. Medal view.
+3. Medal view filter screen.
 4. Multi-language support.
