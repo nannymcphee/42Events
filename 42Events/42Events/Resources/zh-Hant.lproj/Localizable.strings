@@ -37,3 +37,4 @@
 
 // MARK: - Alert
 "You are offline. Please check your network connection." = "您離線。請檢查您的網絡連接。";
+"Unable to load event detail\nPlease try again later." = "無法加載事件詳細信息\n請稍後再試。";

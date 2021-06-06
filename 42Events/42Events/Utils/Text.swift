@@ -33,4 +33,5 @@ class Text {
     static var multipleSubmission = "Multiple submission"
     static var networkConnectionAlertMessage = "You are offline. Please check your network connection."
     static var freeMedalEngraving = "FREE MEDAL ENGRAVING"
+    static var eventDetailLoadFailedAlertMessage = "Unable to load event detail\nPlease try again later."
 }

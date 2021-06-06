@@ -38,3 +38,4 @@
 
 // MARK: - Alert
 "You are offline. Please check your network connection." = "Anda sedang offline. Silakan periksa koneksi jaringan Anda.";
+"Unable to load event detail\nPlease try again later." = "Tidak dapat memuat detail acara\nSilakan coba lagi nanti.";

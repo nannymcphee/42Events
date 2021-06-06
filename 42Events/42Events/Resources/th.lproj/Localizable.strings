@@ -38,3 +38,4 @@
 
 // MARK: - Alert
 "You are offline. Please check your network connection." = "คุณออฟไลน์อยู่ โปรดตรวจสอบการเชื่อมต่อเครือข่ายของคุณ";
+"Unable to load event detail\nPlease try again later." = "ไม่สามารถโหลดรายละเอียดกิจกรรม\nโปรดลองอีกครั้งในภายหลัง";

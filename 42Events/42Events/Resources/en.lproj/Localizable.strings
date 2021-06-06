@@ -38,3 +38,4 @@
 
 // MARK: - Alert
 "You are offline. Please check your network connection." = "You are offline. Please check your network connection.";
+"Unable to load event detail\nPlease try again later." = "Unable to load event detail\nPlease try again later.";

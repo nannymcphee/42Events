@@ -38,3 +38,4 @@
 
 // MARK: - Alert
 "You are offline. Please check your network connection." = "Bạn đang offline. Vui lòng kiểm tra lại kết nối mạng.";
+"Unable to load event detail\nPlease try again later." = "Không thể tải chi tiết sự kiện\nVui lòng thử lại sau.";

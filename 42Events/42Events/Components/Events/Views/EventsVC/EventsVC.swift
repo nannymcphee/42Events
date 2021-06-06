@@ -31,6 +31,7 @@ class EventsVC: BaseViewController {
     ]
     
     private var eventListViews: [EventsListView] = []
+    private var eventListResponse: EventListResponse? = nil
     private var sportTypeListView: SportTypeListView?
     
     // MARK: - OVERRIDES
@@ -59,6 +60,13 @@ class EventsVC: BaseViewController {
     // MARK: - ACTIONS
     @objc private func didTapNotificationButton() {
         
+    }
+    
+    @objc private func didTapSlideshow() {
+        guard let response = self.eventListResponse else { return }
+        let featuredEvent = response.featured[self.vSlideshow.currentPage]
+        let vc = EventDetailVC.instanceWithNavController(event: featuredEvent)
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc private func didTapMenuButton() {
@@ -90,6 +98,9 @@ class EventsVC: BaseViewController {
         vSlideshow.pageIndicatorPosition = .init(horizontal: .center, vertical: .bottom)
         vSlideshow.slideshowInterval = 5.0
         vSlideshow.contentScaleMode = UIViewContentMode.scaleAspectFill
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapSlideshow))
+        vSlideshow.addGestureRecognizer(tapGesture)
     }
     
     private func initSportTypeListView() {
@@ -111,6 +122,7 @@ class EventsVC: BaseViewController {
     }
     
     private func populateData(with response: EventListResponse) {
+        self.eventListResponse = response
         // Featured
         let imageSource = response.featured.compactMap { KingfisherSource(urlString: $0.bannerCard) }
         self.vSlideshow.setImageInputs(imageSource)
@@ -150,6 +162,7 @@ extension EventsVC: SportTypeListViewDelegate {
 
 extension EventsVC: EventsListViewDelegate {
     func didSelectEvent(_ event: Event) {
-        print("didSelectEvent: \(event)")
+        let vc = EventDetailVC.instanceWithNavController(event: event)
+        self.present(vc, animated: true, completion: nil)
     }
 }

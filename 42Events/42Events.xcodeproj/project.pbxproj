@@ -52,6 +52,9 @@
 		E13A93B42658A05200348FDE /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A939A2658A05200348FDE /* EndPointType.swift */; };
 		E13A93BF2658A19000348FDE /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93BE2658A19000348FDE /* Int+Ext.swift */; };
 		E13A93CB2658A3EC00348FDE /* EventEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93CA2658A3EC00348FDE /* EventEndPoint.swift */; };
+		E13D2210266D2801003BD4B1 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D220E266D2801003BD4B1 /* EventDetailVC.swift */; };
+		E13D2211266D2801003BD4B1 /* EventDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13D220F266D2801003BD4B1 /* EventDetailVC.xib */; };
+		E13D2219266D377A003BD4B1 /* WKWebView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2218266D377A003BD4B1 /* WKWebView+Ext.swift */; };
 		E1468FB8265813FF009D7971 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FB6265813FF009D7971 /* EventTableViewCell.swift */; };
 		E1468FB9265813FF009D7971 /* EventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1468FB7265813FF009D7971 /* EventTableViewCell.xib */; };
 		E1468FC626581481009D7971 /* MedalViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FC426581481009D7971 /* MedalViewTableViewCell.swift */; };
@@ -189,6 +192,9 @@
 		E13A939A2658A05200348FDE /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		E13A93BE2658A19000348FDE /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		E13A93CA2658A3EC00348FDE /* EventEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEndPoint.swift; sourceTree = "<group>"; };
+		E13D220E266D2801003BD4B1 /* EventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
+		E13D220F266D2801003BD4B1 /* EventDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventDetailVC.xib; sourceTree = "<group>"; };
+		E13D2218266D377A003BD4B1 /* WKWebView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Ext.swift"; sourceTree = "<group>"; };
 		E1468FB6265813FF009D7971 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		E1468FB7265813FF009D7971 /* EventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventTableViewCell.xib; sourceTree = "<group>"; };
 		E1468FC426581481009D7971 /* MedalViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalViewTableViewCell.swift; sourceTree = "<group>"; };
@@ -505,6 +511,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		E13D220D266D27DA003BD4B1 /* EventDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				E13D220E266D2801003BD4B1 /* EventDetailVC.swift */,
+				E13D220F266D2801003BD4B1 /* EventDetailVC.xib */,
+			);
+			path = EventDetailVC;
+			sourceTree = "<group>";
+		};
 		E1468FB5265813EF009D7971 /* EventTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +550,7 @@
 		E1A390AA26553CE700F7E378 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E13D220D266D27DA003BD4B1 /* EventDetailVC */,
 				E1A390AE26553DB300F7E378 /* EventsFilterVC */,
 				E1A390AD26553DA800F7E378 /* EventsVC */,
 				E1A390AC26553D8700F7E378 /* Cells */,
@@ -636,6 +652,7 @@
 				E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */,
 				E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */,
 				E13A93BE2658A19000348FDE /* Int+Ext.swift */,
+				E13D2218266D377A003BD4B1 /* WKWebView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -869,6 +886,7 @@
 				E1D4669926580E2F00CBF384 /* EventContentView.xib in Resources */,
 				E1A39114265542E100F7E378 /* Metropolis-Medium.otf in Resources */,
 				E1A3910A265542E100F7E378 /* Metropolis-Bold.otf in Resources */,
+				E13D2211266D2801003BD4B1 /* EventDetailVC.xib in Resources */,
 				E1F325942655035A003525D6 /* Main.storyboard in Resources */,
 				E1468FB9265813FF009D7971 /* EventTableViewCell.xib in Resources */,
 				E1A3916F2655653000F7E378 /* EventActivityCollectionViewCell.xib in Resources */,
@@ -1033,6 +1051,7 @@
 				E137810A265798030028839A /* EventsListView.swift in Sources */,
 				E13A93A22658A05200348FDE /* DataUpload.swift in Sources */,
 				E13A93BF2658A19000348FDE /* Int+Ext.swift in Sources */,
+				E13D2210266D2801003BD4B1 /* EventDetailVC.swift in Sources */,
 				E13A93CB2658A3EC00348FDE /* EventEndPoint.swift in Sources */,
 				E1D466A626580F6E00CBF384 /* NibLoadable.swift in Sources */,
 				E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */,
@@ -1071,6 +1090,7 @@
 				E13A93AE2658A05200348FDE /* XLog.swift in Sources */,
 				E1A3917C2655669D00F7E378 /* UIView+Ext.swift in Sources */,
 				E13A939E2658A05200348FDE /* ParameterEncoding.swift in Sources */,
+				E13D2219266D377A003BD4B1 /* WKWebView+Ext.swift in Sources */,
 				E13A93A12658A05200348FDE /* MultipartFormData.swift in Sources */,
 				E12565812656BC8B00CCCEA7 /* SettingTableViewCell.swift in Sources */,
 				E13A93A02658A05200348FDE /* JSONParameterEncoder.swift in Sources */,

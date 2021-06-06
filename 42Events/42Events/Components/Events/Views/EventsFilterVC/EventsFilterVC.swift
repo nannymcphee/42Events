@@ -134,6 +134,7 @@ extension EventsFilterVC: UITableViewDataSource {
 
 extension EventsFilterVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("tapped \(events[indexPath.item])")
+        let vc = EventDetailVC.instanceWithNavController(event: events[indexPath.item])
+        self.present(vc, animated: true, completion: nil)
     }
 }
