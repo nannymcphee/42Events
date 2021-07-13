@@ -12,6 +12,12 @@ struct Activity {
     var color: UIColor
     var image: UIImage
     
+    init() {
+        self.name = ""
+        self.color = .clear
+        self.image = UIImage()
+    }
+    
     init(name: String, color: UIColor, image: UIImage) {
         self.name = name
         self.color = color

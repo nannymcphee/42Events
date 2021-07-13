@@ -60,7 +60,7 @@ class EventContentView: BaseView {
     }
     
     // MARK: - Public functions
-    public func populateData(_ data: Event) {
+    public func populateData(_ data: EventModel) {
         self.lbTitle.text = data.raceName
         self.lbSubtitle.text = data.racePeriod
         self.lbMedalEngraving.isHidden = !data.isFreeEngraving

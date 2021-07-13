@@ -6,23 +6,29 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 import MSPeekCollectionViewDelegateImplementation
 
 protocol EventsListViewDelegate: class {
-    func didSelectEvent(_ event: Event)
+    func didSelectEvent(_ event: EventModel)
 }
 
 class EventsListView: BaseView {
+    enum Event {
+        case didSelectEvent(EventModel)
+    }
+    
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var cvEvents: UICollectionView!
     
     // MARK: - Variables
     private var behavior: MSCollectionViewPeekingBehavior!
-    private weak var delegate: EventsListViewDelegate?
-    private var events = [Event]()
+    private var events = [EventModel]()
     private var sectionTitle: String?
     
     public var sectionId: String = ""
+    public var eventPublisher = PublishSubject<Event>()
 
     // MARK: - OVERRIDES
     override func awakeFromNib() {
@@ -31,13 +37,12 @@ class EventsListView: BaseView {
         
     
     // MARK: - PUBLIC FUNCTIONS
-    static func instance(with events: [Event], sectionTitle: String?, sectionId: String, delegate: EventsListViewDelegate?) -> EventsListView {
+    static func instance(with events: [EventModel], sectionTitle: String?, sectionId: String = "") -> EventsListView {
         let nib = UINib(nibName: "EventsListView", bundle: Bundle(for: EventsListView.self))
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? EventsListView else {
             return EventsListView()
         }
         view.events = events
-        view.delegate = delegate
         view.sectionTitle = sectionTitle
         view.sectionId = sectionId
         view.populateData(with: events)
@@ -45,7 +50,7 @@ class EventsListView: BaseView {
     }
     
     // MARK: - PUBLIC FUNCTIONS
-    public func populateData(with events: [Event]) {
+    public func populateData(with events: [EventModel]) {
         self.events = events
         self.lbTitle.text = self.sectionTitle?.localized
         self.behavior = MSCollectionViewPeekingBehavior(cellSpacing: 10,
@@ -94,7 +99,7 @@ extension EventsListView: UICollectionViewDataSource {
 
 extension EventsListView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.didSelectEvent(events[indexPath.item])
+        self.eventPublisher.onNext(.didSelectEvent(events[indexPath.item]))
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

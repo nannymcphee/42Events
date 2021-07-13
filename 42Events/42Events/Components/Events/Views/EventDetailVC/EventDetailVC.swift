@@ -7,31 +7,32 @@
 
 import UIKit
 import WebKit
+import RxSwift
+import RxCocoa
 
-class EventDetailVC: BaseViewController {
+class EventDetailVC: BaseViewController, BindableType {
+    // MARK: - ViewModel
+    internal var viewModel: EventDetailVM!
+
     // MARK: - Instance
-    public static func instanceWithNavController(event: Event) -> UINavigationController {
+    public static func instance() -> EventDetailVC {
         let vc = EventDetailVC()
-        vc.event = event
-        let nav = UINavigationController(rootViewController: vc)
-        return nav
+        return vc
     }
     
     // MARK: - IBOUTLETS
     
     
     // MARK: - VARIABLES
-    private var event: Event!
     private var webView: WKWebView!
-    private let contentController = WKUserContentController()
-
+    private let viewDidLoadTrigger = PublishSubject<Void>()
+    private let networkConnectionTrigger = PublishSubject<Void>()
     
     // MARK: - OVERRIDES
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.initUI()
-        self.initWebView()
         self.initNavigationBar()
     }
     
@@ -41,13 +42,45 @@ class EventDetailVC: BaseViewController {
     
     override func onNetworkConnectionRestored() {
         super.onNetworkConnectionRestored()
-        self.loadWebView(event: self.event)
+        networkConnectionTrigger.onNext(())
+        networkConnectionTrigger.onCompleted()
     }
     
     // MARK: - ACTIONS
     
     
     // MARK: - FUNCTIONS
+    func bindViewModel() {
+        let input = EventDetailVM.Input(intialLoad: viewDidLoadTrigger.asObservable(),
+                                        networkConnectionRestored: networkConnectionTrigger.asObservable())
+        let output = viewModel.transform(input: input)
+        
+        // WebView configuration
+        output.webViewConfig
+            .drive(onNext: { [weak self] config in
+                guard let self = self else { return }
+                self.initWebView(config: config)
+            })
+            .disposed(by: disposeBag)
+        
+        // Load WebView
+        output.detailURL
+            .drive(onNext: { [weak self] url in
+                guard let self = self, let url = url else { return }
+                self.loadWebView(url)
+            })
+            .disposed(by: disposeBag)
+        
+        // Loading
+        let loading = webView.rx.loading.share(replay: 1, scope: .whileConnected)
+        loading
+            .asDriverOnErrorJustComplete()
+            .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
+            .disposed(by: disposeBag)
+        
+        viewDidLoadTrigger.onNext(())
+    }
+    
     private func initUI() {
         
     }
@@ -56,37 +89,14 @@ class EventDetailVC: BaseViewController {
         self.showBackButton()
     }
     
-    private func initWebView() {
-        // Hide header & footer div
-        let headerClass = event.sportType == .running ? "dashboard-header" : "home-header-main"
-        let footerClass = "box-footer"
-        let divIds = [headerClass, footerClass]
-        self.removeDiv(ids: divIds)
-        
-        // Init WebView configuration
-        let config = WKWebViewConfiguration()
-        config.userContentController = contentController
-
+    private func initWebView(config: WKWebViewConfiguration) {
         self.webView = WKWebView(frame: view.bounds, configuration: config)
         self.webView.requestDesktopMode()
+        self.webView.allowsBackForwardNavigationGestures = true
         self.view = self.webView
-        self.loadWebView(event: self.event)
     }
     
-    private func loadWebView(event: Event) {
-        let path = event.sportType == .running ? "race" : "race-bundle"
-        guard let url = URL(string: "https://d3iafmipte35xo.cloudfront.net/\(path)/\(event.id)") else {
-            AppDialog.withOk(controller: self, title: Text.error.localized, message: Text.eventDetailLoadFailedAlertMessage.localized)
-            return
-        }
-        
+    private func loadWebView(_ url: URL) {
         webView.load(URLRequest(url: url))
-        webView.allowsBackForwardNavigationGestures = true
-    }
-    
-    private func removeDiv(ids: [String]) {
-        let scripts = ids.map { "document.querySelector('.\($0)').remove();" }
-        let userScripts = scripts.map { WKUserScript(source: $0 as String, injectionTime: .atDocumentEnd, forMainFrameOnly: false) }
-        userScripts.forEach { contentController.addUserScript($0) }
     }
 }

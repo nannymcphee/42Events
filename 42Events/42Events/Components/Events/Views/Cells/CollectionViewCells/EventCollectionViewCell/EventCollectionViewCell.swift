@@ -29,7 +29,7 @@ class EventCollectionViewCell: DynamicHeightCollectionViewCell {
     
 
     // MARK: - Public functions
-    public func configureCell(data: Event) {
+    public func configureCell(data: EventModel) {
         self.vEventContent.populateData(data)
     }
 }

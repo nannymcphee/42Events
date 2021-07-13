@@ -8,8 +8,8 @@
 import Foundation
 
 struct EventListResponse: Codable {
-    let featured, startingSoon, popular: [Event]
-    let newRelease, free, past: [Event]
+    let featured, startingSoon, popular: [EventModel]
+    let newRelease, free, past: [EventModel]
     let id, updatedAt: String
     
     init() {

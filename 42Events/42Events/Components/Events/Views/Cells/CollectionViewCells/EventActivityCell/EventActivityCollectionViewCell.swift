@@ -6,12 +6,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxGesture
 
 class EventActivityCollectionViewCell: CollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var vContainer: UIView!
     @IBOutlet weak var lbActivityName: UILabel!
     @IBOutlet weak var ivThumbnail: UIImageView!
+    
+    // MARK: - Variables
+    private var binding: Binder<Activity> {
+        return Binder(self) { (cell, activity) in
+            cell.configureCell(data: activity)
+        }
+    }
     
     // MARK: - Overrides
     override func awakeFromNib() {
@@ -32,4 +42,28 @@ class EventActivityCollectionViewCell: CollectionViewCell {
         lbActivityName.text = data.name.localized
         ivThumbnail.image = data.image
     }
+    
+    public func bind(_ viewModel: EventActivityCellVM) {
+        viewModel.activity
+            .drive(self.binding)
+            .disposed(by: disposeBag)
+    }
 }
+
+class EventActivityCellVM {
+    private let _activity = BehaviorRelay<Activity>(value: Activity())
+    var activity: Driver<Activity> {
+        return self._activity
+            .asObservable()
+            .asDriverOnErrorJustComplete()
+    }
+    
+    var item: Activity {
+        return self._activity.value
+    }
+    
+    init(_ activity: Activity) {
+        self._activity.accept(activity)
+    }
+}
+

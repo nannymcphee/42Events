@@ -22,7 +22,7 @@ class EventTableViewCell: TableViewCell {
         self.vEventContent.updateLocalize()
     }
     
-    public func configureCell(data: Event) {
+    public func configureCell(data: EventModel) {
         self.vEventContent.populateData(data)
     }
 }

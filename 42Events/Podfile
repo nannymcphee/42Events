@@ -14,6 +14,13 @@ target '42Events' do
   pod 'Localize-Swift', '~> 3.2'
   pod 'ReachabilitySwift'
   
+  pod 'RxSwift', '~> 6.2.0'
+  pod 'RxCocoa', '~> 6.2.0'
+  pod 'XCoordinator', '~> 2.0'
+  pod 'RxGesture', '~> 4.0.2'
+  pod 'RxDataSources', '~> 5.0.0'
+  pod 'Carbon'
+  
   target '42EventsTests' do
     inherit! :search_paths
     # Pods for testing

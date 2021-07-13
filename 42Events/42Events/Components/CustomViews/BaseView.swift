@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class BaseView: UIView, NibLoadable {
     @IBOutlet weak var subView: UIView!
+    
+    public let disposeBag = DisposeBag()
     
     override func awakeFromNib() {
         super.awakeFromNib()

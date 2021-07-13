@@ -51,9 +51,6 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="47" id="8Gh-oI-eMH"/>
                             </constraints>
-                            <connections>
-                                <action selector="didToggleMedalView:" destination="-1" eventType="valueChanged" id="pjr-4A-Vmg"/>
-                            </connections>
                         </switch>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,7 +74,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="wsM-ZM-GUF" secondAttribute="trailing" id="FRK-6y-CTY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DUJ-jY-H23" secondAttribute="trailing" id="GXE-Fd-I3Y"/>
-                <constraint firstItem="DUJ-jY-H23" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Mpk-UQ-Gj2"/>
+                <constraint firstItem="DUJ-jY-H23" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Mpk-UQ-Gj2"/>
                 <constraint firstAttribute="bottom" secondItem="wsM-ZM-GUF" secondAttribute="bottom" id="YVS-Gb-ZTb"/>
                 <constraint firstItem="DUJ-jY-H23" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oAv-XO-OBK"/>
                 <constraint firstItem="wsM-ZM-GUF" firstAttribute="top" secondItem="DUJ-jY-H23" secondAttribute="bottom" id="roL-Gc-1yB"/>

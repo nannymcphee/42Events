@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 import Reachability
 import Localize_Swift
 
@@ -14,13 +15,15 @@ class BaseViewController: UIViewController {
     private let BTN_BACK_WIDTH: CGFloat = 36
     private let reachability = try? Reachability()
     
+    public let disposeBag = DisposeBag()
     public var refreshControl = UIRefreshControl()
     public var isSwipeBackEnabled: Bool = false {
         didSet {
             self.navigationController?.interactivePopGestureRecognizer?.isEnabled = isSwipeBackEnabled
         }
     }
-    
+    public let refreshTrigger = PublishSubject<Void>()
+
     //MARK: - OVERRIDES
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +57,12 @@ class BaseViewController: UIViewController {
     }
     
     private func initRefreshControl() {
-        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+//        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        refreshControl.rx
+            .controlEvent(.valueChanged)
+            .asObservable()
+            .bind(to: refreshTrigger)
+            .disposed(by: disposeBag)
     }
     
     private func initDefaultNavigationBar() {

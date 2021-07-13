@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Event: Codable {
+struct EventModel: Codable {
     let id: String
     let raceIDs: [String]
     let slug, raceName: String

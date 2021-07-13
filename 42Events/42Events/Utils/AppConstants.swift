@@ -9,6 +9,7 @@ import Foundation
 
 class AppConstants {
     static var serverUrl: String = "https://api-v2-sg-staging.42race.com/api/v1"
+    static var detailUrl: String = "https://d3iafmipte35xo.cloudfront.net"
     
     static var languages = [
         Language(code: "en",        name: "English"),

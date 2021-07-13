@@ -31,7 +31,7 @@ class MedalViewTableViewCell: TableViewCell {
         self.tvTags.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
     }
     
-    private func getTagsText(data: Event) -> String? {
+    private func getTagsText(data: EventModel) -> String? {
         var firstLineComponents: [String] = [data.sportType.rawValue.capitalizeFirst.localized]
         var firstLine = ""
         var secondLine = ""
@@ -54,7 +54,7 @@ class MedalViewTableViewCell: TableViewCell {
         return text
     }
     
-    public func configureCell(data: Event) {
+    public func configureCell(data: EventModel) {
         self.ivThumbnail.setImage(url: data.medalViewImage)
         self.lbTitle.text = data.raceName
         self.lbSubtitle.text = data.racePeriod
