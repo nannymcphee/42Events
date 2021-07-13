@@ -20,6 +20,7 @@ target '42Events' do
   pod 'RxGesture', '~> 4.0.2'
   pod 'RxDataSources', '~> 5.0.0'
   pod 'Carbon'
+  pod 'Resolver', '~> 1.4.3'
   
   target '42EventsTests' do
     inherit! :search_paths

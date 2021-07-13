@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EventListResponse: Codable {
+public struct EventListResponse: Codable {
     let featured, startingSoon, popular: [EventModel]
     let newRelease, free, past: [EventModel]
     let id, updatedAt: String

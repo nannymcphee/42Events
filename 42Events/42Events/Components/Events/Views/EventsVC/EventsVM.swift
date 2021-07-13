@@ -7,6 +7,7 @@
 
 import RxSwift
 import RxCocoa
+import Resolver
 
 class EventsVM: BaseVM, ViewModelType, EventPublisherType {
     
@@ -40,7 +41,7 @@ class EventsVM: BaseVM, ViewModelType, EventPublisherType {
     
     
     // MARK: Private variables
-    private let eventsApi = EventsApi.shared
+    @Injected private var eventsRepo: EventsRepo
     private var eventListResponse: EventListResponse? = nil
     private var sectionList = BehaviorRelay<[EventSection]>(value: [
         EventSection(id: "startingSoon", title: Text.startingSoon,   data: []),
@@ -50,38 +51,30 @@ class EventsVM: BaseVM, ViewModelType, EventPublisherType {
         EventSection(id: "past",         title: Text.pastEvents,     data: []),
     ])
     private var featuredEvents = BehaviorRelay<[EventModel]>(value: [])
+    private let loadingIndicator = ActivityIndicator()
     
     // MARK: Public functions
     func transform(input: Input) -> Output {
-        let loadingIndicator = ActivityIndicator()
         let loading = loadingIndicator.asDriver()
         
         // Load list events
         input.initialLoad
-            .flatMap { [weak self] () -> Observable<Void> in
-                guard let self = self else { return .empty() }
-                
-                return self.loadEvents().trackActivity(loadingIndicator)
-            }
-            .catch({ (err) -> Observable<Void> in
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.loadEvents()
+            }, onError: { err in
                 print("Load events failed: \(err.localizedDescription)")
-                return .empty()
             })
-            .subscribe()
             .disposed(by: disposeBag)
         
         // Refresh data
         input.refresh
-            .flatMap { [weak self] () -> Observable<Void> in
-                guard let self = self else { return .empty() }
-                
-                return self.loadEvents().trackActivity(loadingIndicator)
-            }
-            .catch({ (err) -> Observable<Void> in
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.loadEvents()
+            }, onError: { err in
                 print("Load events failed: \(err.localizedDescription)")
-                return .empty()
             })
-            .subscribe()
             .disposed(by: disposeBag)
         
         // Settings selected
@@ -116,12 +109,12 @@ class EventsVM: BaseVM, ViewModelType, EventPublisherType {
                       loading: loading)
     }
     
-    @discardableResult
-    private func loadEvents() -> Observable<Void> {
-        return eventsApi
-            .getAllEventsRx()
+    private func loadEvents() {
+        eventsRepo
+            .getAllEvents()
             .asObservable()
-            .do { [weak self] (response) in
+            .trackActivity(loadingIndicator)
+            .subscribe(onNext: { [weak self] response in
                 guard let self = self else { return }
                 self.eventListResponse = response
                 // Featured
@@ -139,8 +132,8 @@ class EventsVM: BaseVM, ViewModelType, EventPublisherType {
                     }
                 }
                 self.sectionList.accept(tempSections)
-        }
-        .mapToVoid()
+            })
+            .disposed(by: disposeBag)
             
     }
     

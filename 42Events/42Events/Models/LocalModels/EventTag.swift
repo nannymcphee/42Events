@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct EventTag {
+public struct EventTag {
     var title: String
     var iconName: String?
 }

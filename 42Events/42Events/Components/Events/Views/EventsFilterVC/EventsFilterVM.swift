@@ -7,6 +7,7 @@
 
 import RxSwift
 import RxCocoa
+import Resolver
 
 class EventsFilterVM: BaseVM, ViewModelType, EventPublisherType {
     init(sportType: String) {
@@ -41,42 +42,34 @@ class EventsFilterVM: BaseVM, ViewModelType, EventPublisherType {
 
     
     // MARK: Private variables
-    private let eventsApi = EventsApi.shared
+    @Injected private var eventsRepo: EventsRepo
     private var eventListResponse: EventListResponse? = nil
     private var events = BehaviorRelay<[EventModel]>(value: [])
     private var isMedalView = BehaviorRelay<Bool>(value: false)
+    private let loadingIndicator = ActivityIndicator()
 
     // MARK: Public functions
     func transform(input: Input) -> Output {
-        let loadingIndicator = ActivityIndicator()
         let loading = loadingIndicator.asDriver()
         
         // Load list events
         input.initialLoad
-            .flatMap { [weak self] () -> Observable<Void> in
-                guard let self = self else { return .empty() }
-                
-                return self.loadEvents().trackActivity(loadingIndicator)
-            }
-            .catch({ (err) -> Observable<Void> in
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.loadEvents()
+            }, onError: { (err) in
                 print("Load events failed: \(err.localizedDescription)")
-                return .empty()
             })
-            .subscribe()
             .disposed(by: disposeBag)
         
         // Refresh data
         input.refresh
-            .flatMap { [weak self] () -> Observable<Void> in
-                guard let self = self else { return .empty() }
-                
-                return self.loadEvents().trackActivity(loadingIndicator)
-            }
-            .catch({ (err) -> Observable<Void> in
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.loadEvents()
+            }, onError: { (err) in
                 print("Load events failed: \(err.localizedDescription)")
-                return .empty()
             })
-            .subscribe()
             .disposed(by: disposeBag)
         
         // Medal view toggled
@@ -89,16 +82,13 @@ class EventsFilterVM: BaseVM, ViewModelType, EventPublisherType {
                       loading: loading)
     }
     
-    @discardableResult
-    private func loadEvents() -> Observable<Void> {
-        return eventsApi
-            .getEventsRx(sportType: sportType)
+    private func loadEvents() {
+        eventsRepo
+            .getEvents(sportType: sportType, limit: 10)
             .asObservable()
-            .do(onNext: { [weak self] response in
-                guard let self = self else { return }
-                self.events.accept(response)
-            })
-            .mapToVoid()
+            .trackActivity(loadingIndicator)
+            .bind(to: self.events)
+            .disposed(by: disposeBag)
     }
     
     // MARK: Privates functions

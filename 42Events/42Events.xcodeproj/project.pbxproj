@@ -63,10 +63,11 @@
 		E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */; };
 		E1498F692658B0F400043C42 /* SwipeBackNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */; };
 		E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
-		E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CA2656592B00AC13C5 /* EventsApi.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
 		E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */; };
 		E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */; };
+		E194B751269DF0C400286D14 /* EventsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E194B750269DF0C400286D14 /* EventsRepo.swift */; };
+		E194B75D269DF12600286D14 /* Injections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E194B75C269DF12600286D14 /* Injections.swift */; };
 		E1A390B126553DD000F7E378 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A390AF26553DD000F7E378 /* EventsVC.swift */; };
 		E1A390B226553DD000F7E378 /* EventsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A390B026553DD000F7E378 /* EventsVC.xib */; };
 		E1A390C826553F5B00F7E378 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A390C726553F5B00F7E378 /* BaseVC.swift */; };
@@ -221,10 +222,11 @@
 		E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeBackNavigationController.swift; sourceTree = "<group>"; };
 		E180B6C5265658CF00AC13C5 /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
-		E180B6CA2656592B00AC13C5 /* EventsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApi.swift; sourceTree = "<group>"; };
 		E180B6CF26565A0F00AC13C5 /* AppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDialog.swift; sourceTree = "<group>"; };
 		E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightFlowLayout.swift; sourceTree = "<group>"; };
 		E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewCell.swift; sourceTree = "<group>"; };
+		E194B750269DF0C400286D14 /* EventsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRepo.swift; sourceTree = "<group>"; };
+		E194B75C269DF12600286D14 /* Injections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injections.swift; sourceTree = "<group>"; };
 		E1A390AF26553DD000F7E378 /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		E1A390B026553DD000F7E378 /* EventsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsVC.xib; sourceTree = "<group>"; };
 		E1A390C726553F5B00F7E378 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
@@ -588,6 +590,22 @@
 			path = EventCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		E194B74F269DF0BD00286D14 /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				E194B750269DF0C400286D14 /* EventsRepo.swift */,
+			);
+			path = Repos;
+			sourceTree = "<group>";
+		};
+		E194B75B269DF11D00286D14 /* Injections */ = {
+			isa = PBXGroup;
+			children = (
+				E194B75C269DF12600286D14 /* Injections.swift */,
+			);
+			path = Injections;
+			sourceTree = "<group>";
+		};
 		E1A390AA26553CE700F7E378 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,7 +641,6 @@
 			children = (
 				E1A390AF26553DD000F7E378 /* EventsVC.swift */,
 				E1A390B026553DD000F7E378 /* EventsVC.xib */,
-				E180B6CA2656592B00AC13C5 /* EventsApi.swift */,
 				E1EBA7D626608D51008EAAAB /* EventsRoute.swift */,
 				E1EBA7DB26608D61008EAAAB /* EventsVM.swift */,
 			);
@@ -798,6 +815,8 @@
 		E1F3258B2655035A003525D6 /* 42Events */ = {
 			isa = PBXGroup;
 			children = (
+				E194B75B269DF11D00286D14 /* Injections */,
+				E194B74F269DF0BD00286D14 /* Repos */,
 				E13A93C72658A3D000348FDE /* Components */,
 				E13A937A2658A05200348FDE /* XNetwork */,
 				E12565C326574E5600CCCEA7 /* Resources */,
@@ -1103,7 +1122,6 @@
 				E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */,
 				E13A93A52658A05200348FDE /* XNetworkManager.swift in Sources */,
 				E13A93AF2658A05200348FDE /* JSonKeys.swift in Sources */,
-				E180B6CB2656592B00AC13C5 /* EventsApi.swift in Sources */,
 				E1EBA7CF26608C90008EAAAB /* AppCoordinator.swift in Sources */,
 				E1EBA8252660D349008EAAAB /* ActivitySection.swift in Sources */,
 				E12565BF2656D2E700CCCEA7 /* Localize+Ext.swift in Sources */,
@@ -1114,6 +1132,7 @@
 				E1EBA7FA266095BA008EAAAB /* EventSection.swift in Sources */,
 				E1EBA8382660D3FA008EAAAB /* SectionedTableViewState.swift in Sources */,
 				E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */,
+				E194B751269DF0C400286D14 /* EventsRepo.swift in Sources */,
 				E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */,
 				E1EBA7E126608DFD008EAAAB /* BaseVM.swift in Sources */,
 				E1D4669E26580E3800CBF384 /* EventContentView.swift in Sources */,
@@ -1137,6 +1156,7 @@
 				E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */,
 				E1EBA7D726608D51008EAAAB /* EventsRoute.swift in Sources */,
 				E1A3918F265574FD00F7E378 /* EventListResponse.swift in Sources */,
+				E194B75D269DF12600286D14 /* Injections.swift in Sources */,
 				E12565BA2656D27C00CCCEA7 /* Text.swift in Sources */,
 				E1A755A9265759FD0087412E /* AppConstants.swift in Sources */,
 				E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */,
