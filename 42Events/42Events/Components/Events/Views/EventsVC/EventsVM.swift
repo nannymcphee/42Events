@@ -86,26 +86,20 @@ class EventsVM: BaseVM, ViewModelType, EventPublisherType {
         
         // Settings selected
         input.settingSelected
-            .do(onNext: { [weak self] _ in
-                self?.eventPublisher.onNext(.settings)
-            })
-            .subscribe()
+            .map { Event.settings }
+            .bind(to: eventPublisher)
             .disposed(by: disposeBag)
         
         // Event selected
         input.itemSelected
-            .do(onNext: { [weak self] event in
-                self?.eventPublisher.onNext(.presentEventDetail(event))
-            })
-            .subscribe()
+            .map { Event.presentEventDetail($0) }
+            .bind(to: eventPublisher)
             .disposed(by: disposeBag)
         
         // Sport type selected
         input.sportTypeSelected
-            .do(onNext: { [weak self] sportType in
-                self?.eventPublisher.onNext(.filterEvents(sportType))
-            })
-            .subscribe()
+            .map { Event.filterEvents($0) }
+            .bind(to: eventPublisher)
             .disposed(by: disposeBag)
         
         // Slideshow selected
