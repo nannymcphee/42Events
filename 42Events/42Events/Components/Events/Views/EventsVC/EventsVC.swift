@@ -102,11 +102,7 @@ class EventsVC: BaseViewController, BindableType {
         
         // Pull to refresh
         output.loading
-            .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
-            .disposed(by: disposeBag)
-        
-        output.loading
-            .drive(self.refreshControl.rx.isRefreshing)
+            .drive(UIApplication.shared.rx.isNetworkActivityIndicatorVisible, self.refreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
         
         self.viewDidLoadTrigger.onNext(())
