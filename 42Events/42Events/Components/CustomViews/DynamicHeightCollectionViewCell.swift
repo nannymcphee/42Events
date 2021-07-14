@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DynamicHeightCollectionViewCell: UICollectionViewCell {
+class DynamicHeightCollectionViewCell: CollectionViewCell {
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let layoutAttributes = super.preferredLayoutAttributesFitting(layoutAttributes)
         layoutIfNeeded()

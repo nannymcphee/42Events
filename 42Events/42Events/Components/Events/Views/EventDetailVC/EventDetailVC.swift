@@ -51,8 +51,8 @@ class EventDetailVC: BaseViewController, BindableType {
     
     // MARK: - FUNCTIONS
     func bindViewModel() {
-        let input = EventDetailVM.Input(intialLoad: viewDidLoadTrigger.asObservable(),
-                                        networkConnectionRestored: networkConnectionTrigger.asObservable())
+        let input = EventDetailVM.Input(intialLoad: viewDidLoadTrigger,
+                                        networkConnectionRestored: networkConnectionTrigger)
         let output = viewModel.transform(input: input)
         
         // WebView configuration

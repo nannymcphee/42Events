@@ -46,6 +46,32 @@ public struct EventModel: Codable {
         case joined
     }
     
+    init() {
+        id = ""
+        raceIDs = []
+        slug = ""
+        raceName = ""
+        startDate = ""
+        endDate = ""
+        raceType = ""
+        sportType = .cycling
+        medalEngravingEndDate = nil
+        raceRunners = 0
+        launchDate = ""
+        isNew = false
+        isFreeEngraving = false
+        racePeriod = ""
+        categories = nil
+        racePrice = ""
+        eventType = .single
+        bannerCard = ""
+        medalViewImage = ""
+        isBundle = false
+        brandRaceSlug = ""
+        isBrandRace = false
+        joined = false
+    }
+    
     /*
      sportType
      raceRunners

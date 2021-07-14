@@ -29,7 +29,7 @@
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-lw-Y3i">
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ThZ-lw-Y3i" customClass="EventsRxCollectionView" customModule="_2Events" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="70" width="414" height="370"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>

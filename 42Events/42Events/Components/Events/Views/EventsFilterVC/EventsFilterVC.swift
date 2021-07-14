@@ -64,11 +64,11 @@ class EventsFilterVC: BaseViewController, BindableType {
     
     // MARK: - FUNCTIONS
     func bindViewModel() {
-        let input = EventsFilterVM.Input(initialLoad: viewDidLoadTrigger.asObservable(),
-                                         networkConnectionRestored: networkConnectionTrigger.asObservable(),
-                                         refresh: refreshTrigger.asObservable(),
+        let input = EventsFilterVM.Input(initialLoad: viewDidLoadTrigger,
+                                         networkConnectionRestored: networkConnectionTrigger,
+                                         refresh: refreshTrigger,
                                          medalViewToggle: swMedalView.rx.isOn.asObservable(),
-                                         itemSelected: itemSelectedTrigger.asObservable())
+                                         itemSelected: itemSelectedTrigger)
         let output = viewModel.transform(input: input)
         
         // Events

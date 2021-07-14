@@ -8,11 +8,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import MSPeekCollectionViewDelegateImplementation
-
-protocol EventsListViewDelegate: class {
-    func didSelectEvent(_ event: EventModel)
-}
 
 class EventsListView: BaseView {
     enum Event {
@@ -20,11 +15,10 @@ class EventsListView: BaseView {
     }
     
     @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var cvEvents: UICollectionView!
+    @IBOutlet weak var cvEvents: EventsRxCollectionView!
     
     // MARK: - Variables
-    private var behavior: MSCollectionViewPeekingBehavior!
-    private var events = [EventModel]()
+    private var viewModel: EventListViewVM!
     private var sectionTitle: String?
     
     public var sectionId: String = ""
@@ -42,24 +36,17 @@ class EventsListView: BaseView {
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? EventsListView else {
             return EventsListView()
         }
-        view.events = events
+        view.viewModel = EventListViewVM(events: events)
         view.sectionTitle = sectionTitle
         view.sectionId = sectionId
-        view.populateData(with: events)
+        view.bindViewModel()
         return view
     }
     
     // MARK: - PUBLIC FUNCTIONS
     public func populateData(with events: [EventModel]) {
-        self.events = events
+        self.viewModel.updateEvents(events)
         self.lbTitle.text = self.sectionTitle?.localized
-        self.behavior = MSCollectionViewPeekingBehavior(cellSpacing: 10,
-                                                        cellPeekWidth: 20,
-                                                        maximumItemsToScroll: 1,
-                                                        numberOfItemsToShow: 1,
-                                                        scrollDirection: .horizontal)
-        self.cvEvents.configureForPeekingBehavior(behavior: behavior)
-        self.cvEvents.reloadData()
     }
     
     public override func updateLocalize() {
@@ -70,39 +57,31 @@ class EventsListView: BaseView {
     
     // MARK: - PRIVATE FUNCTIONS
     private func configureView() {
-        self.initCollectionView()
+
     }
     
-    private func initCollectionView() {
-        self.cvEvents.registerNib(EventCollectionViewCell.self)
-        self.cvEvents.delegate = self
-        self.cvEvents.dataSource = self
+    private func bindViewModel() {
+        let input = EventListViewVM.Input()
+        let output = viewModel.transform(input: input)
+        let dataSource = self.cvEvents.dataSource()
+        
+        output.eventModels
+            .drive(cvEvents.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        cvEvents.rx
+            .modelSelected(EventCellItem.self)
+            .asObservable()
+            .subscribe(onNext: { [weak self] item in
+                guard let self = self else { return }
+                
+                switch item {
+                case .event(let viewModel, _):
+                    self.eventPublisher.onNext(.didSelectEvent(viewModel.item))
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 // MARK: - Extensions
-extension EventsListView: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.events.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: EventCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.configureCell(data: self.events[indexPath.item])
-        return cell
-    }
-}
-
-extension EventsListView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.eventPublisher.onNext(.didSelectEvent(events[indexPath.item]))
-    }
-    
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        self.behavior.scrollViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
-    }
-}

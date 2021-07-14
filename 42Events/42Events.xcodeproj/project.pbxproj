@@ -96,6 +96,8 @@
 		E1A3920D26560D0700F7E378 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3920C26560D0700F7E378 /* PaddingLabel.swift */; };
 		E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */; };
 		E1A755A9265759FD0087412E /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A755A8265759FD0087412E /* AppConstants.swift */; };
+		E1B6CD14269E8E3000C4350C /* EventsRxCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6CD13269E8E3000C4350C /* EventsRxCollectionView.swift */; };
+		E1B6CD19269E8F0700C4350C /* EventSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B6CD18269E8F0700C4350C /* EventSection.swift */; };
 		E1BC98B8267C985700A88806 /* XCoordinator+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC98B7267C985700A88806 /* XCoordinator+Ext.swift */; };
 		E1BC98BD267C99E800A88806 /* EventDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC98BC267C99E800A88806 /* EventDetailVM.swift */; };
 		E1BC98C2267CA24F00A88806 /* EventsFilterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC98C1267CA24E00A88806 /* EventsFilterVM.swift */; };
@@ -104,6 +106,9 @@
 		E1D4669926580E2F00CBF384 /* EventContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1D4669826580E2F00CBF384 /* EventContentView.xib */; };
 		E1D4669E26580E3800CBF384 /* EventContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4669D26580E3800CBF384 /* EventContentView.swift */; };
 		E1D466A626580F6E00CBF384 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D466A526580F6E00CBF384 /* NibLoadable.swift */; };
+		E1E4C323269E9220006EB90B /* EventListViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4C322269E9220006EB90B /* EventListViewVM.swift */; };
+		E1E4C328269E9967006EB90B /* EventCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4C327269E9967006EB90B /* EventCellVM.swift */; };
+		E1E4C32D269E998A006EB90B /* EventActivityCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4C32C269E998A006EB90B /* EventActivityCellVM.swift */; };
 		E1EBA7CF26608C90008EAAAB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7CE26608C90008EAAAB /* AppCoordinator.swift */; };
 		E1EBA7D726608D51008EAAAB /* EventsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7D626608D51008EAAAB /* EventsRoute.swift */; };
 		E1EBA7DC26608D61008EAAAB /* EventsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7DB26608D61008EAAAB /* EventsVM.swift */; };
@@ -112,7 +117,7 @@
 		E1EBA7EB26608E3D008EAAAB /* EventPublisherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7EA26608E3D008EAAAB /* EventPublisherType.swift */; };
 		E1EBA7F0266090E6008EAAAB /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7EF266090E6008EAAAB /* ActivityIndicator.swift */; };
 		E1EBA7F5266093E1008EAAAB /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7F4266093E1008EAAAB /* Observable+Operators.swift */; };
-		E1EBA7FA266095BA008EAAAB /* EventSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7F9266095BA008EAAAB /* EventSection.swift */; };
+		E1EBA7FA266095BA008EAAAB /* EventListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7F9266095BA008EAAAB /* EventListSection.swift */; };
 		E1EBA7FF26609D08008EAAAB /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7FE26609D08008EAAAB /* BindableType.swift */; };
 		E1EBA8252660D349008EAAAB /* ActivitySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA8242660D349008EAAAB /* ActivitySection.swift */; };
 		E1EBA82B2660D3B1008EAAAB /* NAAnimatableSectionModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA82A2660D3B1008EAAAB /* NAAnimatableSectionModelType.swift */; };
@@ -255,6 +260,8 @@
 		E1A3920C26560D0700F7E378 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Ext.swift"; sourceTree = "<group>"; };
 		E1A755A8265759FD0087412E /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		E1B6CD13269E8E3000C4350C /* EventsRxCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRxCollectionView.swift; sourceTree = "<group>"; };
+		E1B6CD18269E8F0700C4350C /* EventSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSection.swift; sourceTree = "<group>"; };
 		E1BC98B7267C985700A88806 /* XCoordinator+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCoordinator+Ext.swift"; sourceTree = "<group>"; };
 		E1BC98BC267C99E800A88806 /* EventDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVM.swift; sourceTree = "<group>"; };
 		E1BC98C1267CA24E00A88806 /* EventsFilterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFilterVM.swift; sourceTree = "<group>"; };
@@ -263,6 +270,9 @@
 		E1D4669826580E2F00CBF384 /* EventContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventContentView.xib; sourceTree = "<group>"; };
 		E1D4669D26580E3800CBF384 /* EventContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventContentView.swift; sourceTree = "<group>"; };
 		E1D466A526580F6E00CBF384 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		E1E4C322269E9220006EB90B /* EventListViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewVM.swift; sourceTree = "<group>"; };
+		E1E4C327269E9967006EB90B /* EventCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellVM.swift; sourceTree = "<group>"; };
+		E1E4C32C269E998A006EB90B /* EventActivityCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActivityCellVM.swift; sourceTree = "<group>"; };
 		E1EBA7CE26608C90008EAAAB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E1EBA7D626608D51008EAAAB /* EventsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRoute.swift; sourceTree = "<group>"; };
 		E1EBA7DB26608D61008EAAAB /* EventsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVM.swift; sourceTree = "<group>"; };
@@ -271,7 +281,7 @@
 		E1EBA7EA26608E3D008EAAAB /* EventPublisherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPublisherType.swift; sourceTree = "<group>"; };
 		E1EBA7EF266090E6008EAAAB /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		E1EBA7F4266093E1008EAAAB /* Observable+Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
-		E1EBA7F9266095BA008EAAAB /* EventSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSection.swift; sourceTree = "<group>"; };
+		E1EBA7F9266095BA008EAAAB /* EventListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListSection.swift; sourceTree = "<group>"; };
 		E1EBA7FE26609D08008EAAAB /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		E1EBA8242660D349008EAAAB /* ActivitySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySection.swift; sourceTree = "<group>"; };
 		E1EBA82A2660D3B1008EAAAB /* NAAnimatableSectionModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NAAnimatableSectionModelType.swift; sourceTree = "<group>"; };
@@ -414,6 +424,9 @@
 			children = (
 				E1378109265798030028839A /* EventsListView.swift */,
 				E1378104265797FA0028839A /* EventsListView.xib */,
+				E1B6CD13269E8E3000C4350C /* EventsRxCollectionView.swift */,
+				E1B6CD18269E8F0700C4350C /* EventSection.swift */,
+				E1E4C322269E9220006EB90B /* EventListViewVM.swift */,
 			);
 			path = EventsListView;
 			sourceTree = "<group>";
@@ -586,6 +599,7 @@
 			children = (
 				E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */,
 				E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */,
+				E1E4C327269E9967006EB90B /* EventCellVM.swift */,
 			);
 			path = EventCollectionViewCell;
 			sourceTree = "<group>";
@@ -622,7 +636,7 @@
 			children = (
 				E125658C2656BCDD00CCCEA7 /* LocalModels */,
 				E125658B2656BCD000CCCEA7 /* RemoteModels */,
-				E1EBA7F9266095BA008EAAAB /* EventSection.swift */,
+				E1EBA7F9266095BA008EAAAB /* EventListSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -732,6 +746,7 @@
 			children = (
 				E1A3916C2655653000F7E378 /* EventActivityCollectionViewCell.swift */,
 				E1A3916D2655653000F7E378 /* EventActivityCollectionViewCell.xib */,
+				E1E4C32C269E998A006EB90B /* EventActivityCellVM.swift */,
 			);
 			path = EventActivityCell;
 			sourceTree = "<group>";
@@ -1120,6 +1135,7 @@
 				E1BC98B8267C985700A88806 /* XCoordinator+Ext.swift in Sources */,
 				E13A93A62658A05200348FDE /* XError.swift in Sources */,
 				E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */,
+				E1E4C323269E9220006EB90B /* EventListViewVM.swift in Sources */,
 				E13A93A52658A05200348FDE /* XNetworkManager.swift in Sources */,
 				E13A93AF2658A05200348FDE /* JSonKeys.swift in Sources */,
 				E1EBA7CF26608C90008EAAAB /* AppCoordinator.swift in Sources */,
@@ -1129,7 +1145,7 @@
 				E1A39177265565D100F7E378 /* Activity.swift in Sources */,
 				E13A93AC2658A05200348FDE /* XCache.swift in Sources */,
 				E1468FC626581481009D7971 /* MedalViewTableViewCell.swift in Sources */,
-				E1EBA7FA266095BA008EAAAB /* EventSection.swift in Sources */,
+				E1EBA7FA266095BA008EAAAB /* EventListSection.swift in Sources */,
 				E1EBA8382660D3FA008EAAAB /* SectionedTableViewState.swift in Sources */,
 				E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */,
 				E194B751269DF0C400286D14 /* EventsRepo.swift in Sources */,
@@ -1140,6 +1156,7 @@
 				E1EBA7F0266090E6008EAAAB /* ActivityIndicator.swift in Sources */,
 				E1A391432655505900F7E378 /* Event.swift in Sources */,
 				E13A93AB2658A05200348FDE /* YResponse.swift in Sources */,
+				E1E4C328269E9967006EB90B /* EventCellVM.swift in Sources */,
 				E12565E72657521900CCCEA7 /* CollectionViewCell.swift in Sources */,
 				E1A39122265543CF00F7E378 /* AppColors.swift in Sources */,
 				E13A939F2658A05200348FDE /* URLParameterEncoding.swift in Sources */,
@@ -1171,6 +1188,7 @@
 				E1EBA83D2660D63D008EAAAB /* SportTypeListViewVM.swift in Sources */,
 				E12565E22657518200CCCEA7 /* TableViewCell.swift in Sources */,
 				E1EBA7EB26608E3D008EAAAB /* EventPublisherType.swift in Sources */,
+				E1B6CD14269E8E3000C4350C /* EventsRxCollectionView.swift in Sources */,
 				E1A391EA265603AB00F7E378 /* String+Ext.swift in Sources */,
 				E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */,
 				E13A93B42658A05200348FDE /* EndPointType.swift in Sources */,
@@ -1197,12 +1215,14 @@
 				E1A3917C2655669D00F7E378 /* UIView+Ext.swift in Sources */,
 				E13A939E2658A05200348FDE /* ParameterEncoding.swift in Sources */,
 				E13D2219266D377A003BD4B1 /* WKWebView+Ext.swift in Sources */,
+				E1E4C32D269E998A006EB90B /* EventActivityCellVM.swift in Sources */,
 				E1EBA7FF26609D08008EAAAB /* BindableType.swift in Sources */,
 				E13A93A12658A05200348FDE /* MultipartFormData.swift in Sources */,
 				E12565812656BC8B00CCCEA7 /* SettingTableViewCell.swift in Sources */,
 				E13A93A02658A05200348FDE /* JSONParameterEncoder.swift in Sources */,
 				E13781182657A4A80028839A /* SportTypeListView.swift in Sources */,
 				E1A390B126553DD000F7E378 /* EventsVC.swift in Sources */,
+				E1B6CD19269E8F0700C4350C /* EventSection.swift in Sources */,
 				E1EBA7E626608E28008EAAAB /* ViewModelType.swift in Sources */,
 				E13A93AA2658A05200348FDE /* XResult.swift in Sources */,
 			);

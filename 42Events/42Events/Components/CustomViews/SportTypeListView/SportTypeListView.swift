@@ -45,7 +45,7 @@ class SportTypeListView: BaseView {
         let output = viewModel.transform(input: input)
         
         let dataSource = self.cvSportType.dataSource()
-        output.activities.asDriver()
+        output.activities
             .drive(cvSportType.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }

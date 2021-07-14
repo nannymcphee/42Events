@@ -25,20 +25,10 @@ class SportTypeListViewVM: BaseVM, ViewModelType, EventPublisherType {
     
     // MARK: Event
     enum Event {
-        case settings
+        case didSelectSportType(String)
     }
-    
-    // MARK: Action
-    struct Action {
-        fileprivate let _didSelectSportType = PublishSubject<String>()
-        public var didSelectSportType: Observable<String> {
-            return _didSelectSportType.asObservable()
-        }
-    }
-    
     
     // MARK: Public variables
-    public let action = Action()
     public var eventPublisher = PublishSubject<Event>()
     
     
@@ -76,7 +66,7 @@ class SportTypeListViewVM: BaseVM, ViewModelType, EventPublisherType {
                 guard let self = self else { return }
                 switch item {
                 case .activity(let viewModel, _):
-                    self.action._didSelectSportType.onNext(viewModel.item.name.lowercased())
+                    self.eventPublisher.onNext(.didSelectSportType(viewModel.item.name.lowercased()))
                 }
             })
             .subscribe()

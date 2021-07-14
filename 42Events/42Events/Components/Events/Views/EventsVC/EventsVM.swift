@@ -24,7 +24,7 @@ class EventsVM: BaseVM, ViewModelType, EventPublisherType {
     // MARK: Outputs
     struct Output {
         let featuredEvents: Driver<[EventModel]>
-        let sections: Driver<[EventSection]>
+        let sections: Driver<[EventListSection]>
         let loading: Driver<Bool>
     }
     
@@ -43,12 +43,12 @@ class EventsVM: BaseVM, ViewModelType, EventPublisherType {
     // MARK: Private variables
     @Injected private var eventsRepo: EventsRepo
     private var eventListResponse: EventListResponse? = nil
-    private var sectionList = BehaviorRelay<[EventSection]>(value: [
-        EventSection(id: "startingSoon", title: Text.startingSoon,   data: []),
-        EventSection(id: "popular",      title: Text.popular,        data: []),
-        EventSection(id: "newRelease",   title: Text.newRelease,     data: []),
-        EventSection(id: "free",         title: Text.free,           data: []),
-        EventSection(id: "past",         title: Text.pastEvents,     data: []),
+    private var sectionList = BehaviorRelay<[EventListSection]>(value: [
+        EventListSection(id: "startingSoon", title: Text.startingSoon,   data: []),
+        EventListSection(id: "popular",      title: Text.popular,        data: []),
+        EventListSection(id: "newRelease",   title: Text.newRelease,     data: []),
+        EventListSection(id: "free",         title: Text.free,           data: []),
+        EventListSection(id: "past",         title: Text.pastEvents,     data: []),
     ])
     private var featuredEvents = BehaviorRelay<[EventModel]>(value: [])
     private let loadingIndicator = ActivityIndicator()

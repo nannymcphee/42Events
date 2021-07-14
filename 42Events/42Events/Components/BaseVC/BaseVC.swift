@@ -57,7 +57,6 @@ class BaseViewController: UIViewController {
     }
     
     private func initRefreshControl() {
-//        refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
         refreshControl.rx
             .controlEvent(.valueChanged)
             .asObservable()

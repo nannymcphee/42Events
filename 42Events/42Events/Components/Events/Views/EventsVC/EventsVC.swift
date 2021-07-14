@@ -33,21 +33,22 @@ class EventsVC: BaseViewController, BindableType {
     
     private let settingsTrigger = PublishSubject<Void>()
     private let sportTypeTrigger = PublishSubject<String>()
-    private let selectTrigger = PublishSubject<EventModel>()
+    private let eventSelectTrigger = PublishSubject<EventModel>()
     private let slideshowSelectTrigger = PublishSubject<Int>()
+    private let sportTypeSelectTrigger = PublishSubject<String>()
     private let viewDidLoadTrigger = PublishSubject<Void>()
     
     // MARK: - OVERRIDES
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initRefreshControl()
+        self.initNavigationBar()
         self.initSlideshow()
         self.initSportTypeListView()
     }
     
     override func localizeContent() {
-        super.localizeContent()
-        self.initNavigationBar()
+        self.showScreenTitle(Text.events.localized)
         self.sportTypeListView?.updateLocalize()
         self.eventListViews.forEach { $0.updateLocalize() }
     }
@@ -69,12 +70,12 @@ class EventsVC: BaseViewController, BindableType {
     
     // MARK: - FUNCTIONS
     func bindViewModel() {
-        let input = EventsVM.Input(initialLoad: viewDidLoadTrigger.asObservable(),
-                                   refresh: refreshTrigger.asObservable(),
-                                   settingSelected: settingsTrigger.asObservable(),
-                                   sportTypeSelected: sportTypeListViewVM.action.didSelectSportType,
-                                   itemSelected: selectTrigger.asObservable(),
-                                   slideshowSelected: slideshowSelectTrigger.asObservable())
+        let input = EventsVM.Input(initialLoad: viewDidLoadTrigger,
+                                   refresh: refreshTrigger,
+                                   settingSelected: settingsTrigger,
+                                   sportTypeSelected: sportTypeSelectTrigger,
+                                   itemSelected: eventSelectTrigger,
+                                   slideshowSelected: slideshowSelectTrigger)
         
         let output = viewModel.transform(input: input)
         
@@ -109,8 +110,6 @@ class EventsVC: BaseViewController, BindableType {
     }
     
     private func initNavigationBar() {
-        self.showScreenTitle(Text.events.localized)
-        
         let btnNoti = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_bell"), target: self, action: #selector(didTapNotificationButton))
         self.navigationItem.leftBarButtonItem = btnNoti
         
@@ -147,13 +146,22 @@ class EventsVC: BaseViewController, BindableType {
         self.sportTypeListView = SportTypeListView.instance(viewModel: sportTypeListViewVM)
         self.vSportTypeListContainer.addSubview(self.sportTypeListView!)
         self.sportTypeListView?.layoutAttachAll(to: self.vSportTypeListContainer)
+        self.sportTypeListViewVM.eventPublisher
+            .subscribe(onNext: { [weak self] event in
+                guard let self = self else { return }
+                switch event {
+                case .didSelectSportType(let sportType):
+                    self.sportTypeSelectTrigger.onNext(sportType)
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     private func initRefreshControl() {
         scrollView.refreshControl = refreshControl
     }
     
-    private func initEventListViews(sections: [EventSection]) {
+    private func initEventListViews(sections: [EventListSection]) {
         guard eventListViews.isEmpty else { return }
         
         for section in sections {
