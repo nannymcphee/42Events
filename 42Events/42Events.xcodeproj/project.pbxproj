@@ -81,6 +81,8 @@
 		E17D884426A59005008C9A49 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D884326A59005008C9A49 /* Language.swift */; };
 		E17D884726A594C1008C9A49 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
 		E17D884826A594C1008C9A49 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A39176265565D100F7E378 /* Activity.swift */; };
+		E17D884A26A59F8C008C9A49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17D884926A59F8C008C9A49 /* Main.storyboard */; };
+		E17D884D26A5A797008C9A49 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D884C26A5A797008C9A49 /* SettingsCoordinator.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
 		E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */; };
 		E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */; };
@@ -278,6 +280,8 @@
 		E17D883F26A58BF3008C9A49 /* ServerConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigType.swift; sourceTree = "<group>"; };
 		E17D884126A58C4D008C9A49 /* EnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentType.swift; sourceTree = "<group>"; };
 		E17D884326A59005008C9A49 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		E17D884926A59F8C008C9A49 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E17D884C26A5A797008C9A49 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		E180B6C5265658CF00AC13C5 /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
 		E180B6CF26565A0F00AC13C5 /* AppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDialog.swift; sourceTree = "<group>"; };
 		E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightFlowLayout.swift; sourceTree = "<group>"; };
@@ -727,6 +731,7 @@
 			children = (
 				E1EBA7CD26608C84008EAAAB /* AppCoordinator */,
 				E17D884626A59257008C9A49 /* EventsCoordinator */,
+				E17D884B26A5A78A008C9A49 /* SettingsCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -737,6 +742,14 @@
 				E1EBA7D626608D51008EAAAB /* EventsCoordinator.swift */,
 			);
 			path = EventsCoordinator;
+			sourceTree = "<group>";
+		};
+		E17D884B26A5A78A008C9A49 /* SettingsCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E17D884C26A5A797008C9A49 /* SettingsCoordinator.swift */,
+			);
+			path = SettingsCoordinator;
 			sourceTree = "<group>";
 		};
 		E194B74F269DF0BD00286D14 /* Repos */ = {
@@ -982,6 +995,7 @@
 				E1A390AB26553D0500F7E378 /* Models */,
 				E1F3258C2655035A003525D6 /* AppDelegate.swift */,
 				E1F325952655035C003525D6 /* Assets.xcassets */,
+				E17D884926A59F8C008C9A49 /* Main.storyboard */,
 				E1F325972655035C003525D6 /* LaunchScreen.storyboard */,
 				E1F3259A2655035C003525D6 /* Info.plist */,
 			);
@@ -1201,6 +1215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A3910C265542E100F7E378 /* Metropolis-Thin.otf in Resources */,
+				E17D884A26A59F8C008C9A49 /* Main.storyboard in Resources */,
 				E1A3910B265542E100F7E378 /* SIL Open Font License.txt in Resources */,
 				E12565C926574EE100CCCEA7 /* Localizable.strings in Resources */,
 				E1F325992655035C003525D6 /* LaunchScreen.storyboard in Resources */,
@@ -1466,6 +1481,7 @@
 				E1EBA7EB26608E3D008EAAAB /* EventPublisherType.swift in Sources */,
 				E1B6CD14269E8E3000C4350C /* EventsRxCollectionView.swift in Sources */,
 				E1A391EA265603AB00F7E378 /* String+Ext.swift in Sources */,
+				E17D884D26A5A797008C9A49 /* SettingsCoordinator.swift in Sources */,
 				E1A391302655477000F7E378 /* AppFont.swift in Sources */,
 				E1C30DF326561A21008CC0BA /* TagCollectionViewCell.swift in Sources */,
 				E1A3920D26560D0700F7E378 /* PaddingLabel.swift in Sources */,

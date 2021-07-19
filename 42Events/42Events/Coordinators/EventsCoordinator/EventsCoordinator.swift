@@ -79,9 +79,9 @@ class EventsCoordinator: NavigationCoordinator<EventsRoute> {
             return .present(nav)
         
         case .settings:
-            let vc = SettingsVC()
-            return .push(vc)
+            let settingsCoordinator = SettingsCoordinator(navigation: rootViewController)
+            addChild(settingsCoordinator)
+            return .none()
         }
     }
-    
 }
