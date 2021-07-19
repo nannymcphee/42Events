@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FTDomain
 
 class TagCollectionViewCell: CollectionViewCell {
     // MARK: - IBOutlets

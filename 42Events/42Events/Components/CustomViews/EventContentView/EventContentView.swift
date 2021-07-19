@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FTDomain
 
 class EventContentView: BaseView {
     // MARK: - IBOutlets

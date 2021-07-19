@@ -1,26 +1,39 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target '42Events' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+def rxswift_pods
+  pod 'RxSwift', '~> 6.2.0'
+  pod 'RxCocoa', '~> 6.2.0'
+end
 
-  # Pods for 42Events
+def rx_pods
+  rxswift_pods
+  pod 'XCoordinator', '~> 2.0'
+  pod 'RxGesture', '~> 4.0.2'
+  pod 'RxDataSources', '~> 5.0.0'
+  pod 'Resolver', '~> 1.4.3'
+end
+
+def networking_pods
   pod 'Kingfisher', '~> 6.0'
+end
+
+def app_pods
   pod 'ImageSlideshow', '~> 1.9.0'
   pod 'ImageSlideshow/Kingfisher'
   pod 'MSPeekCollectionViewDelegateImplementation'
   pod 'DropDown', '2.3.13'
   pod 'Localize-Swift', '~> 3.2'
   pod 'ReachabilitySwift'
-  
-  pod 'RxSwift', '~> 6.2.0'
-  pod 'RxCocoa', '~> 6.2.0'
-  pod 'XCoordinator', '~> 2.0'
-  pod 'RxGesture', '~> 4.0.2'
-  pod 'RxDataSources', '~> 5.0.0'
-  pod 'Carbon'
-  pod 'Resolver', '~> 1.4.3'
+end
+
+target '42Events' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for 42Events
+  app_pods
+  rx_pods
   
   target '42EventsTests' do
     inherit! :search_paths
@@ -29,6 +42,11 @@ target '42Events' do
 
   target '42EventsUITests' do
     # Pods for testing
+  end
+  
+  target 'FTNetworkPlatform' do
+    rxswift_pods
+    networking_pods
   end
 
 end

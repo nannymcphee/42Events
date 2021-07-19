@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FTDomain
 
 class MedalViewTableViewCell: TableViewCell {
     @IBOutlet weak var ivThumbnail: UIImageView!

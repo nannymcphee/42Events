@@ -8,6 +8,7 @@
 import UIKit
 import DropDown
 import Localize_Swift
+import FTDomain
 
 class SettingsVC: BaseViewController {
     enum ViewType {

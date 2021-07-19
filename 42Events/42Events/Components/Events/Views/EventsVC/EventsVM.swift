@@ -8,6 +8,7 @@
 import RxSwift
 import RxCocoa
 import Resolver
+import FTDomain
 
 class EventsVM: BaseVM, ViewModelType, EventPublisherType {
     

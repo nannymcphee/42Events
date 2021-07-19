@@ -8,6 +8,7 @@
 import RxSwift
 import RxCocoa
 import XCoordinator
+import FTDomain
 
 class SportTypeListViewVM: BaseVM, ViewModelType, EventPublisherType {
     // MARK: Initialization

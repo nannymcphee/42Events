@@ -14,8 +14,7 @@ public enum EventEndPoint {
 
 extension EventEndPoint: EndPointType {
     public var baseURL: URL {
-        guard let url = URL(string: AppConstants.serverUrl) else { fatalError("baseURL could not be configured.")}
-        return url
+        return BuildConfig.default.baseURL
     }
     
     public var path: String {

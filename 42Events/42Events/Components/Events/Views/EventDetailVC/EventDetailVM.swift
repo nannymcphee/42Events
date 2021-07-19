@@ -8,6 +8,7 @@
 import WebKit
 import RxSwift
 import RxCocoa
+import FTDomain
 
 class EventDetailVM: BaseVM, ViewModelType, EventPublisherType {
     init(eventModel: EventModel) {

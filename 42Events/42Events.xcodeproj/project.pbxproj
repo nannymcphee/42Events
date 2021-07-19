@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B39591E9DD8303F39E90612 /* Pods_42EventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F38930D4B1C2E643656A92 /* Pods_42EventsTests.framework */; };
+		689791A0173D8B167CFB4861 /* Pods_42Events_FTNetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C8D5616FA64B1F3CC6F6D3 /* Pods_42Events_FTNetworkPlatform.framework */; };
 		8D85D06218DFCE35D9554601 /* Pods_42Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EC462620577ABBB3A13F1E /* Pods_42Events.framework */; };
 		A00A7A710241A8BD72C9C945 /* Pods_42Events_42EventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFC0957AF07723358BEF0F6 /* Pods_42Events_42EventsUITests.framework */; };
 		E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122C28E2656406A008611DF /* DynamicHeightCollectionView.swift */; };
@@ -16,8 +17,6 @@
 		E12565772656BBD300CCCEA7 /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12565752656BBD300CCCEA7 /* SettingsVC.xib */; };
 		E12565812656BC8B00CCCEA7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125657F2656BC8B00CCCEA7 /* SettingTableViewCell.swift */; };
 		E12565822656BC8B00CCCEA7 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */; };
-		E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E125658D2656BCED00CCCEA7 /* Setting.swift */; };
-		E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565A62656CA9E00CCCEA7 /* Language.swift */; };
 		E12565BA2656D27C00CCCEA7 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565B92656D27C00CCCEA7 /* Text.swift */; };
 		E12565BF2656D2E700CCCEA7 /* Localize+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */; };
 		E12565C926574EE100CCCEA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12565CB26574EE100CCCEA7 /* Localizable.strings */; };
@@ -28,30 +27,7 @@
 		E13781132657A49F0028839A /* SportTypeListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13781122657A49F0028839A /* SportTypeListView.xib */; };
 		E13781182657A4A80028839A /* SportTypeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13781172657A4A80028839A /* SportTypeListView.swift */; };
 		E13781282657A7D60028839A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13781272657A7D60028839A /* BaseView.swift */; };
-		E13A939D2658A05200348FDE /* MultiplePartParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A937F2658A05200348FDE /* MultiplePartParameterEncoder.swift */; };
-		E13A939E2658A05200348FDE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93802658A05200348FDE /* ParameterEncoding.swift */; };
-		E13A939F2658A05200348FDE /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93812658A05200348FDE /* URLParameterEncoding.swift */; };
-		E13A93A02658A05200348FDE /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93822658A05200348FDE /* JSONParameterEncoder.swift */; };
-		E13A93A12658A05200348FDE /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93842658A05200348FDE /* MultipartFormData.swift */; };
-		E13A93A22658A05200348FDE /* DataUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93852658A05200348FDE /* DataUpload.swift */; };
-		E13A93A52658A05200348FDE /* XNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93882658A05200348FDE /* XNetworkManager.swift */; };
-		E13A93A62658A05200348FDE /* XError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938A2658A05200348FDE /* XError.swift */; };
-		E13A93A72658A05200348FDE /* XResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938B2658A05200348FDE /* XResponse.swift */; };
-		E13A93A82658A05200348FDE /* XSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938C2658A05200348FDE /* XSerializer.swift */; };
-		E13A93A92658A05200348FDE /* XDecodingWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938D2658A05200348FDE /* XDecodingWrapper.swift */; };
-		E13A93AA2658A05200348FDE /* XResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938E2658A05200348FDE /* XResult.swift */; };
-		E13A93AB2658A05200348FDE /* YResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938F2658A05200348FDE /* YResponse.swift */; };
-		E13A93AC2658A05200348FDE /* XCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93902658A05200348FDE /* XCache.swift */; };
-		E13A93AD2658A05200348FDE /* XPagingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93912658A05200348FDE /* XPagingData.swift */; };
-		E13A93AE2658A05200348FDE /* XLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93922658A05200348FDE /* XLog.swift */; };
-		E13A93AF2658A05200348FDE /* JSonKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93942658A05200348FDE /* JSonKeys.swift */; };
-		E13A93B02658A05200348FDE /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93962658A05200348FDE /* HTTPTask.swift */; };
-		E13A93B12658A05200348FDE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93972658A05200348FDE /* HTTPMethod.swift */; };
-		E13A93B22658A05200348FDE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93982658A05200348FDE /* Router.swift */; };
-		E13A93B32658A05200348FDE /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93992658A05200348FDE /* NetworkLogger.swift */; };
-		E13A93B42658A05200348FDE /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A939A2658A05200348FDE /* EndPointType.swift */; };
 		E13A93BF2658A19000348FDE /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93BE2658A19000348FDE /* Int+Ext.swift */; };
-		E13A93CB2658A3EC00348FDE /* EventEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93CA2658A3EC00348FDE /* EventEndPoint.swift */; };
 		E13D2210266D2801003BD4B1 /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D220E266D2801003BD4B1 /* EventDetailVC.swift */; };
 		E13D2211266D2801003BD4B1 /* EventDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E13D220F266D2801003BD4B1 /* EventDetailVC.xib */; };
 		E13D2219266D377A003BD4B1 /* WKWebView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2218266D377A003BD4B1 /* WKWebView+Ext.swift */; };
@@ -62,7 +38,49 @@
 		E1468FD1265818D7009D7971 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */; };
 		E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */; };
 		E1498F692658B0F400043C42 /* SwipeBackNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */; };
-		E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
+		E17D87F326A58028008C9A49 /* FTDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = E17D87F126A58028008C9A49 /* FTDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E17D87F626A58028008C9A49 /* FTDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17D87EF26A58028008C9A49 /* FTDomain.framework */; };
+		E17D87F726A58028008C9A49 /* FTDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E17D87EF26A58028008C9A49 /* FTDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E17D880526A58031008C9A49 /* FTNetworkPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = E17D880326A58031008C9A49 /* FTNetworkPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E17D880826A58031008C9A49 /* FTNetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17D880126A58031008C9A49 /* FTNetworkPlatform.framework */; };
+		E17D880926A58031008C9A49 /* FTNetworkPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E17D880126A58031008C9A49 /* FTNetworkPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E17D880E26A5809F008C9A49 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
+		E17D880F26A5809F008C9A49 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A39176265565D100F7E378 /* Activity.swift */; };
+		E17D881026A5809F008C9A49 /* EventListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3918E265574FD00F7E378 /* EventListResponse.swift */; };
+		E17D881326A5809F008C9A49 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391422655505900F7E378 /* Event.swift */; };
+		E17D881526A58192008C9A49 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D881426A58192008C9A49 /* Setting.swift */; };
+		E17D881726A581C2008C9A49 /* EventModel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D881626A581C2008C9A49 /* EventModel+Ext.swift */; };
+		E17D881C26A5864E008C9A49 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93822658A05200348FDE /* JSONParameterEncoder.swift */; };
+		E17D881D26A5864E008C9A49 /* MultiplePartParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A937F2658A05200348FDE /* MultiplePartParameterEncoder.swift */; };
+		E17D881E26A5864E008C9A49 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93812658A05200348FDE /* URLParameterEncoding.swift */; };
+		E17D881F26A5864E008C9A49 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93802658A05200348FDE /* ParameterEncoding.swift */; };
+		E17D882026A58655008C9A49 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93842658A05200348FDE /* MultipartFormData.swift */; };
+		E17D882126A58655008C9A49 /* XNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93882658A05200348FDE /* XNetworkManager.swift */; };
+		E17D882226A58655008C9A49 /* DataUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93852658A05200348FDE /* DataUpload.swift */; };
+		E17D882326A58660008C9A49 /* XLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93922658A05200348FDE /* XLog.swift */; };
+		E17D882426A58660008C9A49 /* XResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938B2658A05200348FDE /* XResponse.swift */; };
+		E17D882526A58660008C9A49 /* XDecodingWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938D2658A05200348FDE /* XDecodingWrapper.swift */; };
+		E17D882626A58660008C9A49 /* XCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93902658A05200348FDE /* XCache.swift */; };
+		E17D882726A58660008C9A49 /* XPagingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93912658A05200348FDE /* XPagingData.swift */; };
+		E17D882826A58660008C9A49 /* XError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938A2658A05200348FDE /* XError.swift */; };
+		E17D882926A58660008C9A49 /* XSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938C2658A05200348FDE /* XSerializer.swift */; };
+		E17D882A26A58660008C9A49 /* XResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938E2658A05200348FDE /* XResult.swift */; };
+		E17D882B26A58660008C9A49 /* YResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A938F2658A05200348FDE /* YResponse.swift */; };
+		E17D882C26A58672008C9A49 /* JSonKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93942658A05200348FDE /* JSonKeys.swift */; };
+		E17D882D26A58679008C9A49 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A939A2658A05200348FDE /* EndPointType.swift */; };
+		E17D882E26A58679008C9A49 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93962658A05200348FDE /* HTTPTask.swift */; };
+		E17D882F26A58679008C9A49 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93992658A05200348FDE /* NetworkLogger.swift */; };
+		E17D883026A58679008C9A49 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93982658A05200348FDE /* Router.swift */; };
+		E17D883126A58679008C9A49 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93972658A05200348FDE /* HTTPMethod.swift */; };
+		E17D883426A586A9008C9A49 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D883326A586A9008C9A49 /* String+Ext.swift */; };
+		E17D883626A586F1008C9A49 /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D883526A586F1008C9A49 /* Int+Ext.swift */; };
+		E17D883826A5879C008C9A49 /* BuildConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D883726A5879C008C9A49 /* BuildConfig.swift */; };
+		E17D883A26A58818008C9A49 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D883926A58818008C9A49 /* UseCaseProvider.swift */; };
+		E17D883C26A58821008C9A49 /* EventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D883B26A58821008C9A49 /* EventUseCase.swift */; };
+		E17D883D26A58A7B008C9A49 /* EventEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13A93CA2658A3EC00348FDE /* EventEndPoint.swift */; };
+		E17D884026A58BF3008C9A49 /* ServerConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D883F26A58BF3008C9A49 /* ServerConfigType.swift */; };
+		E17D884226A58C4D008C9A49 /* EnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D884126A58C4D008C9A49 /* EnvironmentType.swift */; };
+		E17D884426A59005008C9A49 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D884326A59005008C9A49 /* Language.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
 		E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */; };
 		E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */; };
@@ -83,15 +101,12 @@
 		E1A3911A265542E100F7E378 /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E1A39107265542E100F7E378 /* Metropolis-SemiBold.otf */; };
 		E1A39122265543CF00F7E378 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A39121265543CF00F7E378 /* AppColors.swift */; };
 		E1A391302655477000F7E378 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3912F2655477000F7E378 /* AppFont.swift */; };
-		E1A391432655505900F7E378 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391422655505900F7E378 /* Event.swift */; };
 		E1A391482655546C00F7E378 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391472655546C00F7E378 /* UITableView+Reusable.swift */; };
 		E1A391592655589700F7E378 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391582655589700F7E378 /* UIImageView+Ext.swift */; };
 		E1A3916E2655653000F7E378 /* EventActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3916C2655653000F7E378 /* EventActivityCollectionViewCell.swift */; };
 		E1A3916F2655653000F7E378 /* EventActivityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1A3916D2655653000F7E378 /* EventActivityCollectionViewCell.xib */; };
-		E1A39177265565D100F7E378 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A39176265565D100F7E378 /* Activity.swift */; };
 		E1A3917C2655669D00F7E378 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3917B2655669D00F7E378 /* UIView+Ext.swift */; };
 		E1A391812655733400F7E378 /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391802655733400F7E378 /* Dictionary+Ext.swift */; };
-		E1A3918F265574FD00F7E378 /* EventListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3918E265574FD00F7E378 /* EventListResponse.swift */; };
 		E1A391EA265603AB00F7E378 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391E9265603AB00F7E378 /* String+Ext.swift */; };
 		E1A3920D26560D0700F7E378 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3920C26560D0700F7E378 /* PaddingLabel.swift */; };
 		E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3921126560D8300F7E378 /* UIEdgeInsets+Ext.swift */; };
@@ -134,6 +149,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E17D87F426A58028008C9A49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F3258126550359003525D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E17D87EE26A58028008C9A49;
+			remoteInfo = FTDomain;
+		};
+		E17D880626A58031008C9A49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1F3258126550359003525D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E17D880026A58031008C9A49;
+			remoteInfo = FTNetworkPlatform;
+		};
 		E1F325A02655035C003525D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1F3258126550359003525D6 /* Project object */;
@@ -150,6 +179,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E17D87F826A58028008C9A49 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E17D880926A58031008C9A49 /* FTNetworkPlatform.framework in Embed Frameworks */,
+				E17D87F726A58028008C9A49 /* FTDomain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		267F38CB6C995256EA626B0C /* Pods-42Events-42EventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events-42EventsUITests.debug.xcconfig"; path = "Target Support Files/Pods-42Events-42EventsUITests/Pods-42Events-42EventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2BFC0957AF07723358BEF0F6 /* Pods_42Events_42EventsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42Events_42EventsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +202,7 @@
 		56EC462620577ABBB3A13F1E /* Pods_42Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E1203D771C94FC272B8216 /* Pods-42Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events.debug.xcconfig"; path = "Target Support Files/Pods-42Events/Pods-42Events.debug.xcconfig"; sourceTree = "<group>"; };
 		8F6CC5428B84EBEFA097FB4B /* Pods-42Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events.release.xcconfig"; path = "Target Support Files/Pods-42Events/Pods-42Events.release.xcconfig"; sourceTree = "<group>"; };
+		BA6FFBCBB2BE9E9EDD50C557 /* Pods-42Events-FTNetworkPlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events-FTNetworkPlatform.release.xcconfig"; path = "Target Support Files/Pods-42Events-FTNetworkPlatform/Pods-42Events-FTNetworkPlatform.release.xcconfig"; sourceTree = "<group>"; };
 		C1F38930D4B1C2E643656A92 /* Pods_42EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E122C28E2656406A008611DF /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		E122C29326564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -165,8 +210,6 @@
 		E12565752656BBD300CCCEA7 /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 		E125657F2656BC8B00CCCEA7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
-		E125658D2656BCED00CCCEA7 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		E12565A62656CA9E00CCCEA7 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		E12565B92656D27C00CCCEA7 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localize+Ext.swift"; sourceTree = "<group>"; };
 		E12565CA26574EE100CCCEA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -226,6 +269,22 @@
 		E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeBackNavigationController.swift; sourceTree = "<group>"; };
+		E17D87EF26A58028008C9A49 /* FTDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17D87F126A58028008C9A49 /* FTDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTDomain.h; sourceTree = "<group>"; };
+		E17D87F226A58028008C9A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E17D880126A58031008C9A49 /* FTNetworkPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTNetworkPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17D880326A58031008C9A49 /* FTNetworkPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTNetworkPlatform.h; sourceTree = "<group>"; };
+		E17D880426A58031008C9A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E17D881426A58192008C9A49 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		E17D881626A581C2008C9A49 /* EventModel+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventModel+Ext.swift"; sourceTree = "<group>"; };
+		E17D883326A586A9008C9A49 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		E17D883526A586F1008C9A49 /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
+		E17D883726A5879C008C9A49 /* BuildConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildConfig.swift; sourceTree = "<group>"; };
+		E17D883926A58818008C9A49 /* UseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
+		E17D883B26A58821008C9A49 /* EventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventUseCase.swift; sourceTree = "<group>"; };
+		E17D883F26A58BF3008C9A49 /* ServerConfigType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfigType.swift; sourceTree = "<group>"; };
+		E17D884126A58C4D008C9A49 /* EnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentType.swift; sourceTree = "<group>"; };
+		E17D884326A59005008C9A49 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		E180B6C5265658CF00AC13C5 /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
 		E180B6CF26565A0F00AC13C5 /* AppDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDialog.swift; sourceTree = "<group>"; };
 		E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightFlowLayout.swift; sourceTree = "<group>"; };
@@ -301,15 +360,34 @@
 		E1F325AA2655035C003525D6 /* 42EventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 42EventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F325AE2655035C003525D6 /* _2EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _2EventsUITests.swift; sourceTree = "<group>"; };
 		E1F325B02655035C003525D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCF706BA598D949FBAEB5D4 /* Pods-42Events-FTNetworkPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events-FTNetworkPlatform.debug.xcconfig"; path = "Target Support Files/Pods-42Events-FTNetworkPlatform/Pods-42Events-FTNetworkPlatform.debug.xcconfig"; sourceTree = "<group>"; };
+		F5C8D5616FA64B1F3CC6F6D3 /* Pods_42Events_FTNetworkPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42Events_FTNetworkPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60058FC7EE6DEA91512B729 /* Pods-42EventsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42EventsTests.release.xcconfig"; path = "Target Support Files/Pods-42EventsTests/Pods-42EventsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E17D87EC26A58028008C9A49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E17D87FE26A58031008C9A49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				689791A0173D8B167CFB4861 /* Pods_42Events_FTNetworkPlatform.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1F325862655035A003525D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E17D87F626A58028008C9A49 /* FTDomain.framework in Frameworks */,
 				8D85D06218DFCE35D9554601 /* Pods_42Events.framework in Frameworks */,
+				E17D880826A58031008C9A49 /* FTNetworkPlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +416,7 @@
 				56EC462620577ABBB3A13F1E /* Pods_42Events.framework */,
 				2BFC0957AF07723358BEF0F6 /* Pods_42Events_42EventsUITests.framework */,
 				C1F38930D4B1C2E643656A92 /* Pods_42EventsTests.framework */,
+				F5C8D5616FA64B1F3CC6F6D3 /* Pods_42Events_FTNetworkPlatform.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,6 +430,8 @@
 				35CAB9304AD0D2F88E0DD754 /* Pods-42Events-42EventsUITests.release.xcconfig */,
 				4CC8E0936DA8C7710B388D7F /* Pods-42EventsTests.debug.xcconfig */,
 				F60058FC7EE6DEA91512B729 /* Pods-42EventsTests.release.xcconfig */,
+				EDCF706BA598D949FBAEB5D4 /* Pods-42Events-FTNetworkPlatform.debug.xcconfig */,
+				BA6FFBCBB2BE9E9EDD50C557 /* Pods-42Events-FTNetworkPlatform.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -371,26 +452,6 @@
 				E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */,
 			);
 			path = SettingCell;
-			sourceTree = "<group>";
-		};
-		E125658B2656BCD000CCCEA7 /* RemoteModels */ = {
-			isa = PBXGroup;
-			children = (
-				E1A3918E265574FD00F7E378 /* EventListResponse.swift */,
-			);
-			path = RemoteModels;
-			sourceTree = "<group>";
-		};
-		E125658C2656BCDD00CCCEA7 /* LocalModels */ = {
-			isa = PBXGroup;
-			children = (
-				E1A391422655505900F7E378 /* Event.swift */,
-				E1A39176265565D100F7E378 /* Activity.swift */,
-				E180B6C5265658CF00AC13C5 /* EventTag.swift */,
-				E125658D2656BCED00CCCEA7 /* Setting.swift */,
-				E12565A62656CA9E00CCCEA7 /* Language.swift */,
-			);
-			path = LocalModels;
 			sourceTree = "<group>";
 		};
 		E12565C326574E5600CCCEA7 /* Resources */ = {
@@ -441,18 +502,6 @@
 				E1EBA83C2660D63D008EAAAB /* SportTypeListViewVM.swift */,
 			);
 			path = SportTypeListView;
-			sourceTree = "<group>";
-		};
-		E13A937A2658A05200348FDE /* XNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				E13A937E2658A05200348FDE /* Encoding */,
-				E13A93832658A05200348FDE /* Manager */,
-				E13A93892658A05200348FDE /* Common */,
-				E13A93932658A05200348FDE /* JSonKeys */,
-				E13A93952658A05200348FDE /* Service */,
-			);
-			path = XNetwork;
 			sourceTree = "<group>";
 		};
 		E13A937E2658A05200348FDE /* Encoding */ = {
@@ -528,17 +577,8 @@
 			isa = PBXGroup;
 			children = (
 				E1A390AA26553CE700F7E378 /* Views */,
-				E13A93C92658A3DC00348FDE /* EndPoints */,
 			);
 			path = Events;
-			sourceTree = "<group>";
-		};
-		E13A93C92658A3DC00348FDE /* EndPoints */ = {
-			isa = PBXGroup;
-			children = (
-				E13A93CA2658A3EC00348FDE /* EventEndPoint.swift */,
-			);
-			path = EndPoints;
 			sourceTree = "<group>";
 		};
 		E13A93CF2658A41400348FDE /* Settings */ = {
@@ -604,6 +644,96 @@
 			path = EventCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		E17D87F026A58028008C9A49 /* FTDomain */ = {
+			isa = PBXGroup;
+			children = (
+				E17D880D26A5805C008C9A49 /* Entities */,
+				E17D87F126A58028008C9A49 /* FTDomain.h */,
+				E17D87F226A58028008C9A49 /* Info.plist */,
+			);
+			path = FTDomain;
+			sourceTree = "<group>";
+		};
+		E17D880226A58031008C9A49 /* FTNetworkPlatform */ = {
+			isa = PBXGroup;
+			children = (
+				E17D883226A5869E008C9A49 /* Extensions */,
+				E17D881826A585E7008C9A49 /* Config */,
+				E17D881926A585F2008C9A49 /* EndPoints */,
+				E17D881A26A58607008C9A49 /* Network */,
+				E17D881B26A5860C008C9A49 /* UseCases */,
+				E17D880326A58031008C9A49 /* FTNetworkPlatform.h */,
+				E17D880426A58031008C9A49 /* Info.plist */,
+			);
+			path = FTNetworkPlatform;
+			sourceTree = "<group>";
+		};
+		E17D880D26A5805C008C9A49 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E1A391422655505900F7E378 /* Event.swift */,
+				E1A39176265565D100F7E378 /* Activity.swift */,
+				E180B6C5265658CF00AC13C5 /* EventTag.swift */,
+				E1A3918E265574FD00F7E378 /* EventListResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E17D881826A585E7008C9A49 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E17D883726A5879C008C9A49 /* BuildConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E17D881926A585F2008C9A49 /* EndPoints */ = {
+			isa = PBXGroup;
+			children = (
+				E13A93CA2658A3EC00348FDE /* EventEndPoint.swift */,
+			);
+			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		E17D881A26A58607008C9A49 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E13A937E2658A05200348FDE /* Encoding */,
+				E13A93832658A05200348FDE /* Manager */,
+				E13A93892658A05200348FDE /* Common */,
+				E13A93932658A05200348FDE /* JSonKeys */,
+				E13A93952658A05200348FDE /* Service */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E17D881B26A5860C008C9A49 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E17D883926A58818008C9A49 /* UseCaseProvider.swift */,
+				E17D883B26A58821008C9A49 /* EventUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		E17D883226A5869E008C9A49 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E17D883326A586A9008C9A49 /* String+Ext.swift */,
+				E17D883526A586F1008C9A49 /* Int+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E17D883E26A58BE4008C9A49 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E17D883F26A58BF3008C9A49 /* ServerConfigType.swift */,
+				E17D884126A58C4D008C9A49 /* EnvironmentType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E194B74F269DF0BD00286D14 /* Repos */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,9 +764,10 @@
 		E1A390AB26553D0500F7E378 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E125658C2656BCDD00CCCEA7 /* LocalModels */,
-				E125658B2656BCD000CCCEA7 /* RemoteModels */,
 				E1EBA7F9266095BA008EAAAB /* EventListSection.swift */,
+				E17D881426A58192008C9A49 /* Setting.swift */,
+				E17D884326A59005008C9A49 /* Language.swift */,
+				E17D881626A581C2008C9A49 /* EventModel+Ext.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -809,6 +940,8 @@
 			isa = PBXGroup;
 			children = (
 				E1F3258B2655035A003525D6 /* 42Events */,
+				E17D87F026A58028008C9A49 /* FTDomain */,
+				E17D880226A58031008C9A49 /* FTNetworkPlatform */,
 				E1F325A22655035C003525D6 /* 42EventsTests */,
 				E1F325AD2655035C003525D6 /* 42EventsUITests */,
 				E1F3258A2655035A003525D6 /* Products */,
@@ -823,6 +956,8 @@
 				E1F325892655035A003525D6 /* 42Events.app */,
 				E1F3259F2655035C003525D6 /* 42EventsTests.xctest */,
 				E1F325AA2655035C003525D6 /* 42EventsUITests.xctest */,
+				E17D87EF26A58028008C9A49 /* FTDomain.framework */,
+				E17D880126A58031008C9A49 /* FTNetworkPlatform.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -830,10 +965,10 @@
 		E1F3258B2655035A003525D6 /* 42Events */ = {
 			isa = PBXGroup;
 			children = (
+				E17D883E26A58BE4008C9A49 /* Common */,
 				E194B75B269DF11D00286D14 /* Injections */,
 				E194B74F269DF0BD00286D14 /* Repos */,
 				E13A93C72658A3D000348FDE /* Components */,
-				E13A937A2658A05200348FDE /* XNetwork */,
 				E12565C326574E5600CCCEA7 /* Resources */,
 				E1A391572655588B00F7E378 /* Extensions */,
 				E1A39120265543C400F7E378 /* Utils */,
@@ -868,7 +1003,63 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E17D87EA26A58028008C9A49 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17D87F326A58028008C9A49 /* FTDomain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E17D87FC26A58031008C9A49 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17D880526A58031008C9A49 /* FTNetworkPlatform.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		E17D87EE26A58028008C9A49 /* FTDomain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E17D87FB26A58028008C9A49 /* Build configuration list for PBXNativeTarget "FTDomain" */;
+			buildPhases = (
+				E17D87EA26A58028008C9A49 /* Headers */,
+				E17D87EB26A58028008C9A49 /* Sources */,
+				E17D87EC26A58028008C9A49 /* Frameworks */,
+				E17D87ED26A58028008C9A49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FTDomain;
+			productName = FTDomain;
+			productReference = E17D87EF26A58028008C9A49 /* FTDomain.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E17D880026A58031008C9A49 /* FTNetworkPlatform */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E17D880A26A58031008C9A49 /* Build configuration list for PBXNativeTarget "FTNetworkPlatform" */;
+			buildPhases = (
+				53AE06233BDB9E988F63FDE5 /* [CP] Check Pods Manifest.lock */,
+				E17D87FC26A58031008C9A49 /* Headers */,
+				E17D87FD26A58031008C9A49 /* Sources */,
+				E17D87FE26A58031008C9A49 /* Frameworks */,
+				E17D87FF26A58031008C9A49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FTNetworkPlatform;
+			productName = FTNetworkPlatform;
+			productReference = E17D880126A58031008C9A49 /* FTNetworkPlatform.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		E1F325882655035A003525D6 /* 42Events */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1F325B32655035C003525D6 /* Build configuration list for PBXNativeTarget "42Events" */;
@@ -878,10 +1069,13 @@
 				E1F325862655035A003525D6 /* Frameworks */,
 				E1F325872655035A003525D6 /* Resources */,
 				C83A56E53A31B47E624AD4AD /* [CP] Embed Pods Frameworks */,
+				E17D87F826A58028008C9A49 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E17D87F526A58028008C9A49 /* PBXTargetDependency */,
+				E17D880726A58031008C9A49 /* PBXTargetDependency */,
 			);
 			name = 42Events;
 			productName = 42Events;
@@ -936,6 +1130,12 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					E17D87EE26A58028008C9A49 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					E17D880026A58031008C9A49 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					E1F325882655035A003525D6 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -970,11 +1170,27 @@
 				E1F325882655035A003525D6 /* 42Events */,
 				E1F3259E2655035C003525D6 /* 42EventsTests */,
 				E1F325A92655035C003525D6 /* 42EventsUITests */,
+				E17D87EE26A58028008C9A49 /* FTDomain */,
+				E17D880026A58031008C9A49 /* FTNetworkPlatform */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E17D87ED26A58028008C9A49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E17D87FF26A58031008C9A49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1F325872655035A003525D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1024,6 +1240,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		53AE06233BDB9E988F63FDE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-42Events-FTNetworkPlatform-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6BCE7EE2831EC9CBE0754B2B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1127,23 +1365,63 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E17D87EB26A58028008C9A49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17D880F26A5809F008C9A49 /* Activity.swift in Sources */,
+				E17D880E26A5809F008C9A49 /* EventTag.swift in Sources */,
+				E17D881326A5809F008C9A49 /* Event.swift in Sources */,
+				E17D881026A5809F008C9A49 /* EventListResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E17D87FD26A58031008C9A49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17D882F26A58679008C9A49 /* NetworkLogger.swift in Sources */,
+				E17D883C26A58821008C9A49 /* EventUseCase.swift in Sources */,
+				E17D882726A58660008C9A49 /* XPagingData.swift in Sources */,
+				E17D881C26A5864E008C9A49 /* JSONParameterEncoder.swift in Sources */,
+				E17D882D26A58679008C9A49 /* EndPointType.swift in Sources */,
+				E17D882B26A58660008C9A49 /* YResponse.swift in Sources */,
+				E17D882126A58655008C9A49 /* XNetworkManager.swift in Sources */,
+				E17D882A26A58660008C9A49 /* XResult.swift in Sources */,
+				E17D883826A5879C008C9A49 /* BuildConfig.swift in Sources */,
+				E17D883426A586A9008C9A49 /* String+Ext.swift in Sources */,
+				E17D882E26A58679008C9A49 /* HTTPTask.swift in Sources */,
+				E17D882426A58660008C9A49 /* XResponse.swift in Sources */,
+				E17D881E26A5864E008C9A49 /* URLParameterEncoding.swift in Sources */,
+				E17D883D26A58A7B008C9A49 /* EventEndPoint.swift in Sources */,
+				E17D883026A58679008C9A49 /* Router.swift in Sources */,
+				E17D881F26A5864E008C9A49 /* ParameterEncoding.swift in Sources */,
+				E17D882226A58655008C9A49 /* DataUpload.swift in Sources */,
+				E17D882C26A58672008C9A49 /* JSonKeys.swift in Sources */,
+				E17D883126A58679008C9A49 /* HTTPMethod.swift in Sources */,
+				E17D881D26A5864E008C9A49 /* MultiplePartParameterEncoder.swift in Sources */,
+				E17D882926A58660008C9A49 /* XSerializer.swift in Sources */,
+				E17D882826A58660008C9A49 /* XError.swift in Sources */,
+				E17D882626A58660008C9A49 /* XCache.swift in Sources */,
+				E17D882026A58655008C9A49 /* MultipartFormData.swift in Sources */,
+				E17D883A26A58818008C9A49 /* UseCaseProvider.swift in Sources */,
+				E17D882326A58660008C9A49 /* XLog.swift in Sources */,
+				E17D882526A58660008C9A49 /* XDecodingWrapper.swift in Sources */,
+				E17D883626A586F1008C9A49 /* Int+Ext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1F325852655035A003525D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E180B6C6265658CF00AC13C5 /* EventTag.swift in Sources */,
 				E1BC98B8267C985700A88806 /* XCoordinator+Ext.swift in Sources */,
-				E13A93A62658A05200348FDE /* XError.swift in Sources */,
 				E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */,
 				E1E4C323269E9220006EB90B /* EventListViewVM.swift in Sources */,
-				E13A93A52658A05200348FDE /* XNetworkManager.swift in Sources */,
-				E13A93AF2658A05200348FDE /* JSonKeys.swift in Sources */,
 				E1EBA7CF26608C90008EAAAB /* AppCoordinator.swift in Sources */,
 				E1EBA8252660D349008EAAAB /* ActivitySection.swift in Sources */,
 				E12565BF2656D2E700CCCEA7 /* Localize+Ext.swift in Sources */,
 				E1EBA8332660D3D5008EAAAB /* SportTypeRxCollectionView.swift in Sources */,
-				E1A39177265565D100F7E378 /* Activity.swift in Sources */,
-				E13A93AC2658A05200348FDE /* XCache.swift in Sources */,
 				E1468FC626581481009D7971 /* MedalViewTableViewCell.swift in Sources */,
 				E1EBA7FA266095BA008EAAAB /* EventListSection.swift in Sources */,
 				E1EBA8382660D3FA008EAAAB /* SectionedTableViewState.swift in Sources */,
@@ -1154,33 +1432,29 @@
 				E1D4669E26580E3800CBF384 /* EventContentView.swift in Sources */,
 				E1F325912655035A003525D6 /* EventsViewController.swift in Sources */,
 				E1EBA7F0266090E6008EAAAB /* ActivityIndicator.swift in Sources */,
-				E1A391432655505900F7E378 /* Event.swift in Sources */,
-				E13A93AB2658A05200348FDE /* YResponse.swift in Sources */,
 				E1E4C328269E9967006EB90B /* EventCellVM.swift in Sources */,
 				E12565E72657521900CCCEA7 /* CollectionViewCell.swift in Sources */,
 				E1A39122265543CF00F7E378 /* AppColors.swift in Sources */,
-				E13A939F2658A05200348FDE /* URLParameterEncoding.swift in Sources */,
 				E1A391812655733400F7E378 /* Dictionary+Ext.swift in Sources */,
 				E1EBA7DC26608D61008EAAAB /* EventsVM.swift in Sources */,
 				E1EBA7F5266093E1008EAAAB /* Observable+Operators.swift in Sources */,
 				E13781282657A7D60028839A /* BaseView.swift in Sources */,
 				E137810A265798030028839A /* EventsListView.swift in Sources */,
-				E13A93A22658A05200348FDE /* DataUpload.swift in Sources */,
+				E17D881526A58192008C9A49 /* Setting.swift in Sources */,
+				E17D881726A581C2008C9A49 /* EventModel+Ext.swift in Sources */,
 				E13A93BF2658A19000348FDE /* Int+Ext.swift in Sources */,
 				E13D2210266D2801003BD4B1 /* EventDetailVC.swift in Sources */,
-				E13A93CB2658A3EC00348FDE /* EventEndPoint.swift in Sources */,
 				E1D466A626580F6E00CBF384 /* NibLoadable.swift in Sources */,
 				E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */,
+				E17D884426A59005008C9A49 /* Language.swift in Sources */,
 				E1EBA7D726608D51008EAAAB /* EventsRoute.swift in Sources */,
-				E1A3918F265574FD00F7E378 /* EventListResponse.swift in Sources */,
 				E194B75D269DF12600286D14 /* Injections.swift in Sources */,
+				E17D884226A58C4D008C9A49 /* EnvironmentType.swift in Sources */,
 				E12565BA2656D27C00CCCEA7 /* Text.swift in Sources */,
 				E1A755A9265759FD0087412E /* AppConstants.swift in Sources */,
-				E125658E2656BCED00CCCEA7 /* Setting.swift in Sources */,
 				E122C29426564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				E1468FB8265813FF009D7971 /* EventTableViewCell.swift in Sources */,
 				E1BC98C2267CA24F00A88806 /* EventsFilterVM.swift in Sources */,
-				E13A93A92658A05200348FDE /* XDecodingWrapper.swift in Sources */,
 				E1EBA82B2660D3B1008EAAAB /* NAAnimatableSectionModelType.swift in Sources */,
 				E1BC98BD267C99E800A88806 /* EventDetailVM.swift in Sources */,
 				E12565762656BBD300CCCEA7 /* SettingsVC.swift in Sources */,
@@ -1190,41 +1464,27 @@
 				E1EBA7EB26608E3D008EAAAB /* EventPublisherType.swift in Sources */,
 				E1B6CD14269E8E3000C4350C /* EventsRxCollectionView.swift in Sources */,
 				E1A391EA265603AB00F7E378 /* String+Ext.swift in Sources */,
-				E12565A72656CA9E00CCCEA7 /* Language.swift in Sources */,
-				E13A93B42658A05200348FDE /* EndPointType.swift in Sources */,
-				E13A93B22658A05200348FDE /* Router.swift in Sources */,
-				E13A93B32658A05200348FDE /* NetworkLogger.swift in Sources */,
 				E1A391302655477000F7E378 /* AppFont.swift in Sources */,
 				E1C30DF326561A21008CC0BA /* TagCollectionViewCell.swift in Sources */,
-				E13A93A82658A05200348FDE /* XSerializer.swift in Sources */,
 				E1A3920D26560D0700F7E378 /* PaddingLabel.swift in Sources */,
-				E13A939D2658A05200348FDE /* MultiplePartParameterEncoder.swift in Sources */,
 				E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */,
 				E1A391482655546C00F7E378 /* UITableView+Reusable.swift in Sources */,
+				E17D884026A58BF3008C9A49 /* ServerConfigType.swift in Sources */,
 				E1A3916E2655653000F7E378 /* EventActivityCollectionViewCell.swift in Sources */,
 				E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */,
 				E1A391592655589700F7E378 /* UIImageView+Ext.swift in Sources */,
-				E13A93A72658A05200348FDE /* XResponse.swift in Sources */,
 				E1A390C826553F5B00F7E378 /* BaseVC.swift in Sources */,
-				E13A93AD2658A05200348FDE /* XPagingData.swift in Sources */,
 				E1F3258D2655035A003525D6 /* AppDelegate.swift in Sources */,
 				E1A390CE26553FE000F7E378 /* EventsFilterVC.swift in Sources */,
-				E13A93B12658A05200348FDE /* HTTPMethod.swift in Sources */,
-				E13A93B02658A05200348FDE /* HTTPTask.swift in Sources */,
-				E13A93AE2658A05200348FDE /* XLog.swift in Sources */,
 				E1A3917C2655669D00F7E378 /* UIView+Ext.swift in Sources */,
-				E13A939E2658A05200348FDE /* ParameterEncoding.swift in Sources */,
 				E13D2219266D377A003BD4B1 /* WKWebView+Ext.swift in Sources */,
 				E1E4C32D269E998A006EB90B /* EventActivityCellVM.swift in Sources */,
 				E1EBA7FF26609D08008EAAAB /* BindableType.swift in Sources */,
-				E13A93A12658A05200348FDE /* MultipartFormData.swift in Sources */,
 				E12565812656BC8B00CCCEA7 /* SettingTableViewCell.swift in Sources */,
-				E13A93A02658A05200348FDE /* JSONParameterEncoder.swift in Sources */,
 				E13781182657A4A80028839A /* SportTypeListView.swift in Sources */,
 				E1A390B126553DD000F7E378 /* EventsVC.swift in Sources */,
 				E1B6CD19269E8F0700C4350C /* EventSection.swift in Sources */,
 				E1EBA7E626608E28008EAAAB /* ViewModelType.swift in Sources */,
-				E13A93AA2658A05200348FDE /* XResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1247,6 +1507,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E17D87F526A58028008C9A49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E17D87EE26A58028008C9A49 /* FTDomain */;
+			targetProxy = E17D87F426A58028008C9A49 /* PBXContainerItemProxy */;
+		};
+		E17D880726A58031008C9A49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E17D880026A58031008C9A49 /* FTNetworkPlatform */;
+			targetProxy = E17D880626A58031008C9A49 /* PBXContainerItemProxy */;
+		};
 		E1F325A12655035C003525D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E1F325882655035A003525D6 /* 42Events */;
@@ -1302,6 +1572,124 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E17D87F926A58028008C9A49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = MZ84R57GH6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FTDomain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FTDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E17D87FA26A58028008C9A49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = MZ84R57GH6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FTDomain/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FTDomain;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E17D880B26A58031008C9A49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDCF706BA598D949FBAEB5D4 /* Pods-42Events-FTNetworkPlatform.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = MZ84R57GH6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FTNetworkPlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FTNetworkPlatform;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E17D880C26A58031008C9A49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6FFBCBB2BE9E9EDD50C557 /* Pods-42Events-FTNetworkPlatform.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = MZ84R57GH6;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FTNetworkPlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.FTNetworkPlatform;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E1F325B12655035C003525D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1424,6 +1812,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78E1203D771C94FC272B8216 /* Pods-42Events.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1446,6 +1835,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F6CC5428B84EBEFA097FB4B /* Pods-42Events.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1555,6 +1945,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E17D87FB26A58028008C9A49 /* Build configuration list for PBXNativeTarget "FTDomain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E17D87F926A58028008C9A49 /* Debug */,
+				E17D87FA26A58028008C9A49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E17D880A26A58031008C9A49 /* Build configuration list for PBXNativeTarget "FTNetworkPlatform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E17D880B26A58031008C9A49 /* Debug */,
+				E17D880C26A58031008C9A49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E1F3258426550359003525D6 /* Build configuration list for PBXProject "42Events" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

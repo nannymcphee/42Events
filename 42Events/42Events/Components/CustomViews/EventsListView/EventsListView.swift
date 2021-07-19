@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FTDomain
 
 class EventsListView: BaseView {
     enum Event {

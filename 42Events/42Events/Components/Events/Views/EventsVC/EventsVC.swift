@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import ImageSlideshow
+import FTDomain
 
 class EventsVC: BaseViewController, BindableType {
     // MARK: - ViewModel

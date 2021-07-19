@@ -7,18 +7,18 @@
 
 import UIKit
 
-struct Activity {
-    var name: String
-    var color: UIColor
-    var image: UIImage
+public struct Activity {
+    public var name: String
+    public var color: UIColor
+    public var image: UIImage
     
-    init() {
+    public init() {
         self.name = ""
         self.color = .clear
         self.image = UIImage()
     }
     
-    init(name: String, color: UIColor, image: UIImage) {
+    public init(name: String, color: UIColor, image: UIImage) {
         self.name = name
         self.color = color
         self.image = image

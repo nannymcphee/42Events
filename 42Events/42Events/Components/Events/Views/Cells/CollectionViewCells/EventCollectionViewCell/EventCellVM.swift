@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FTDomain
 
 class EventCellVM {
     private let _event = BehaviorRelay<EventModel>(value: EventModel())

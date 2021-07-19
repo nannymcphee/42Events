@@ -7,6 +7,7 @@
 
 import RxSwift
 import XCoordinator
+import FTDomain
 
 enum EventsRoute: Route {
     case events
