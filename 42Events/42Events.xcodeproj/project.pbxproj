@@ -44,8 +44,6 @@
 		E17D880526A58031008C9A49 /* FTNetworkPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = E17D880326A58031008C9A49 /* FTNetworkPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E17D880826A58031008C9A49 /* FTNetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17D880126A58031008C9A49 /* FTNetworkPlatform.framework */; };
 		E17D880926A58031008C9A49 /* FTNetworkPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E17D880126A58031008C9A49 /* FTNetworkPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E17D880E26A5809F008C9A49 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
-		E17D880F26A5809F008C9A49 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A39176265565D100F7E378 /* Activity.swift */; };
 		E17D881026A5809F008C9A49 /* EventListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A3918E265574FD00F7E378 /* EventListResponse.swift */; };
 		E17D881326A5809F008C9A49 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A391422655505900F7E378 /* Event.swift */; };
 		E17D881526A58192008C9A49 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D881426A58192008C9A49 /* Setting.swift */; };
@@ -81,6 +79,8 @@
 		E17D884026A58BF3008C9A49 /* ServerConfigType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D883F26A58BF3008C9A49 /* ServerConfigType.swift */; };
 		E17D884226A58C4D008C9A49 /* EnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D884126A58C4D008C9A49 /* EnvironmentType.swift */; };
 		E17D884426A59005008C9A49 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17D884326A59005008C9A49 /* Language.swift */; };
+		E17D884726A594C1008C9A49 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6C5265658CF00AC13C5 /* EventTag.swift */; };
+		E17D884826A594C1008C9A49 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A39176265565D100F7E378 /* Activity.swift */; };
 		E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B6CF26565A0F00AC13C5 /* AppDialog.swift */; };
 		E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7012656A16600AC13C5 /* DynamicHeightFlowLayout.swift */; };
 		E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E180B7162656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift */; };
@@ -660,8 +660,6 @@
 			isa = PBXGroup;
 			children = (
 				E1A391422655505900F7E378 /* Event.swift */,
-				E1A39176265565D100F7E378 /* Activity.swift */,
-				E180B6C5265658CF00AC13C5 /* EventTag.swift */,
 				E1A3918E265574FD00F7E378 /* EventListResponse.swift */,
 			);
 			path = Entities;
@@ -774,6 +772,8 @@
 				E1EBA7F9266095BA008EAAAB /* EventListSection.swift */,
 				E17D881426A58192008C9A49 /* Setting.swift */,
 				E17D884326A59005008C9A49 /* Language.swift */,
+				E1A39176265565D100F7E378 /* Activity.swift */,
+				E180B6C5265658CF00AC13C5 /* EventTag.swift */,
 				E17D881626A581C2008C9A49 /* EventModel+Ext.swift */,
 			);
 			path = Models;
@@ -1373,8 +1373,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E17D880F26A5809F008C9A49 /* Activity.swift in Sources */,
-				E17D880E26A5809F008C9A49 /* EventTag.swift in Sources */,
 				E17D881326A5809F008C9A49 /* Event.swift in Sources */,
 				E17D881026A5809F008C9A49 /* EventListResponse.swift in Sources */,
 			);
@@ -1432,6 +1430,7 @@
 				E1A3921226560D8300F7E378 /* UIEdgeInsets+Ext.swift in Sources */,
 				E194B751269DF0C400286D14 /* EventsRepo.swift in Sources */,
 				E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */,
+				E17D884726A594C1008C9A49 /* EventTag.swift in Sources */,
 				E1EBA7E126608DFD008EAAAB /* BaseVM.swift in Sources */,
 				E1D4669E26580E3800CBF384 /* EventContentView.swift in Sources */,
 				E1EBA7F0266090E6008EAAAB /* ActivityIndicator.swift in Sources */,
@@ -1471,6 +1470,7 @@
 				E1C30DF326561A21008CC0BA /* TagCollectionViewCell.swift in Sources */,
 				E1A3920D26560D0700F7E378 /* PaddingLabel.swift in Sources */,
 				E180B6D026565A0F00AC13C5 /* AppDialog.swift in Sources */,
+				E17D884826A594C1008C9A49 /* Activity.swift in Sources */,
 				E1A391482655546C00F7E378 /* UITableView+Reusable.swift in Sources */,
 				E17D884026A58BF3008C9A49 /* ServerConfigType.swift in Sources */,
 				E1A3916E2655653000F7E378 /* EventActivityCollectionViewCell.swift in Sources */,
