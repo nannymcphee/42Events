@@ -125,7 +125,7 @@
 		E1E4C328269E9967006EB90B /* EventCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4C327269E9967006EB90B /* EventCellVM.swift */; };
 		E1E4C32D269E998A006EB90B /* EventActivityCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4C32C269E998A006EB90B /* EventActivityCellVM.swift */; };
 		E1EBA7CF26608C90008EAAAB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7CE26608C90008EAAAB /* AppCoordinator.swift */; };
-		E1EBA7D726608D51008EAAAB /* EventsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7D626608D51008EAAAB /* EventsRoute.swift */; };
+		E1EBA7D726608D51008EAAAB /* EventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7D626608D51008EAAAB /* EventsCoordinator.swift */; };
 		E1EBA7DC26608D61008EAAAB /* EventsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7DB26608D61008EAAAB /* EventsVM.swift */; };
 		E1EBA7E126608DFD008EAAAB /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7E026608DFD008EAAAB /* BaseVM.swift */; };
 		E1EBA7E626608E28008EAAAB /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA7E526608E28008EAAAB /* ViewModelType.swift */; };
@@ -140,8 +140,6 @@
 		E1EBA8382660D3FA008EAAAB /* SectionedTableViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA8372660D3FA008EAAAB /* SectionedTableViewState.swift */; };
 		E1EBA83D2660D63D008EAAAB /* SportTypeListViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBA83C2660D63D008EAAAB /* SportTypeListViewVM.swift */; };
 		E1F3258D2655035A003525D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F3258C2655035A003525D6 /* AppDelegate.swift */; };
-		E1F325912655035A003525D6 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F325902655035A003525D6 /* EventsViewController.swift */; };
-		E1F325942655035A003525D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F325922655035A003525D6 /* Main.storyboard */; };
 		E1F325962655035C003525D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F325952655035C003525D6 /* Assets.xcassets */; };
 		E1F325992655035C003525D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1F325972655035C003525D6 /* LaunchScreen.storyboard */; };
 		E1F325A42655035C003525D6 /* _2EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F325A32655035C003525D6 /* _2EventsTests.swift */; };
@@ -213,19 +211,14 @@
 		E12565B92656D27C00CCCEA7 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		E12565BE2656D2E700CCCEA7 /* Localize+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localize+Ext.swift"; sourceTree = "<group>"; };
 		E12565CA26574EE100CCCEA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E12565CF26574F4B00CCCEA7 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
 		E12565D026574F4B00CCCEA7 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E12565D126574F4B00CCCEA7 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E12565D526574F5800CCCEA7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		E12565D626574F5800CCCEA7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E12565D726574F5800CCCEA7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		E12565D826574F6100CCCEA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		E12565D926574F6100CCCEA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		E12565DA26574F6100CCCEA7 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		E12565DB2657512900CCCEA7 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
 		E12565DC2657512900CCCEA7 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E12565DD2657512900CCCEA7 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E12565DE2657513500CCCEA7 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Main.strings; sourceTree = "<group>"; };
 		E12565DF2657513500CCCEA7 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E12565E02657513500CCCEA7 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E12565E12657518200CCCEA7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -333,7 +326,7 @@
 		E1E4C327269E9967006EB90B /* EventCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellVM.swift; sourceTree = "<group>"; };
 		E1E4C32C269E998A006EB90B /* EventActivityCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActivityCellVM.swift; sourceTree = "<group>"; };
 		E1EBA7CE26608C90008EAAAB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		E1EBA7D626608D51008EAAAB /* EventsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsRoute.swift; sourceTree = "<group>"; };
+		E1EBA7D626608D51008EAAAB /* EventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCoordinator.swift; sourceTree = "<group>"; };
 		E1EBA7DB26608D61008EAAAB /* EventsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVM.swift; sourceTree = "<group>"; };
 		E1EBA7E026608DFD008EAAAB /* BaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
 		E1EBA7E526608E28008EAAAB /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
@@ -349,8 +342,6 @@
 		E1EBA83C2660D63D008EAAAB /* SportTypeListViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportTypeListViewVM.swift; sourceTree = "<group>"; };
 		E1F325892655035A003525D6 /* 42Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 42Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F3258C2655035A003525D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1F325902655035A003525D6 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
-		E1F325932655035A003525D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1F325952655035C003525D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1F325982655035C003525D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1F3259A2655035C003525D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -561,16 +552,13 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		E13A93C72658A3D000348FDE /* Components */ = {
+		E13A93C72658A3D000348FDE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				E1EBA7CD26608C84008EAAAB /* AppCoordinator */,
-				E1A390B926553DEA00F7E378 /* BaseVC */,
-				E13781012657975C0028839A /* CustomViews */,
 				E13A93CF2658A41400348FDE /* Settings */,
 				E13A93C82658A3D600348FDE /* Events */,
 			);
-			path = Components;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		E13A93C82658A3D600348FDE /* Events */ = {
@@ -728,10 +716,29 @@
 		E17D883E26A58BE4008C9A49 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E1A390B926553DEA00F7E378 /* BaseVC */,
+				E13781012657975C0028839A /* CustomViews */,
 				E17D883F26A58BF3008C9A49 /* ServerConfigType.swift */,
 				E17D884126A58C4D008C9A49 /* EnvironmentType.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E17D884526A59206008C9A49 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				E1EBA7CD26608C84008EAAAB /* AppCoordinator */,
+				E17D884626A59257008C9A49 /* EventsCoordinator */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		E17D884626A59257008C9A49 /* EventsCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E1EBA7D626608D51008EAAAB /* EventsCoordinator.swift */,
+			);
+			path = EventsCoordinator;
 			sourceTree = "<group>";
 		};
 		E194B74F269DF0BD00286D14 /* Repos */ = {
@@ -786,7 +793,6 @@
 			children = (
 				E1A390AF26553DD000F7E378 /* EventsVC.swift */,
 				E1A390B026553DD000F7E378 /* EventsVC.xib */,
-				E1EBA7D626608D51008EAAAB /* EventsRoute.swift */,
 				E1EBA7DB26608D61008EAAAB /* EventsVM.swift */,
 			);
 			path = EventsVC;
@@ -968,14 +974,13 @@
 				E17D883E26A58BE4008C9A49 /* Common */,
 				E194B75B269DF11D00286D14 /* Injections */,
 				E194B74F269DF0BD00286D14 /* Repos */,
-				E13A93C72658A3D000348FDE /* Components */,
+				E17D884526A59206008C9A49 /* Coordinators */,
+				E13A93C72658A3D000348FDE /* Scenes */,
 				E12565C326574E5600CCCEA7 /* Resources */,
 				E1A391572655588B00F7E378 /* Extensions */,
 				E1A39120265543C400F7E378 /* Utils */,
 				E1A390AB26553D0500F7E378 /* Models */,
 				E1F3258C2655035A003525D6 /* AppDelegate.swift */,
-				E1F325902655035A003525D6 /* EventsViewController.swift */,
-				E1F325922655035A003525D6 /* Main.storyboard */,
 				E1F325952655035C003525D6 /* Assets.xcassets */,
 				E1F325972655035C003525D6 /* LaunchScreen.storyboard */,
 				E1F3259A2655035C003525D6 /* Info.plist */,
@@ -1207,7 +1212,6 @@
 				E1A39114265542E100F7E378 /* Metropolis-Medium.otf in Resources */,
 				E1A3910A265542E100F7E378 /* Metropolis-Bold.otf in Resources */,
 				E13D2211266D2801003BD4B1 /* EventDetailVC.xib in Resources */,
-				E1F325942655035A003525D6 /* Main.storyboard in Resources */,
 				E1468FB9265813FF009D7971 /* EventTableViewCell.xib in Resources */,
 				E1A3916F2655653000F7E378 /* EventActivityCollectionViewCell.xib in Resources */,
 				E1A3911A265542E100F7E378 /* Metropolis-SemiBold.otf in Resources */,
@@ -1430,7 +1434,6 @@
 				E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */,
 				E1EBA7E126608DFD008EAAAB /* BaseVM.swift in Sources */,
 				E1D4669E26580E3800CBF384 /* EventContentView.swift in Sources */,
-				E1F325912655035A003525D6 /* EventsViewController.swift in Sources */,
 				E1EBA7F0266090E6008EAAAB /* ActivityIndicator.swift in Sources */,
 				E1E4C328269E9967006EB90B /* EventCellVM.swift in Sources */,
 				E12565E72657521900CCCEA7 /* CollectionViewCell.swift in Sources */,
@@ -1447,7 +1450,7 @@
 				E1D466A626580F6E00CBF384 /* NibLoadable.swift in Sources */,
 				E180B7022656A16700AC13C5 /* DynamicHeightFlowLayout.swift in Sources */,
 				E17D884426A59005008C9A49 /* Language.swift in Sources */,
-				E1EBA7D726608D51008EAAAB /* EventsRoute.swift in Sources */,
+				E1EBA7D726608D51008EAAAB /* EventsCoordinator.swift in Sources */,
 				E194B75D269DF12600286D14 /* Injections.swift in Sources */,
 				E17D884226A58C4D008C9A49 /* EnvironmentType.swift in Sources */,
 				E12565BA2656D27C00CCCEA7 /* Text.swift in Sources */,
@@ -1541,19 +1544,6 @@
 				E12565E02657513500CCCEA7 /* id */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		E1F325922655035A003525D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E1F325932655035A003525D6 /* Base */,
-				E12565CF26574F4B00CCCEA7 /* vi */,
-				E12565D526574F5800CCCEA7 /* zh-Hans */,
-				E12565D826574F6100CCCEA7 /* zh-Hant */,
-				E12565DB2657512900CCCEA7 /* th */,
-				E12565DE2657513500CCCEA7 /* id */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		E1F325972655035C003525D6 /* LaunchScreen.storyboard */ = {
