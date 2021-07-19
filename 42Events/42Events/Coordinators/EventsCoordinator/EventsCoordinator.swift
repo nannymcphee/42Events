@@ -17,9 +17,7 @@ enum EventsRoute: Route {
 }
 
 class EventsCoordinator: NavigationCoordinator<EventsRoute> {
-    
     // MARK: Initialization
-    
     init() {
         super.init(initialRoute: .events)
     }
@@ -27,7 +25,6 @@ class EventsCoordinator: NavigationCoordinator<EventsRoute> {
     let disposeBag = DisposeBag()
     
     // MARK: Overrides
-    
     override func prepareTransition(for route: EventsRoute) -> NavigationTransition {
         switch route {
         case .events:

@@ -9,37 +9,45 @@ import Resolver
 import FTNetworkPlatform
 
 extension Resolver: ResolverRegistering {
+    // Inject all services
     public static func registerAllServices() {
         registerConfigService()
         registerNetworkService()
         registerEventsRepo()
     }
-    
-    private static func registerEventsRepo() {
-        register {
-            EventsRepoImpl() as EventsRepo
-        }.scope(.cached)
-    }
-    
+}
+
+extension Resolver {
+    // Inject server config
     private static func registerConfigService() {
         register { ServerConfig.testing as ServerConfigType }
             .scope(.cached)
     }
     
+    // Inject NetworkPlatform
     private static func registerNetworkService() {
+        // Register UseCaseProvider
         register {
             FTNetworkPlatform.UseCaseProviderImpl(
                 config: resolve() as ServerConfigType
             )  as FTNetworkPlatform.UseCaseProvider
         }
         .scope(.cached)
-
+        
+        // Register EventUseCase
         register { () -> FTNetworkPlatform.EventUseCase in
             let network = resolve() as FTNetworkPlatform.UseCaseProvider
 
             return network.makeEventUseCase()
         }
         .scope(.cached)
+    }
+    
+    // Register EventsRepo
+    private static func registerEventsRepo() {
+        register {
+            EventsRepoImpl() as EventsRepo
+        }.scope(.cached)
     }
 }
 
