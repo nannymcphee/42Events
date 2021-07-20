@@ -59,16 +59,6 @@ class EventsVC: BaseViewController, BindableType {
         self.refreshTrigger.onNext(())
     }
     
-    // MARK: - ACTIONS
-    @objc private func didTapNotificationButton() {
-        
-    }
-    
-    @objc private func didTapMenuButton() {
-        let vc = SettingsVC.instance()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     // MARK: - FUNCTIONS
     func bindViewModel() {
         let input = EventsVM.Input(initialLoad: viewDidLoadTrigger,
@@ -93,12 +83,7 @@ class EventsVC: BaseViewController, BindableType {
         output.sections
             .drive(onNext: { [weak self] sections in
                 guard let self = self else { return }
-                self.initEventListViews(sections: sections)
-                for section in sections {
-                    if let view = self.eventListViews.first(where: { $0.sectionId == section.id }) {
-                        view.populateData(with: section.data)
-                    }
-                }
+                self.initEventListViews(sections)
             })
             .disposed(by: disposeBag)
         
@@ -111,7 +96,7 @@ class EventsVC: BaseViewController, BindableType {
     }
     
     private func initNavigationBar() {
-        let btnNoti = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_bell"), target: self, action: #selector(didTapNotificationButton))
+        let btnNoti = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_bell"), target: self, action: nil)
         self.navigationItem.leftBarButtonItem = btnNoti
         
         let btnMenu = self.getIconBarButtonItem(icon: #imageLiteral(resourceName: "ic_menu"), target: self, action: nil)
@@ -162,11 +147,19 @@ class EventsVC: BaseViewController, BindableType {
         scrollView.refreshControl = refreshControl
     }
     
-    private func initEventListViews(sections: [EventListSection]) {
-        guard eventListViews.isEmpty else { return }
+    private func initEventListViews(_ sections: [EventListSection]) {
+        guard eventListViews.isEmpty else {
+            for section in sections {
+                if let view = self.eventListViews.first(where: { $0.sectionId == section.id }) {
+                    view.populateData(with: section.data)
+                }
+            }
+            return
+        }
         
         for section in sections {
             let view = EventsListView.instance(with: section.data, sectionTitle: section.title, sectionId: section.id)
+            view.populateData(with: section.data)
             
             view.eventPublisher
                 .map { (event) -> EventsVM.Event in

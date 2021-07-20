@@ -22,6 +22,7 @@ class EventsCoordinator: NavigationCoordinator<EventsRoute> {
         super.init(initialRoute: .events)
     }
     
+    private var settingsCoordinator: SettingsCoordinator?
     let disposeBag = DisposeBag()
     
     // MARK: Overrides
@@ -76,8 +77,24 @@ class EventsCoordinator: NavigationCoordinator<EventsRoute> {
             return .present(nav)
         
         case .settings:
-            let settingsCoordinator = SettingsCoordinator(navigation: rootViewController)
-            addChild(settingsCoordinator)
+            guard settingsCoordinator == nil else { return .none() }
+            let coordinator = SettingsCoordinator(navigation: rootViewController)
+            coordinator.eventPublisher
+                .subscribe(onNext: { [weak self] event in
+                    guard let self = self else { return }
+                    
+                    switch event {
+                    case .releaseIfNeeded:
+                        if let coordinator = self.settingsCoordinator {
+                            self.removeChild(coordinator)
+                            self.settingsCoordinator = nil
+                        }
+                    }
+                })
+                .disposed(by: disposeBag)
+            
+            settingsCoordinator = coordinator
+            addChild(coordinator)
             return .none()
         }
     }

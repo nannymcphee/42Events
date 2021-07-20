@@ -38,6 +38,7 @@
 		E1468FD1265818D7009D7971 /* EventCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */; };
 		E1468FD2265818D7009D7971 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */; };
 		E1498F692658B0F400043C42 /* SwipeBackNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */; };
+		E168224D26A6C44100203A5A /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E168224C26A6C44100203A5A /* SettingsVM.swift */; };
 		E17D87F326A58028008C9A49 /* FTDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = E17D87F126A58028008C9A49 /* FTDomain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E17D87F626A58028008C9A49 /* FTDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17D87EF26A58028008C9A49 /* FTDomain.framework */; };
 		E17D87F726A58028008C9A49 /* FTDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E17D87EF26A58028008C9A49 /* FTDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -264,6 +265,7 @@
 		E1468FCF265818D7009D7971 /* EventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCollectionViewCell.xib; sourceTree = "<group>"; };
 		E1468FD0265818D7009D7971 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1498F682658B0F400043C42 /* SwipeBackNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeBackNavigationController.swift; sourceTree = "<group>"; };
+		E168224C26A6C44100203A5A /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		E17D87EF26A58028008C9A49 /* FTDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FTDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17D87F126A58028008C9A49 /* FTDomain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTDomain.h; sourceTree = "<group>"; };
 		E17D87F226A58028008C9A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			children = (
 				E12565742656BBD300CCCEA7 /* SettingsVC.swift */,
 				E12565752656BBD300CCCEA7 /* SettingsVC.xib */,
+				E168224C26A6C44100203A5A /* SettingsVM.swift */,
 			);
 			path = SettingsVC;
 			sourceTree = "<group>";
@@ -568,7 +571,10 @@
 		E13A93C82658A3D600348FDE /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				E1A390AA26553CE700F7E378 /* Views */,
+				E13D220D266D27DA003BD4B1 /* EventDetailVC */,
+				E1A390AE26553DB300F7E378 /* EventsFilterVC */,
+				E1A390AD26553DA800F7E378 /* EventsVC */,
+				E1A390AC26553D8700F7E378 /* Cells */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -576,18 +582,10 @@
 		E13A93CF2658A41400348FDE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				E13A93D02658A41A00348FDE /* Views */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		E13A93D02658A41A00348FDE /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				E13A93D12658A44900348FDE /* Cells */,
 				E12565732656BBA800CCCEA7 /* SettingsVC */,
 			);
-			path = Views;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E13A93D12658A44900348FDE /* Cells */ = {
@@ -766,17 +764,6 @@
 				E194B75C269DF12600286D14 /* Injections.swift */,
 			);
 			path = Injections;
-			sourceTree = "<group>";
-		};
-		E1A390AA26553CE700F7E378 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				E13D220D266D27DA003BD4B1 /* EventDetailVC */,
-				E1A390AE26553DB300F7E378 /* EventsFilterVC */,
-				E1A390AD26553DA800F7E378 /* EventsVC */,
-				E1A390AC26553D8700F7E378 /* Cells */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		E1A390AB26553D0500F7E378 /* Models */ = {
@@ -1491,6 +1478,7 @@
 				E17D884026A58BF3008C9A49 /* ServerConfigType.swift in Sources */,
 				E1A3916E2655653000F7E378 /* EventActivityCollectionViewCell.swift in Sources */,
 				E180B7172656A71500AC13C5 /* DynamicHeightCollectionViewCell.swift in Sources */,
+				E168224D26A6C44100203A5A /* SettingsVM.swift in Sources */,
 				E1A391592655589700F7E378 /* UIImageView+Ext.swift in Sources */,
 				E1A390C826553F5B00F7E378 /* BaseVC.swift in Sources */,
 				E1F3258D2655035A003525D6 /* AppDelegate.swift in Sources */,

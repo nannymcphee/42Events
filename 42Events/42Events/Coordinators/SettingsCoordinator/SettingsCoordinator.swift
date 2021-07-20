@@ -13,6 +13,9 @@ enum SettingsRoute: Route {
 }
 
 class SettingsCoordinator: NavigationCoordinator<SettingsRoute> {
+    enum Event {
+        case releaseIfNeeded
+    }
     
     // MARK: Initialization
     
@@ -22,11 +25,8 @@ class SettingsCoordinator: NavigationCoordinator<SettingsRoute> {
         trigger(.main)
     }
     
-    deinit {
-        print(">>>>>>> Deinit SettingsCoordinator <<<<<<<<<<")
-    }
-    
-    let disposeBag = DisposeBag()
+    public let eventPublisher = PublishSubject<Event>()
+    private let disposeBag = DisposeBag()
     
     // MARK: Overrides
     
@@ -34,6 +34,20 @@ class SettingsCoordinator: NavigationCoordinator<SettingsRoute> {
         switch route {
         case .main:
             let vc = SettingsVC.instance()
+            let vm = SettingsVM()
+            
+            vm.eventPublisher
+                .subscribe(onNext: { [weak self] event in
+                    guard let self = self else { return }
+                    
+                    switch event {
+                    case .releaseIfNeeded:
+                        self.eventPublisher.onNext(.releaseIfNeeded)
+                    }
+                })
+                .disposed(by: disposeBag)
+            
+            vc.bind(to: vm)
             return .push(vc)
         }
     }
