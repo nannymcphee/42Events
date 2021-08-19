@@ -17,3 +17,9 @@
 3. Medal view filter screen.
 4. Event detail screen.
 5. Multi-language support.
+
+### Architecture ###
+1. Following [Clean Architecture](https://github.com/sergdort/CleanArchitectureRxSwift).
+2. MVVM-C design pattern.
+3. RxSwift, RxDataSources, XCoordinator.
+ 
