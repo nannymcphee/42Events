@@ -15,6 +15,7 @@ class EventsListView: BaseView {
         case didSelectEvent(EventModel)
     }
     
+    // MARK: - IBOutlets
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var cvEvents: EventsRxCollectionView!
     
@@ -29,7 +30,6 @@ class EventsListView: BaseView {
     override func awakeFromNib() {
         configureView()
     }
-        
     
     // MARK: - PUBLIC FUNCTIONS
     static func instance(with events: [EventModel], sectionTitle: String?, sectionId: String = "") -> EventsListView {
@@ -72,17 +72,14 @@ class EventsListView: BaseView {
         
         cvEvents.rx
             .modelSelected(EventCellItem.self)
-            .asObservable()
-            .subscribe(onNext: { [weak self] item in
-                guard let self = self else { return }
-                
+            .withUnretained(self)
+            .compactMap { view, item in
                 switch item {
                 case .event(let viewModel, _):
-                    self.eventPublisher.onNext(.didSelectEvent(viewModel.item))
+                    return .didSelectEvent(viewModel.item)
                 }
-            })
+            }
+            .bind(to: eventPublisher)
             .disposed(by: disposeBag)
     }
 }
-
-// MARK: - Extensions

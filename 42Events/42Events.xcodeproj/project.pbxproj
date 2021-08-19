@@ -11,6 +11,8 @@
 		689791A0173D8B167CFB4861 /* Pods_42Events_FTNetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5C8D5616FA64B1F3CC6F6D3 /* Pods_42Events_FTNetworkPlatform.framework */; };
 		8D85D06218DFCE35D9554601 /* Pods_42Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EC462620577ABBB3A13F1E /* Pods_42Events.framework */; };
 		A00A7A710241A8BD72C9C945 /* Pods_42Events_42EventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BFC0957AF07723358BEF0F6 /* Pods_42Events_42EventsUITests.framework */; };
+		E1202C1026A856A1004776D5 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1202C0F26A856A1004776D5 /* SettingsSection.swift */; };
+		E1202C1226A856B7004776D5 /* SettingCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1202C1126A856B7004776D5 /* SettingCellVM.swift */; };
 		E122C28F2656406A008611DF /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122C28E2656406A008611DF /* DynamicHeightCollectionView.swift */; };
 		E122C29426564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E122C29326564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift */; };
 		E12565762656BBD300CCCEA7 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12565742656BBD300CCCEA7 /* SettingsVC.swift */; };
@@ -205,6 +207,8 @@
 		8F6CC5428B84EBEFA097FB4B /* Pods-42Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events.release.xcconfig"; path = "Target Support Files/Pods-42Events/Pods-42Events.release.xcconfig"; sourceTree = "<group>"; };
 		BA6FFBCBB2BE9E9EDD50C557 /* Pods-42Events-FTNetworkPlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-42Events-FTNetworkPlatform.release.xcconfig"; path = "Target Support Files/Pods-42Events-FTNetworkPlatform/Pods-42Events-FTNetworkPlatform.release.xcconfig"; sourceTree = "<group>"; };
 		C1F38930D4B1C2E643656A92 /* Pods_42EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_42EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1202C0F26A856A1004776D5 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		E1202C1126A856B7004776D5 /* SettingCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellVM.swift; sourceTree = "<group>"; };
 		E122C28E2656406A008611DF /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 		E122C29326564B0A008611DF /* LeftAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		E12565742656BBD300CCCEA7 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -439,6 +443,7 @@
 				E12565742656BBD300CCCEA7 /* SettingsVC.swift */,
 				E12565752656BBD300CCCEA7 /* SettingsVC.xib */,
 				E168224C26A6C44100203A5A /* SettingsVM.swift */,
+				E1202C0F26A856A1004776D5 /* SettingsSection.swift */,
 			);
 			path = SettingsVC;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 			children = (
 				E125657F2656BC8B00CCCEA7 /* SettingTableViewCell.swift */,
 				E12565802656BC8B00CCCEA7 /* SettingTableViewCell.xib */,
+				E1202C1126A856B7004776D5 /* SettingCellVM.swift */,
 			);
 			path = SettingCell;
 			sourceTree = "<group>";
@@ -1441,6 +1447,7 @@
 				E1A39122265543CF00F7E378 /* AppColors.swift in Sources */,
 				E1A391812655733400F7E378 /* Dictionary+Ext.swift in Sources */,
 				E1EBA7DC26608D61008EAAAB /* EventsVM.swift in Sources */,
+				E1202C1026A856A1004776D5 /* SettingsSection.swift in Sources */,
 				E1EBA7F5266093E1008EAAAB /* Observable+Operators.swift in Sources */,
 				E13781282657A7D60028839A /* BaseView.swift in Sources */,
 				E137810A265798030028839A /* EventsListView.swift in Sources */,
@@ -1492,6 +1499,7 @@
 				E1A390B126553DD000F7E378 /* EventsVC.swift in Sources */,
 				E1B6CD19269E8F0700C4350C /* EventSection.swift in Sources */,
 				E1EBA7E626608E28008EAAAB /* ViewModelType.swift in Sources */,
+				E1202C1226A856B7004776D5 /* SettingCellVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

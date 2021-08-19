@@ -20,9 +20,6 @@ class EventDetailVC: BaseViewController, BindableType {
         return vc
     }
     
-    // MARK: - IBOUTLETS
-    
-    
     // MARK: - VARIABLES
     private var webView: WKWebView!
     private let viewDidLoadTrigger = PublishSubject<Void>()
@@ -46,9 +43,6 @@ class EventDetailVC: BaseViewController, BindableType {
         networkConnectionTrigger.onCompleted()
     }
     
-    // MARK: - ACTIONS
-    
-    
     // MARK: - FUNCTIONS
     func bindViewModel() {
         let input = EventDetailVM.Input(intialLoad: viewDidLoadTrigger,
@@ -57,18 +51,13 @@ class EventDetailVC: BaseViewController, BindableType {
         
         // WebView configuration
         output.webViewConfig
-            .drive(onNext: { [weak self] config in
-                guard let self = self else { return }
-                self.initWebView(config: config)
-            })
+            .drive(with: self, onNext: { $0.initWebView(config: $1) })
             .disposed(by: disposeBag)
         
         // Load WebView
         output.detailURL
-            .drive(onNext: { [weak self] url in
-                guard let self = self, let url = url else { return }
-                self.loadWebView(url)
-            })
+            .compactMap { $0 }
+            .drive(with: self, onNext: { $0.loadWebView($1) })
             .disposed(by: disposeBag)
         
         // Loading

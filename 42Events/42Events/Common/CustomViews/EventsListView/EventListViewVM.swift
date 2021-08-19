@@ -62,6 +62,4 @@ class EventListViewVM: BaseVM, ViewModelType {
     public func updateEvents(_ events: [EventModel]) {
         self.eventModels = events
     }
-    
-    // MARK: Privates functions
 }

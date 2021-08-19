@@ -14,14 +14,14 @@ class SettingsVM: BaseVM, ViewModelType, EventPublisherType {
     
     // MARK: Inputs
     struct Input {
-        let itemSelected: Observable<(setting: Setting, indexPath: IndexPath)>
+        let itemSelected: Observable<(setting: SettingCellItem, indexPath: IndexPath)>
         let releaseTrigger: Observable<Void>
     }
     
     // MARK: Outputs
     struct Output {
-        let settings: Driver<[Setting]>
-        let showDropdown: Driver<IndexPath?>
+        let settingsSection: Driver<[SettingSection]>
+        let showDropdown: Driver<IndexPath>
     }
     
     // MARK: Event
@@ -43,15 +43,39 @@ class SettingsVM: BaseVM, ViewModelType, EventPublisherType {
         Setting(actionType: .language,  image: UIImage(named: "ic_language")),
     ])
     private var selectedLanguageRelay = BehaviorRelay<Int>(value: 0)
-    private var showDropdownRelay = BehaviorRelay<IndexPath?>(value: nil)
+    private let sectionsRelay = BehaviorRelay<[SettingSection]>(value: [])
+    private var showDropdownSubject = PublishSubject<IndexPath>()
     
     // MARK: Public functions
     func transform(input: Input) -> Output {
+        let sections = [SettingSection.settings(title: "", items: [])]
+        let initState = SectionedTableViewState<SettingSection>(sections: sections)
+        let command = PublishSubject<TableViewEditingCommand<SettingCellItem>>()
+        
+        // Settings section
+        command.scan(initState) { (state, action) in
+            return state.execute(command: action)
+        }
+        .startWith(initState)
+        .map { $0.sections }
+        .bind(to: sectionsRelay)
+        .disposed(by: disposeBag)
+        
+        settingsRelay
+            .map { $0.map { SettingCellVM($0) } }
+            .map { $0.map { SettingCellItem.setting(viewModel: $0) } }
+            .map { TableViewEditingCommand.reloadItems(items: $0, section: 0) }
+            .bind(to: command)
+            .disposed(by: disposeBag)
+        
         // Item selected
         input.itemSelected
             .subscribe(onNext: { [weak self] item in
                 guard let self = self else { return }
-                self.handleSelectSetting(item.setting, at: item.indexPath)
+                switch item.setting {
+                case .setting(let viewModel, _):
+                    self.handleSelectSetting(viewModel.item, at: item.indexPath)
+                }
             })
             .disposed(by: disposeBag)
         
@@ -61,14 +85,14 @@ class SettingsVM: BaseVM, ViewModelType, EventPublisherType {
             .bind(to: eventPublisher)
             .disposed(by: disposeBag)
         
-        return Output(settings: settingsRelay.asDriverOnErrorJustComplete(),
-                      showDropdown: showDropdownRelay.asDriverOnErrorJustComplete())
+        return Output(settingsSection: sectionsRelay.asDriver(),
+                      showDropdown: showDropdownSubject.asDriverOnErrorJustComplete())
     }
     
     // MARK: Privates functions
     private func handleSelectSetting(_ setting: Setting, at indexPath: IndexPath) {
         if setting.id == ActionSettingType.language.id {
-            showDropdownRelay.accept(indexPath)
+            showDropdownSubject.onNext(indexPath)
         }
     }
 }

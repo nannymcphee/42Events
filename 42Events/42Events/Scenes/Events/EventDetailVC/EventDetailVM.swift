@@ -33,7 +33,6 @@ class EventDetailVM: BaseVM, ViewModelType, EventPublisherType {
         case dismiss
     }
     
-    
     // MARK: Public variables
     public var eventPublisher = PublishSubject<Event>()
     public var eventModel: EventModel
@@ -44,20 +43,11 @@ class EventDetailVM: BaseVM, ViewModelType, EventPublisherType {
     
     // MARK: Public functions
     func transform(input: Input) -> Output {
-        // Intial load
-        input.intialLoad
-            .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                self.initWebViewConfiguration()
-                self.initDetailURL()
-            })
-            .disposed(by: disposeBag)
-        
-        // Network connection restored
-        input.networkConnectionRestored
-            .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                self.initDetailURL()
+        // Intial load & Network connection restored
+        Observable.merge(input.intialLoad, input.networkConnectionRestored)
+            .subscribe(with: self, onNext: { viewModel, _ in
+                viewModel.initWebViewConfiguration()
+                viewModel.initDetailURL()
             })
             .disposed(by: disposeBag)
         

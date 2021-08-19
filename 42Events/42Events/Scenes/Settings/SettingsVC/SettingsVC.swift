@@ -11,6 +11,7 @@ import Localize_Swift
 import RxSwift
 import RxCocoa
 import FTDomain
+import RxDataSources
 
 class SettingsVC: BaseViewController, BindableType {
     enum ViewType {
@@ -26,16 +27,22 @@ class SettingsVC: BaseViewController, BindableType {
     
     // MARK: - IBOUTLETS
     @IBOutlet weak var tbSettings: UITableView!
-    
-    
-    
+        
     // MARK: - VARIABLES
     internal var viewModel: SettingsVM!
     private var selectedLanguageIndex: Int = 0
     private let languageDropDown = DropDown()
     private let releaseTrigger = PublishSubject<Void>()
-    private let settingSelectTrigger = PublishSubject<(setting: Setting, indexPath: IndexPath)>()
-    
+    private let settingSelectTrigger = PublishSubject<(setting: SettingCellItem, indexPath: IndexPath)>()
+    private lazy var dataSource = RxTableViewSectionedAnimatedDataSource<SettingSection>(
+        configureCell: { (dataSource, tableView, indexPath, item) -> SettingTableViewCell in
+            let cell: SettingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+            switch item {
+            case .setting(let viewModel, _):
+                cell.bind(viewModel)
+            }
+            return cell
+        })
     
     // MARK: - OVERRIDES
     override func viewDidLoad() {
@@ -57,43 +64,31 @@ class SettingsVC: BaseViewController, BindableType {
         self.tbSettings.reloadData()
     }
     
-    // MARK: - ACTIONS
-    
-    
     // MARK: - FUNCTIONS
     func bindViewModel() {
         let input = SettingsVM.Input(itemSelected: settingSelectTrigger,
                                      releaseTrigger: releaseTrigger)
         let output = viewModel.transform(input: input)
         
-        // Settings
-        output.settings
-            .asObservable()
-            .bind(to: tbSettings.rx.items) { (tableView, index, item) in
-                let indexPath = IndexPath(row: index, section: 0)
-                let cell: SettingTableViewCell = tableView.dequeueReusableCell(for: indexPath)
-                cell.configureCell(data: item)
-                return cell
-            }
+        // Settings dataSource
+        output.settingsSection
+            .drive(tbSettings.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         // Dropdown show trigger
         output.showDropdown
-            .drive(onNext: { [weak self] indexPath in
-                guard let self = self, let indexPath = indexPath else { return }
-                self.showDropDown(at: indexPath)
-            })
+            .drive(with: self, onNext: { $0.showDropDown(at: $1) })
             .disposed(by: disposeBag)
     }
     
     private func bindingUI() {
         // Item select trigger
-        Observable.zip(tbSettings.rx.itemSelected, tbSettings.rx.modelSelected(Setting.self))
-            .withUnretained(self)
-            .bind(onNext: { (owner, tuple) in
-                owner.tbSettings.deselectRow(at: tuple.0, animated: false)
-                owner.settingSelectTrigger.onNext((setting: tuple.1, indexPath: tuple.0))
+        Observable.zip(tbSettings.rx.modelSelected(SettingCellItem.self), tbSettings.rx.itemSelected)
+            .map { ($0.0, $0.1) }
+            .do(onNext: { [weak self] tuple in
+                self?.tbSettings.deselectRow(at: tuple.1, animated: false)
             })
+            .bind(to: settingSelectTrigger)
             .disposed(by: disposeBag)
     }
     
@@ -142,5 +137,3 @@ class SettingsVC: BaseViewController, BindableType {
         self.languageDropDown.show()
     }
 }
-
-// MARK: - EXTENSIONS

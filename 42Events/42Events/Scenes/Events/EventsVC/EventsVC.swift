@@ -67,24 +67,17 @@ class EventsVC: BaseViewController, BindableType {
                                    sportTypeSelected: sportTypeSelectTrigger,
                                    itemSelected: eventSelectTrigger,
                                    slideshowSelected: slideshowSelectTrigger)
-        
         let output = viewModel.transform(input: input)
         
         // Featured events
         output.featuredEvents
-            .drive(onNext: { [weak self] events in
-                guard let self = self else { return }
-                let imageSource = events.compactMap { KingfisherSource(urlString: $0.bannerCard) }
-                self.vSlideshow.setImageInputs(imageSource)
-            })
+            .map { $0.compactMap { KingfisherSource(urlString: $0.bannerCard) } }
+            .drive(with: self, onNext: { $0.vSlideshow.setImageInputs($1) })
             .disposed(by: disposeBag)
         
         // Starting soon, popular, new release, free, past events
         output.sections
-            .drive(onNext: { [weak self] sections in
-                guard let self = self else { return }
-                self.initEventListViews(sections)
-            })
+            .drive(with: self, onNext: { $0.initEventListViews($1) })
             .disposed(by: disposeBag)
         
         // Pull to refresh
@@ -133,13 +126,13 @@ class EventsVC: BaseViewController, BindableType {
         self.vSportTypeListContainer.addSubview(self.sportTypeListView!)
         self.sportTypeListView?.layoutAttachAll(to: self.vSportTypeListContainer)
         self.sportTypeListViewVM.eventPublisher
-            .subscribe(onNext: { [weak self] event in
-                guard let self = self else { return }
+            .compactMap { event in
                 switch event {
                 case .didSelectSportType(let sportType):
-                    self.sportTypeSelectTrigger.onNext(sportType)
+                    return sportType
                 }
-            })
+            }
+            .bind(to: sportTypeSelectTrigger)
             .disposed(by: disposeBag)
     }
     
@@ -177,5 +170,3 @@ class EventsVC: BaseViewController, BindableType {
         self.eventListViews.forEach { vStackEventList.addArrangedSubview($0) }
     }
 }
-
-// MARK: - EXTENSIONS

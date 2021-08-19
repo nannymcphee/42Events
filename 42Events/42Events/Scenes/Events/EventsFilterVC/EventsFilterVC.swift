@@ -30,7 +30,6 @@ class EventsFilterVC: BaseViewController, BindableType {
     @IBOutlet weak var lbMedalView: UILabel!
     @IBOutlet weak var tbEvents: UITableView!
     
-    
     // MARK: - VARIABLES
     private var viewType: ViewType = .events
     private var events: [EventModel] = []
@@ -74,8 +73,7 @@ class EventsFilterVC: BaseViewController, BindableType {
         
         // Events
         output.events
-            .asObservable()
-            .bind(to: tbEvents.rx.items) { [weak self] (tableView, index, event) in
+            .drive(tbEvents.rx.items) { [weak self] (tableView, index, event) in
                 guard let self = self else { return UITableViewCell() }
                 let indexPath = IndexPath(row: index, section: 0)
                 switch self.viewType {
@@ -91,20 +89,17 @@ class EventsFilterVC: BaseViewController, BindableType {
             }
             .disposed(by: disposeBag)
         
+        // Count label's text
         output.events
             .map { $0.count }
-            .drive(onNext: { [weak self] count in
-                guard let self = self else { return }
-                self.setEventsCountLabel(count)
-            })
+            .drive(with: self, onNext: { $0.setEventsCountLabel($1) })
             .disposed(by: disposeBag)
         
         // Medal view trigger
         output.isMedalView
-            .drive(onNext: { [weak self] isMedalView in
-                guard let self = self else { return }
-                self.viewType = isMedalView ? .medals : .events
-                self.tbEvents.reloadData()
+            .drive(with: self, onNext: { viewController, isMedalView in
+                viewController.viewType = isMedalView ? .medals : .events
+                viewController.tbEvents.reloadData()
             })
             .disposed(by: disposeBag)
         
@@ -132,7 +127,6 @@ class EventsFilterVC: BaseViewController, BindableType {
         tbEvents.registerNib(MedalViewTableViewCell.self)
         tbEvents.estimatedRowHeight = 200
         tbEvents.rowHeight = UITableView.automaticDimension
-        
         tbEvents.refreshControl = refreshControl
     }
     
@@ -141,18 +135,11 @@ class EventsFilterVC: BaseViewController, BindableType {
         self.lbEventsCount.text = "\(count) \(self.viewModel.sportType.localized) \(suffix)"
     }
     
-    private func populateData(_ data: [EventModel]) {
-        self.setEventsCountLabel(data.count)
-        self.events = data
-        self.tbEvents.reloadData()
-        self.refreshControl.endRefreshing()
-    }
-    
     private func bindingUI() {
+        // Event selected
         tbEvents.rx
             .modelSelected(EventModel.self)
-            .map { EventsFilterVM.Event.presentEventDetail($0) }
-            .bind(to: viewModel.eventPublisher)
+            .bind(to: itemSelectedTrigger)
             .disposed(by: disposeBag)
     }
 }

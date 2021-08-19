@@ -23,11 +23,11 @@ class SettingTableViewCell: TableViewCell {
     }
     
     override func reset() {
-        super.reset()
         self.vSeparators.forEach { $0.isHidden = true }
         self.lbLanguage.isHidden = true
         self.ivType.image = nil
         self.lbTitle.text = nil
+        super.reset()
     }
     
     public func configureCell(data: Setting) {
@@ -41,5 +41,12 @@ class SettingTableViewCell: TableViewCell {
         }
     }
     
-    
+    public func bind(_ viewModel: SettingCellVM) {
+        viewModel.setting
+            .drive(onNext: { [weak self] setting in
+                guard let self = self else { return }
+                self.configureCell(data: setting)
+            })
+            .disposed(by: disposeBag)
+    }
 }

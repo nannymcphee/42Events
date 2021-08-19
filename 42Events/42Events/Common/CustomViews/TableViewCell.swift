@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 
 open class TableViewCell: UITableViewCell {
+    public var disposeBag = DisposeBag()
+    
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -38,6 +41,6 @@ open class TableViewCell: UITableViewCell {
     }
     
     open func reset() {
-        
+        disposeBag = DisposeBag()
     }
 }
