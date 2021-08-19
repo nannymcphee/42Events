@@ -5,7 +5,7 @@
 //  Created by Duy Nguyen on 28/05/2021.
 //
 
-import Foundation
+import FTDomain
 
 public struct EventListSection {
     var id: String

@@ -5,7 +5,7 @@
 //  Created by Nguyên Duy on 21/05/2021.
 //
 
-import Foundation
+import FTDomain
 
 class AppConstants {
     static var serverUrl: String = "https://api-v2-sg-staging.42race.com/api/v1"

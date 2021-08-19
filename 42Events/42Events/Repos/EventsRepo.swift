@@ -6,6 +6,9 @@
 //
 
 import RxSwift
+import Resolver
+import FTDomain
+import FTNetworkPlatform
 
 public protocol EventsRepo {
     func getAllEvents() -> Single<EventListResponse>
@@ -13,33 +16,13 @@ public protocol EventsRepo {
 }
 
 public class EventsRepoImpl: EventsRepo {
+    @Injected private var eventsApi: FTNetworkPlatform.EventUseCase
+    
     public func getAllEvents() -> Single<EventListResponse> {
-        return Single.create { (observer) -> Disposable in
-            let eventsManager = XNetworkManager<EventEndPoint>()
-            eventsManager.request(target: .getAllEvents) { (result: XResult<EventListResponse>) in
-                switch result {
-                case .success(let response):
-                    observer(.success(response))
-                case .failure(let err):
-                    observer(.failure(err))
-                }
-            }
-            return Disposables.create()
-        }
+        return eventsApi.getAllEvents()
     }
     
     public func getEvents(sportType: String, limit: Int) -> Single<[EventModel]> {
-        return Single.create { (observer) -> Disposable in
-            let eventsManager = XNetworkManager<EventEndPoint>()
-            eventsManager.request(target: .filterEvents(sportType: sportType, limit: limit)) { (result: XResult<[EventModel]>) in
-                switch result {
-                case .success(let response):
-                    observer(.success(response))
-                case .failure(let err):
-                    observer(.failure(err))
-                }
-            }
-            return Disposables.create()
-        }
+        return eventsApi.getEvents(sportType: sportType, limit: limit)
     }
 }
